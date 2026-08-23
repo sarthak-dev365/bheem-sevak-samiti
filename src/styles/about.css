@@ -1,0 +1,2786 @@
+/* ==========================================================
+   BHEEM SEVAK SAMITI
+   ABOUT SECTION
+   ULTRA PREMIUM — VERSION 1
+   PART 2 — CORE DESKTOP DESIGN
+========================================================== */
+
+
+/* ==========================================================
+   ABOUT ROOT
+========================================================== */
+
+.about-section{
+
+    position:relative;
+
+    isolation:isolate;
+
+    width:100%;
+
+    padding:
+        110px
+        0
+        120px;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f8fbff 52%,
+            #ffffff 100%
+        );
+
+    color:#0f3d7a;
+
+}
+
+
+/* ==========================================================
+   MAIN CONTAINER
+========================================================== */
+
+.about-container{
+
+    position:relative;
+
+    z-index:5;
+
+    width:min(
+        1320px,
+        calc(100% - 64px)
+    );
+
+    margin:0 auto;
+
+}
+
+
+/* ==========================================================
+   SECTION HEADING
+========================================================== */
+
+.about-heading{
+
+    max-width:850px;
+
+    margin:0 auto 72px;
+
+    text-align:center;
+
+}
+
+
+/* ==========================================================
+   EYEBROW
+========================================================== */
+
+.about-eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:9px;
+
+    padding:
+        9px
+        16px;
+
+    border:
+        1px solid
+        rgba(15,61,122,.12);
+
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,.82);
+
+    color:#0f3d7a;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    line-height:1;
+
+    box-shadow:
+        0 8px 24px
+        rgba(15,61,122,.05);
+
+    backdrop-filter:blur(10px);
+
+    -webkit-backdrop-filter:blur(10px);
+
+}
+
+
+.about-eyebrow-icon{
+
+    width:26px;
+
+    height:26px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        rgba(245,124,0,.10);
+
+    color:#f57c00;
+
+}
+
+
+/* ==========================================================
+   SECTION TITLE
+========================================================== */
+
+.about-title{
+
+    margin-top:22px;
+
+    color:#0b2d61;
+
+    font-size:
+        clamp(
+            38px,
+            4vw,
+            56px
+        );
+
+    font-weight:800;
+
+    line-height:1.16;
+
+    letter-spacing:-1.4px;
+
+}
+
+
+.about-title-accent{
+
+    position:relative;
+
+    display:inline-block;
+
+    margin-left:10px;
+
+    color:#f26b21;
+
+}
+
+
+.about-title-accent::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:3px;
+
+    right:0;
+
+    bottom:-7px;
+
+    height:4px;
+
+    border-radius:999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f57c00,
+            #ff9d3d,
+            transparent
+        );
+
+    opacity:.75;
+
+}
+
+
+/* ==========================================================
+   SECTION INTRO
+========================================================== */
+
+.about-intro{
+
+    max-width:760px;
+
+    margin:
+        24px
+        auto
+        0;
+
+    color:#64748b;
+
+    font-size:16px;
+
+    font-weight:400;
+
+    line-height:1.85;
+
+}
+
+
+/* ==========================================================
+   MAIN ABOUT GRID
+========================================================== */
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,.92fr)
+        minmax(0,1.08fr);
+
+    align-items:center;
+
+    gap:90px;
+
+}
+
+
+/* ==========================================================
+   VISUAL AREA
+========================================================== */
+
+.about-visual{
+
+    position:relative;
+
+    min-height:520px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+/* ==========================================================
+   VISUAL GLOW
+========================================================== */
+
+.about-visual-glow{
+
+    position:absolute;
+
+    width:410px;
+
+    height:410px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(15,61,122,.10),
+            rgba(245,124,0,.06),
+            transparent 68%
+        );
+
+    filter:blur(8px);
+
+}
+
+
+/* ==========================================================
+   MISSION CARD
+========================================================== */
+
+.about-visual-card{
+
+    position:relative;
+
+    z-index:3;
+
+    width:
+        min(
+            470px,
+            100%
+        );
+
+    min-height:390px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    padding:
+        32px;
+
+    border:
+        1px solid
+        rgba(15,61,122,.09);
+
+    border-radius:28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.96),
+            rgba(247,250,255,.92)
+        );
+
+    box-shadow:
+        0 28px 65px
+        rgba(15,61,122,.12);
+
+    overflow:hidden;
+
+    backdrop-filter:blur(14px);
+
+    -webkit-backdrop-filter:blur(14px);
+
+}
+
+
+/* ==========================================================
+   CARD TOP
+========================================================== */
+
+.about-visual-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    color:#64748b;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    text-transform:uppercase;
+
+}
+
+
+.about-visual-dot{
+
+    width:9px;
+
+    height:9px;
+
+    border-radius:50%;
+
+    background:#f57c00;
+
+    box-shadow:
+        0 0 0 5px
+        rgba(245,124,0,.10);
+
+}
+
+
+/* ==========================================================
+   CARD CONTENT
+========================================================== */
+
+.about-visual-content{
+
+    padding:
+        35px
+        0
+        30px;
+
+}
+
+
+.about-visual-icon{
+
+    width:64px;
+
+    height:64px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(15,61,122,.11),
+            rgba(15,61,122,.04)
+        );
+
+    color:#0f3d7a;
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(15,61,122,.05);
+
+}
+
+
+.about-visual-content h3{
+
+    max-width:340px;
+
+    margin-top:24px;
+
+    color:#0b2d61;
+
+    font-size:32px;
+
+    font-weight:800;
+
+    line-height:1.25;
+
+    letter-spacing:-.7px;
+
+}
+
+
+.about-visual-content p{
+
+    max-width:390px;
+
+    margin-top:15px;
+
+    color:#64748b;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+
+/* ==========================================================
+   CARD FOOTER
+========================================================== */
+
+.about-visual-footer{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    border-top:
+        1px solid
+        rgba(15,61,122,.08);
+
+    padding-top:19px;
+
+}
+
+
+.about-visual-footer span{
+
+    position:relative;
+
+    color:#0f3d7a;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    text-align:center;
+
+}
+
+
+.about-visual-footer span:not(:last-child)::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+
+    right:0;
+
+    width:1px;
+
+    height:14px;
+
+    transform:translateY(-50%);
+
+    background:
+        rgba(15,61,122,.12);
+
+}
+
+
+/* ==========================================================
+   DECORATIVE CIRCLES
+========================================================== */
+
+.about-circle{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+}
+
+
+.about-circle-one{
+
+    width:180px;
+
+    height:180px;
+
+    left:2%;
+
+    top:5%;
+
+    border:
+        1px solid
+        rgba(15,61,122,.10);
+
+}
+
+
+.about-circle-one::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:18px;
+
+    border:
+        1px solid
+        rgba(15,61,122,.07);
+
+    border-radius:50%;
+
+}
+
+
+.about-circle-two{
+
+    width:120px;
+
+    height:120px;
+
+    right:3%;
+
+    bottom:3%;
+
+    border:
+        12px solid
+        rgba(245,124,0,.08);
+
+}
+
+
+/* ==========================================================
+   FLOATING BADGE
+========================================================== */
+
+.about-floating-badge{
+
+    position:absolute;
+
+    z-index:6;
+
+    right:0;
+
+    bottom:35px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+
+    padding:
+        13px
+        17px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.75);
+
+    border-radius:15px;
+
+    background:
+        rgba(255,255,255,.94);
+
+    box-shadow:
+        0 16px 35px
+        rgba(15,61,122,.14);
+
+    backdrop-filter:blur(14px);
+
+    -webkit-backdrop-filter:blur(14px);
+
+}
+
+
+.about-floating-icon{
+
+    width:38px;
+
+    height:38px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-shrink:0;
+
+    border-radius:11px;
+
+    background:
+        rgba(22,163,74,.10);
+
+    color:#15803d;
+
+}
+
+
+.about-floating-badge strong{
+
+    display:block;
+
+    color:#0f3d7a;
+
+    font-size:12px;
+
+    font-weight:800;
+
+}
+
+
+.about-floating-badge span{
+
+    display:block;
+
+    margin-top:3px;
+
+    color:#64748b;
+
+    font-size:9px;
+
+    font-weight:500;
+
+}
+
+
+/* ==========================================================
+   RIGHT CONTENT
+========================================================== */
+
+.about-content{
+
+    position:relative;
+
+    max-width:620px;
+
+}
+
+
+.about-content-label{
+
+    display:inline-block;
+
+    color:#f57c00;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    letter-spacing:.7px;
+
+    text-transform:uppercase;
+
+}
+
+
+/* ==========================================================
+   CONTENT TITLE
+========================================================== */
+
+.about-content-title{
+
+    margin-top:14px;
+
+    color:#0b2d61;
+
+    font-size:
+        clamp(
+            34px,
+            3.2vw,
+            48px
+        );
+
+    font-weight:800;
+
+    line-height:1.18;
+
+    letter-spacing:-1px;
+
+}
+
+
+.about-content-title span{
+
+    display:block;
+
+    color:#f26b21;
+
+}
+
+
+/* ==========================================================
+   CONTENT TEXT
+========================================================== */
+
+.about-content-text{
+
+    margin-top:20px;
+
+    color:#64748b;
+
+    font-size:15px;
+
+    line-height:1.85;
+
+}
+
+
+.about-content-text + .about-content-text{
+
+    margin-top:12px;
+
+}
+
+
+/* ==========================================================
+   FOCUS LIST
+========================================================== */
+
+.about-focus-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+    margin-top:28px;
+
+}
+
+
+/* ==========================================================
+   FOCUS ITEM
+========================================================== */
+
+.about-focus-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:14px;
+
+    padding:
+        14px
+        15px;
+
+    border:
+        1px solid
+        rgba(15,61,122,.07);
+
+    border-radius:15px;
+
+    background:
+        rgba(255,255,255,.70);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+
+}
+
+
+.about-focus-item:hover{
+
+    transform:
+        translateX(5px);
+
+    border-color:
+        rgba(15,61,122,.12);
+
+    box-shadow:
+        0 10px 25px
+        rgba(15,61,122,.07);
+
+}
+
+
+/* ==========================================================
+   FOCUS ICON
+========================================================== */
+
+.about-focus-icon{
+
+    width:43px;
+
+    height:43px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-shrink:0;
+
+    border-radius:12px;
+
+}
+
+
+.about-focus-orange{
+
+    color:#f57c00;
+
+    background:
+        rgba(245,124,0,.10);
+
+}
+
+
+.about-focus-green{
+
+    color:#15803d;
+
+    background:
+        rgba(22,163,74,.10);
+
+}
+
+
+.about-focus-blue{
+
+    color:#0f3d7a;
+
+    background:
+        rgba(15,61,122,.10);
+
+}
+
+
+/* ==========================================================
+   FOCUS TEXT
+========================================================== */
+
+.about-focus-item h4{
+
+    color:#0f3d7a;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    line-height:1.3;
+
+}
+
+
+.about-focus-item p{
+
+    margin-top:3px;
+
+    color:#64748b;
+
+    font-size:11px;
+
+    line-height:1.55;
+
+}
+
+
+/* ==========================================================
+   READ MORE BUTTON
+========================================================== */
+
+.about-read-more{
+
+    width:max-content;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:11px;
+
+    margin-top:30px;
+
+    color:#0f3d7a;
+
+    font-size:14px;
+
+    font-weight:800;
+
+}
+
+
+.about-read-more span{
+
+    width:36px;
+
+    height:36px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#0f3d7a;
+
+    color:#fff;
+
+    transition:
+        transform .3s ease,
+        background .3s ease;
+
+}
+
+
+.about-read-more:hover span{
+
+    transform:
+        translateX(4px);
+
+    background:#f57c00;
+
+}
+
+
+/* ==========================================================
+   BOTTOM DECORATION
+========================================================== */
+
+.about-bottom-decoration{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    transform:translateX(-50%);
+
+    opacity:.45;
+
+}
+
+
+.about-bottom-decoration span{
+
+    width:6px;
+
+    height:6px;
+
+    border-radius:50%;
+
+    background:#0f3d7a;
+
+}
+
+
+.about-bottom-decoration span:nth-child(2){
+
+    background:#f57c00;
+
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+.about-section a:focus-visible{
+
+    outline:
+        2px solid
+        #f57c00;
+
+    outline-offset:4px;
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+    .about-section *{
+
+        transition:none!important;
+
+        animation:none!important;
+
+    }
+
+}
+
+/* ==========================================================
+   ABOUT SECTION
+   VERSION 1 — PART 3
+   LAPTOP + TABLET RESPONSIVE
+========================================================== */
+
+
+/* ==========================================================
+   LARGE LAPTOP
+========================================================== */
+
+@media (max-width: 1200px){
+
+    .about-section{
+
+        padding:
+            95px
+            0
+            105px;
+
+    }
+
+
+    .about-container{
+
+        width:
+            min(
+                1120px,
+                calc(100% - 52px)
+            );
+
+    }
+
+
+    .about-heading{
+
+        margin-bottom:60px;
+
+    }
+
+
+    .about-title{
+
+        font-size:
+            clamp(
+                36px,
+                4vw,
+                50px
+            );
+
+    }
+
+
+    .about-grid{
+
+        gap:55px;
+
+    }
+
+
+    .about-visual{
+
+        min-height:470px;
+
+    }
+
+
+    .about-visual-card{
+
+        width:
+            min(
+                430px,
+                100%
+            );
+
+        min-height:365px;
+
+        padding:28px;
+
+    }
+
+
+    .about-visual-content h3{
+
+        font-size:29px;
+
+    }
+
+
+    .about-content-title{
+
+        font-size:
+            clamp(
+                32px,
+                3.5vw,
+                43px
+            );
+
+    }
+
+
+    .about-content-text{
+
+        font-size:14px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   LAPTOP / SMALL DESKTOP
+========================================================== */
+
+@media (max-width: 1050px){
+
+    .about-section{
+
+        padding:
+            85px
+            0
+            95px;
+
+    }
+
+
+    .about-container{
+
+        width:
+            calc(100% - 44px);
+
+    }
+
+
+    .about-heading{
+
+        max-width:760px;
+
+        margin-bottom:55px;
+
+    }
+
+
+    .about-grid{
+
+        grid-template-columns:
+            minmax(0,.88fr)
+            minmax(0,1.12fr);
+
+        gap:40px;
+
+    }
+
+
+    .about-visual{
+
+        min-height:440px;
+
+    }
+
+
+    .about-visual-card{
+
+        width:
+            min(
+                400px,
+                100%
+            );
+
+        min-height:350px;
+
+        padding:25px;
+
+        border-radius:24px;
+
+    }
+
+
+    .about-visual-content{
+
+        padding:
+            25px
+            0
+            22px;
+
+    }
+
+
+    .about-visual-content h3{
+
+        font-size:27px;
+
+    }
+
+
+    .about-visual-content p{
+
+        font-size:13px;
+
+    }
+
+
+    .about-content-title{
+
+        font-size:36px;
+
+    }
+
+
+    .about-content-text{
+
+        font-size:14px;
+
+        line-height:1.75;
+
+    }
+
+
+    .about-focus-list{
+
+        gap:11px;
+
+        margin-top:22px;
+
+    }
+
+
+    .about-focus-item{
+
+        padding:12px;
+
+    }
+
+
+    .about-focus-icon{
+
+        width:39px;
+
+        height:39px;
+
+    }
+
+
+    .about-floating-badge{
+
+        right:-5px;
+
+        bottom:25px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   TABLET LANDSCAPE
+========================================================== */
+
+@media (max-width: 900px){
+
+    .about-section{
+
+        padding:
+            80px
+            0
+            90px;
+
+    }
+
+
+    .about-container{
+
+        width:
+            calc(100% - 40px);
+
+    }
+
+
+    .about-heading{
+
+        margin-bottom:48px;
+
+    }
+
+
+    .about-title{
+
+        font-size:
+            clamp(
+                34px,
+                5vw,
+                45px
+            );
+
+    }
+
+
+    .about-intro{
+
+        font-size:15px;
+
+        line-height:1.75;
+
+    }
+
+
+    .about-grid{
+
+        grid-template-columns:1fr;
+
+        gap:65px;
+
+    }
+
+
+    .about-visual{
+
+        width:100%;
+
+        min-height:430px;
+
+        order:1;
+
+    }
+
+
+    .about-content{
+
+        width:100%;
+
+        max-width:720px;
+
+        margin-inline:auto;
+
+        order:2;
+
+    }
+
+
+    .about-visual-card{
+
+        width:
+            min(
+                470px,
+                88%
+            );
+
+    }
+
+
+    .about-content-title{
+
+        font-size:
+            clamp(
+                32px,
+                5vw,
+                42px
+            );
+
+    }
+
+
+    .about-content-text{
+
+        max-width:680px;
+
+    }
+
+
+    .about-focus-list{
+
+        display:grid;
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+        gap:12px;
+
+    }
+
+
+    .about-read-more{
+
+        margin-top:25px;
+
+    }
+
+
+    .about-circle-one{
+
+        left:-70px;
+
+    }
+
+
+    .about-circle-two{
+
+        right:-45px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   TABLET PORTRAIT
+========================================================== */
+
+@media (max-width: 768px){
+
+    .about-section{
+
+        padding:
+            70px
+            0
+            80px;
+
+    }
+
+
+    .about-container{
+
+        width:
+            calc(100% - 32px);
+
+    }
+
+
+    .about-heading{
+
+        margin-bottom:42px;
+
+    }
+
+
+    .about-eyebrow{
+
+        padding:
+            8px
+            14px;
+
+        font-size:12px;
+
+    }
+
+
+    .about-eyebrow-icon{
+
+        width:23px;
+
+        height:23px;
+
+    }
+
+
+    .about-title{
+
+        margin-top:18px;
+
+        font-size:
+            clamp(
+                31px,
+                7vw,
+                40px
+            );
+
+        line-height:1.2;
+
+        letter-spacing:-.9px;
+
+    }
+
+
+    .about-title-accent{
+
+        margin-left:5px;
+
+    }
+
+
+    .about-title-accent::after{
+
+        bottom:-5px;
+
+        height:3px;
+
+    }
+
+
+    .about-intro{
+
+        margin-top:19px;
+
+        font-size:14px;
+
+        line-height:1.75;
+
+    }
+
+
+    .about-grid{
+
+        gap:52px;
+
+    }
+
+
+    .about-visual{
+
+        min-height:390px;
+
+    }
+
+
+    .about-visual-glow{
+
+        width:330px;
+
+        height:330px;
+
+    }
+
+
+    .about-visual-card{
+
+        width:
+            min(
+                430px,
+                94%
+            );
+
+        min-height:350px;
+
+        padding:23px;
+
+        border-radius:22px;
+
+    }
+
+
+    .about-visual-top{
+
+        font-size:10px;
+
+    }
+
+
+    .about-visual-content{
+
+        padding:
+            25px
+            0
+            22px;
+
+    }
+
+
+    .about-visual-icon{
+
+        width:55px;
+
+        height:55px;
+
+        border-radius:15px;
+
+    }
+
+
+    .about-visual-content h3{
+
+        margin-top:18px;
+
+        font-size:25px;
+
+    }
+
+
+    .about-visual-content p{
+
+        margin-top:11px;
+
+        font-size:12px;
+
+        line-height:1.65;
+
+    }
+
+
+    .about-visual-footer{
+
+        padding-top:15px;
+
+    }
+
+
+    .about-visual-footer span{
+
+        font-size:9px;
+
+    }
+
+
+    .about-floating-badge{
+
+        right:1%;
+
+        bottom:15px;
+
+        padding:
+            11px
+            14px;
+
+        border-radius:13px;
+
+    }
+
+
+    .about-floating-icon{
+
+        width:34px;
+
+        height:34px;
+
+    }
+
+
+    .about-floating-badge strong{
+
+        font-size:11px;
+
+    }
+
+
+    .about-floating-badge span{
+
+        font-size:8px;
+
+    }
+
+
+    .about-content{
+
+        text-align:left;
+
+    }
+
+
+    .about-content-label{
+
+        font-size:11px;
+
+        letter-spacing:.6px;
+
+    }
+
+
+    .about-content-title{
+
+        margin-top:11px;
+
+        font-size:
+            clamp(
+                29px,
+                7vw,
+                37px
+            );
+
+        line-height:1.2;
+
+    }
+
+
+    .about-content-text{
+
+        margin-top:17px;
+
+        font-size:13px;
+
+        line-height:1.75;
+
+    }
+
+
+    .about-focus-list{
+
+        margin-top:21px;
+
+        grid-template-columns:1fr;
+
+        gap:10px;
+
+    }
+
+
+    .about-focus-item{
+
+        padding:11px 12px;
+
+        border-radius:13px;
+
+    }
+
+
+    .about-focus-item:hover{
+
+        transform:
+            translateY(-2px);
+
+    }
+
+
+    .about-focus-icon{
+
+        width:38px;
+
+        height:38px;
+
+        border-radius:10px;
+
+    }
+
+
+    .about-focus-item h4{
+
+        font-size:13px;
+
+    }
+
+
+    .about-focus-item p{
+
+        font-size:10px;
+
+    }
+
+
+    .about-read-more{
+
+        margin-top:23px;
+
+        font-size:13px;
+
+    }
+
+
+    .about-read-more span{
+
+        width:34px;
+
+        height:34px;
+
+    }
+
+
+    .about-circle-one{
+
+        width:130px;
+
+        height:130px;
+
+        left:-65px;
+
+        top:0;
+
+    }
+
+
+    .about-circle-two{
+
+        width:90px;
+
+        height:90px;
+
+        right:-35px;
+
+        bottom:0;
+
+        border-width:8px;
+
+    }
+
+}
+
+/* ==========================================================
+   BHEEM SEVAK SAMITI
+   ABOUT SECTION
+   VERSION 1 — PART 4
+   FINAL MOBILE POLISH + STABILITY
+========================================================== */
+
+
+/* ==========================================================
+   MOBILE — FINAL
+========================================================== */
+
+@media (max-width: 576px){
+
+    .about-section{
+
+        width:100%;
+
+        overflow:hidden;
+
+        padding:
+            62px
+            0
+            70px;
+
+    }
+
+
+    .about-container{
+
+        width:
+            calc(100% - 26px);
+
+        max-width:100%;
+
+    }
+
+
+    /* ------------------------------------------------------
+       SECTION HEADING
+    ------------------------------------------------------ */
+
+    .about-heading{
+
+        width:100%;
+
+        margin:
+            0
+            auto
+            38px;
+
+    }
+
+
+    .about-eyebrow{
+
+        max-width:100%;
+
+        padding:
+            8px
+            12px;
+
+        font-size:11px;
+
+        gap:6px;
+
+    }
+
+
+    .about-eyebrow-icon{
+
+        width:22px;
+
+        height:22px;
+
+        flex-shrink:0;
+
+    }
+
+
+    .about-title{
+
+        margin-top:17px;
+
+        font-size:
+            clamp(
+                29px,
+                8vw,
+                36px
+            );
+
+        line-height:1.2;
+
+        letter-spacing:-.7px;
+
+    }
+
+
+    .about-title-accent{
+
+        display:block;
+
+        width:max-content;
+
+        max-width:100%;
+
+        margin:
+            7px
+            auto
+            0;
+
+    }
+
+
+    .about-title-accent::after{
+
+        left:0;
+
+        bottom:-4px;
+
+        height:3px;
+
+    }
+
+
+    .about-intro{
+
+        max-width:100%;
+
+        margin-top:18px;
+
+        font-size:12.5px;
+
+        line-height:1.75;
+
+    }
+
+
+    /* ------------------------------------------------------
+       MAIN GRID
+    ------------------------------------------------------ */
+
+    .about-grid{
+
+        width:100%;
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:42px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       VISUAL
+    ------------------------------------------------------ */
+
+    .about-visual{
+
+        width:100%;
+
+        min-height:350px;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+    }
+
+
+    .about-visual-glow{
+
+        width:280px;
+
+        height:280px;
+
+        opacity:.75;
+
+    }
+
+
+    /* ------------------------------------------------------
+       MISSION CARD
+    ------------------------------------------------------ */
+
+    .about-visual-card{
+
+        width:
+            calc(100% - 34px);
+
+        min-height:315px;
+
+        padding:
+            20px;
+
+        border-radius:20px;
+
+        box-shadow:
+            0 20px 45px
+            rgba(15,61,122,.10);
+
+    }
+
+
+    .about-visual-top{
+
+        font-size:9px;
+
+        letter-spacing:.35px;
+
+    }
+
+
+    .about-visual-dot{
+
+        width:7px;
+
+        height:7px;
+
+        box-shadow:
+            0 0 0 4px
+            rgba(245,124,0,.10);
+
+    }
+
+
+    /* ------------------------------------------------------
+       CARD CONTENT
+    ------------------------------------------------------ */
+
+    .about-visual-content{
+
+        padding:
+            20px
+            0
+            18px;
+
+    }
+
+
+    .about-visual-icon{
+
+        width:48px;
+
+        height:48px;
+
+        border-radius:13px;
+
+    }
+
+
+    .about-visual-content h3{
+
+        max-width:270px;
+
+        margin-top:15px;
+
+        font-size:22px;
+
+        line-height:1.25;
+
+        letter-spacing:-.4px;
+
+    }
+
+
+    .about-visual-content p{
+
+        max-width:300px;
+
+        margin-top:9px;
+
+        font-size:10.5px;
+
+        line-height:1.65;
+
+    }
+
+
+    /* ------------------------------------------------------
+       CARD FOOTER
+    ------------------------------------------------------ */
+
+    .about-visual-footer{
+
+        padding-top:13px;
+
+    }
+
+
+    .about-visual-footer span{
+
+        font-size:8px;
+
+    }
+
+
+    .about-visual-footer span:not(:last-child)::after{
+
+        height:11px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       FLOATING BADGE
+    ------------------------------------------------------ */
+
+    .about-floating-badge{
+
+        right:0;
+
+        bottom:7px;
+
+        max-width:175px;
+
+        padding:
+            8px
+            10px;
+
+        gap:7px;
+
+        border-radius:11px;
+
+        box-shadow:
+            0 12px 28px
+            rgba(15,61,122,.12);
+
+    }
+
+
+    .about-floating-icon{
+
+        width:29px;
+
+        height:29px;
+
+        border-radius:8px;
+
+    }
+
+
+    .about-floating-badge strong{
+
+        font-size:9px;
+
+    }
+
+
+    .about-floating-badge span{
+
+        font-size:7px;
+
+        line-height:1.3;
+
+    }
+
+
+    /* ------------------------------------------------------
+       DECORATIONS
+    ------------------------------------------------------ */
+
+    .about-circle-one{
+
+        width:105px;
+
+        height:105px;
+
+        left:-57px;
+
+        top:12px;
+
+    }
+
+
+    .about-circle-one::before{
+
+        inset:12px;
+
+    }
+
+
+    .about-circle-two{
+
+        width:72px;
+
+        height:72px;
+
+        right:-30px;
+
+        bottom:8px;
+
+        border-width:7px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       CONTENT
+    ------------------------------------------------------ */
+
+    .about-content{
+
+        width:100%;
+
+        max-width:100%;
+
+    }
+
+
+    .about-content-label{
+
+        font-size:10px;
+
+    }
+
+
+    .about-content-title{
+
+        margin-top:9px;
+
+        font-size:
+            clamp(
+                27px,
+                7.5vw,
+                34px
+            );
+
+        line-height:1.2;
+
+        letter-spacing:-.55px;
+
+    }
+
+
+    .about-content-title span{
+
+        margin-top:3px;
+
+    }
+
+
+    .about-content-text{
+
+        margin-top:15px;
+
+        font-size:12px;
+
+        line-height:1.75;
+
+    }
+
+
+    .about-content-text + .about-content-text{
+
+        margin-top:10px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       FOCUS ITEMS
+    ------------------------------------------------------ */
+
+    .about-focus-list{
+
+        width:100%;
+
+        margin-top:19px;
+
+        gap:9px;
+
+    }
+
+
+    .about-focus-item{
+
+        width:100%;
+
+        min-width:0;
+
+        padding:
+            10px;
+
+        gap:10px;
+
+        border-radius:12px;
+
+    }
+
+
+    .about-focus-icon{
+
+        width:35px;
+
+        height:35px;
+
+        flex-shrink:0;
+
+        border-radius:9px;
+
+    }
+
+
+    .about-focus-item h4{
+
+        font-size:12px;
+
+    }
+
+
+    .about-focus-item p{
+
+        margin-top:2px;
+
+        font-size:9px;
+
+        line-height:1.5;
+
+    }
+
+
+    /* ------------------------------------------------------
+       READ MORE
+    ------------------------------------------------------ */
+
+    .about-read-more{
+
+        margin-top:20px;
+
+        font-size:12px;
+
+        gap:8px;
+
+    }
+
+
+    .about-read-more span{
+
+        width:32px;
+
+        height:32px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       BOTTOM DOTS
+    ------------------------------------------------------ */
+
+    .about-bottom-decoration{
+
+        bottom:15px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   VERY SMALL MOBILE
+========================================================== */
+
+@media (max-width:400px){
+
+    .about-section{
+
+        padding:
+            56px
+            0
+            64px;
+
+    }
+
+
+    .about-container{
+
+        width:
+            calc(100% - 20px);
+
+    }
+
+
+    .about-heading{
+
+        margin-bottom:32px;
+
+    }
+
+
+    .about-title{
+
+        font-size:28px;
+
+    }
+
+
+    .about-intro{
+
+        font-size:11.5px;
+
+    }
+
+
+    .about-grid{
+
+        gap:36px;
+
+    }
+
+
+    .about-visual{
+
+        min-height:320px;
+
+    }
+
+
+    .about-visual-card{
+
+        width:
+            calc(100% - 26px);
+
+        min-height:290px;
+
+        padding:17px;
+
+        border-radius:18px;
+
+    }
+
+
+    .about-visual-content{
+
+        padding:
+            17px
+            0
+            14px;
+
+    }
+
+
+    .about-visual-icon{
+
+        width:44px;
+
+        height:44px;
+
+    }
+
+
+    .about-visual-content h3{
+
+        font-size:20px;
+
+    }
+
+
+    .about-visual-content p{
+
+        max-width:260px;
+
+        font-size:9.5px;
+
+    }
+
+
+    .about-visual-footer{
+
+        padding-top:11px;
+
+    }
+
+
+    .about-visual-footer span{
+
+        font-size:7px;
+
+    }
+
+
+    .about-floating-badge{
+
+        max-width:155px;
+
+        padding:
+            7px
+            8px;
+
+    }
+
+
+    .about-floating-icon{
+
+        width:26px;
+
+        height:26px;
+
+    }
+
+
+    .about-floating-badge strong{
+
+        font-size:8px;
+
+    }
+
+
+    .about-floating-badge span{
+
+        font-size:6.5px;
+
+    }
+
+
+    .about-content-title{
+
+        font-size:26px;
+
+    }
+
+
+    .about-content-text{
+
+        font-size:11.5px;
+
+    }
+
+
+    .about-focus-item{
+
+        padding:9px;
+
+    }
+
+
+    .about-focus-icon{
+
+        width:33px;
+
+        height:33px;
+
+    }
+
+
+    .about-focus-item h4{
+
+        font-size:11.5px;
+
+    }
+
+
+    .about-focus-item p{
+
+        font-size:8.5px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   EXTRA SMALL DEVICES
+========================================================== */
+
+@media (max-width:340px){
+
+    .about-container{
+
+        width:
+            calc(100% - 16px);
+
+    }
+
+
+    .about-title{
+
+        font-size:26px;
+
+    }
+
+
+    .about-intro{
+
+        font-size:11px;
+
+    }
+
+
+    .about-visual{
+
+        min-height:300px;
+
+    }
+
+
+    .about-visual-card{
+
+        width:
+            calc(100% - 18px);
+
+        min-height:275px;
+
+        padding:15px;
+
+    }
+
+
+    .about-visual-content h3{
+
+        font-size:18px;
+
+    }
+
+
+    .about-visual-content p{
+
+        font-size:9px;
+
+    }
+
+
+    .about-visual-footer span{
+
+        font-size:6.5px;
+
+    }
+
+
+    .about-floating-badge{
+
+        max-width:140px;
+
+    }
+
+
+    .about-content-title{
+
+        font-size:24px;
+
+    }
+
+
+    .about-content-text{
+
+        font-size:10.5px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   TOUCH DEVICE POLISH
+========================================================== */
+
+@media (hover:none){
+
+    .about-focus-item:hover{
+
+        transform:none;
+
+        box-shadow:none;
+
+    }
+
+
+    .about-read-more:hover span{
+
+        transform:none;
+
+    }
+
+
+    .about-floating-badge:hover{
+
+        transform:none;
+
+    }
+
+}
+
+
+/* ==========================================================
+   FINAL OVERFLOW PROTECTION
+========================================================== */
+
+.about-section,
+.about-container,
+.about-grid,
+.about-content,
+.about-visual{
+
+    min-width:0;
+
+    max-width:100%;
+
+}
+
+
+.about-section{
+
+    overflow-x:hidden;
+
+}
+
+
+/* ==========================================================
+   SAFE AREA SUPPORT
+========================================================== */
+
+@supports (padding:max(0px)){
+
+    @media (max-width:768px){
+
+        .about-container{
+
+            padding-left:
+                max(
+                    0px,
+                    env(safe-area-inset-left)
+                );
+
+            padding-right:
+                max(
+                    0px,
+                    env(safe-area-inset-right)
+                );
+
+        }
+
+    }
+
+}

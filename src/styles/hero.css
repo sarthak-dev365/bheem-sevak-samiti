@@ -1,0 +1,1976 @@
+/* ==========================================================
+   BHEEM SEVAK SAMITI
+   HERO SECTION
+   FINAL PRODUCTION CSS
+   VERSION 14.0
+========================================================== */
+
+
+/* ==========================================================
+   ROOT / BOX MODEL
+========================================================== */
+
+.hero,
+.hero *,
+.hero *::before,
+.hero *::after {
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   HERO ROOT
+========================================================== */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    max-width: 100%;
+
+    min-height: calc(100vh - 140px);
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    color: #0f2f63;
+
+    background:
+        radial-gradient(
+            circle at 82% 45%,
+            rgba(15, 61, 122, 0.045),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #f8fbff 0%,
+            #ffffff 48%,
+            #f5f8ff 100%
+        );
+}
+
+
+/* ==========================================================
+   BACKGROUND DECORATION
+========================================================== */
+
+.hero-bg-pattern {
+    position: absolute;
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+}
+
+
+/* ==========================================================
+   DOT GRID
+========================================================== */
+
+.hero-dot-grid {
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    opacity: 0.28;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(15, 61, 122, 0.28) 1.3px,
+            transparent 1.3px
+        );
+
+    background-size: 15px 15px;
+
+    pointer-events: none;
+}
+
+
+.hero-dot-grid-left {
+    left: 16px;
+    bottom: 90px;
+}
+
+
+.hero-dot-grid-right {
+    right: 24px;
+    top: 70px;
+
+    opacity: 0.18;
+}
+
+
+/* ==========================================================
+   DECORATIVE RING
+========================================================== */
+
+.hero-ring {
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    border: 1px solid rgba(15, 61, 122, 0.08);
+
+    border-radius: 50%;
+}
+
+
+.hero-ring::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 18px;
+
+    border:
+        1px solid
+        rgba(245, 124, 0, 0.07);
+
+    border-radius: 50%;
+}
+
+
+.hero-ring-left {
+    left: -105px;
+    top: 18%;
+
+    opacity: 0.8;
+}
+
+
+/* ==========================================================
+   MAIN HERO CONTAINER
+========================================================== */
+
+.hero-container {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(
+        1380px,
+        calc(100% - 80px)
+    );
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.94fr)
+        minmax(0, 1.06fr);
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding:
+        58px 0
+        62px;
+}
+
+
+/* ==========================================================
+   LEFT CONTENT
+========================================================== */
+
+.hero-content {
+    position: relative;
+
+    z-index: 10;
+
+    width: 100%;
+    max-width: 720px;
+
+    min-width: 0;
+
+    padding:
+        10px
+        0
+        10px
+        10px;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================================
+   TRUST BADGE
+========================================================== */
+
+.hero-badge {
+    width: max-content;
+    max-width: 100%;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding:
+        10px 17px;
+
+    border:
+        1px solid
+        rgba(245, 124, 0, 0.30);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.88);
+
+    box-shadow:
+        0 8px 28px
+        rgba(15, 61, 122, 0.06);
+
+    color: #0f3d7a;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+}
+
+
+/* ==========================================================
+   BADGE ICON
+========================================================== */
+
+.hero-badge-icon {
+    width: 25px;
+    height: 25px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        rgba(245, 124, 0, 0.10);
+
+    color: #f57c00;
+
+    font-size: 14px;
+}
+
+
+/* ==========================================================
+   BADGE SEPARATOR
+========================================================== */
+
+.hero-badge-separator {
+    color: #f57c00;
+
+    font-weight: 800;
+}
+
+
+/* ==========================================================
+   BADGE YEAR
+========================================================== */
+
+.hero-badge-year {
+    color: #64748b;
+}
+
+
+/* ==========================================================
+   HERO TITLE
+========================================================== */
+
+.hero-title {
+    max-width: 720px;
+
+    margin:
+        28px 0 0;
+
+    color: #0b2d61;
+
+    font-size:
+        clamp(
+            42px,
+            4.25vw,
+            70px
+        );
+
+    font-weight: 800;
+
+    line-height: 1.12;
+
+    letter-spacing: -1.7px;
+}
+
+
+/* ==========================================================
+   TITLE PRIMARY
+========================================================== */
+
+.hero-title-primary {
+    color: #0b2d61;
+}
+
+
+/* ==========================================================
+   TITLE ACCENT
+========================================================== */
+
+.hero-title-accent {
+    position: relative;
+
+    display: inline-block;
+
+    color: #f26b21;
+}
+
+
+/* ==========================================================
+   ACCENT UNDERLINE
+========================================================== */
+
+.hero-title-accent::after {
+    content: "";
+
+    position: absolute;
+
+    left: 3px;
+    right: 0;
+
+    bottom: -7px;
+
+    height: 5px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f57c00,
+            #ff9d3d,
+            transparent
+        );
+
+    opacity: 0.78;
+}
+
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.hero-description {
+    width: 100%;
+    max-width: 650px;
+
+    margin:
+        28px 0 0;
+
+    color: #475569;
+
+    font-size: 17px;
+
+    font-weight: 400;
+
+    line-height: 1.9;
+
+    letter-spacing: 0.05px;
+}
+
+
+/* ==========================================================
+   ACTION AREA
+========================================================== */
+
+.hero-actions {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 16px;
+
+    margin-top: 32px;
+}
+
+
+/* ==========================================================
+   COMMON BUTTON
+========================================================== */
+
+.hero-btn {
+    position: relative;
+
+    min-width: 172px;
+    min-height: 56px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding:
+        0 23px;
+
+    border-radius: 12px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    text-decoration: none;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+
+    touch-action: manipulation;
+
+    transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        background 0.28s ease,
+        color 0.28s ease,
+        border-color 0.28s ease;
+}
+
+
+/* ==========================================================
+   PRIMARY BUTTON
+========================================================== */
+
+.hero-btn-primary {
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f3d7a,
+            #092f67
+        );
+
+    box-shadow:
+        0 12px 28px
+        rgba(15, 61, 122, 0.22);
+}
+
+
+.hero-btn-primary::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            110deg,
+            transparent 20%,
+            rgba(255, 255, 255, 0.18) 50%,
+            transparent 80%
+        );
+
+    transform:
+        translateX(-120%);
+
+    transition:
+        transform 0.65s ease;
+}
+
+
+.hero-btn-primary:hover::before {
+    transform:
+        translateX(120%);
+}
+
+
+.hero-btn-primary:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 17px 35px
+        rgba(15, 61, 122, 0.28);
+}
+
+
+/* ==========================================================
+   SECONDARY BUTTON
+========================================================== */
+
+.hero-btn-secondary {
+    color: #0f3d7a;
+
+    background: #ffffff;
+
+    border:
+        2px solid
+        #0f3d7a;
+
+    box-shadow:
+        0 7px 20px
+        rgba(15, 61, 122, 0.06);
+}
+
+
+.hero-btn-secondary:hover {
+    color: #ffffff;
+
+    background: #0f3d7a;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 14px 28px
+        rgba(15, 61, 122, 0.18);
+}
+
+
+/* ==========================================================
+   BUTTON ICON
+========================================================== */
+
+.hero-btn-icon {
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-size: 19px;
+}
+
+
+/* ==========================================================
+   BUTTON TEXT
+========================================================== */
+
+.hero-btn > span:not(.hero-btn-icon):not(.hero-btn-arrow) {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* ==========================================================
+   BUTTON ARROW
+========================================================== */
+
+.hero-btn-arrow {
+    position: relative;
+
+    z-index: 2;
+
+    margin-left: 3px;
+
+    font-size: 18px;
+
+    transition:
+        transform 0.28s ease;
+}
+
+
+.hero-btn-primary:hover .hero-btn-arrow {
+    transform:
+        translateX(4px);
+}
+
+
+/* ==========================================================
+   IMPACT STATS
+========================================================== */
+
+.hero-stats {
+    width: 100%;
+    max-width: 690px;
+
+    margin-top: 40px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+
+/* ==========================================================
+   STAT CARD
+========================================================== */
+
+.hero-stat-card {
+    position: relative;
+
+    min-width: 0;
+    min-height: 122px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    padding:
+        17px 15px;
+
+    border:
+        1px solid
+        rgba(15, 61, 122, 0.07);
+
+    border-radius: 16px;
+
+    background:
+        rgba(255, 255, 255, 0.88);
+
+    box-shadow:
+        0 8px 25px
+        rgba(15, 61, 122, 0.07);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        border-color 0.28s ease;
+}
+
+
+.hero-stat-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 15%;
+
+    width: 70%;
+    height: 2px;
+
+    border-radius:
+        0 0 999px 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(15, 61, 122, 0.18),
+            transparent
+        );
+
+    opacity: 0;
+
+    transition:
+        opacity 0.28s ease;
+}
+
+
+.hero-stat-card:hover {
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(15, 61, 122, 0.13);
+
+    box-shadow:
+        0 16px 32px
+        rgba(15, 61, 122, 0.12);
+}
+
+
+.hero-stat-card:hover::before {
+    opacity: 1;
+}
+
+
+/* ==========================================================
+   STAT ICON
+========================================================== */
+
+.hero-stat-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 9px;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+
+    font-size: 19px;
+
+    transition:
+        transform 0.28s ease;
+}
+
+
+.hero-stat-card:hover .hero-stat-icon {
+    transform:
+        scale(1.06);
+}
+
+
+/* ==========================================================
+   STAT COLORS
+========================================================== */
+
+.hero-stat-orange .hero-stat-icon {
+    background:
+        rgba(245, 124, 0, 0.10);
+
+    color: #f57c00;
+}
+
+
+.hero-stat-green .hero-stat-icon {
+    background:
+        rgba(22, 163, 74, 0.10);
+
+    color: #15803d;
+}
+
+
+.hero-stat-blue .hero-stat-icon {
+    background:
+        rgba(15, 61, 122, 0.10);
+
+    color: #0f3d7a;
+}
+
+
+.hero-stat-red .hero-stat-icon {
+    background:
+        rgba(239, 68, 68, 0.10);
+
+    color: #dc2626;
+}
+
+
+/* ==========================================================
+   STAT CONTENT
+========================================================== */
+
+.hero-stat-content {
+    min-width: 0;
+}
+
+
+/* ==========================================================
+   STAT VALUE
+========================================================== */
+
+.hero-stat-value {
+    display: block;
+
+    color: #0f3d7a;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    line-height: 1.1;
+
+    letter-spacing: -0.2px;
+}
+
+
+/* ==========================================================
+   STAT LABEL
+========================================================== */
+
+.hero-stat-label {
+    display: block;
+
+    max-width: 100%;
+
+    margin-top: 5px;
+
+    color: #64748b;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    line-height: 1.35;
+
+    overflow-wrap: break-word;
+}
+
+
+/* ==========================================================
+   RIGHT VISUAL
+========================================================== */
+
+.hero-visual {
+    position: relative;
+
+    min-width: 0;
+    min-height: 620px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    transform: translateY(2px);
+}
+
+
+/* ==========================================================
+   BUILDING WRAPPER
+========================================================== */
+
+.hero-building-wrapper {
+    position: relative;
+
+    width:
+        min(
+            720px,
+            100%
+        );
+
+    height: 620px;
+
+    margin-right: -40px;
+
+    flex-shrink: 0;
+}
+
+
+/* ==========================================================
+   BUILDING GLOW
+========================================================== */
+
+.hero-building-glow {
+    position: absolute;
+
+    inset:
+        7% 3% 4% 5%;
+
+    z-index: 0;
+
+    border-radius:
+        46%
+        54%
+        48%
+        52% /
+        42%
+        48%
+        52%
+        58%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(15, 61, 122, 0.15),
+            rgba(245, 124, 0, 0.12)
+        );
+
+    filter:
+        blur(25px);
+
+    transform:
+        scale(0.96);
+
+    opacity: 0.9;
+
+    pointer-events: none;
+
+    transition:
+        transform 0.8s ease,
+        opacity 0.8s ease;
+}
+
+
+/* ==========================================================
+   BUILDING IMAGE CONTAINER
+========================================================== */
+
+.hero-building-image {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    border-radius:
+        48%
+        52%
+        50%
+        50% /
+        46%
+        42%
+        58%
+        54%;
+
+    background: #e9f0fa;
+
+    box-shadow:
+        0 28px 65px
+        rgba(15, 61, 122, 0.18);
+
+    isolation: isolate;
+}
+
+
+/* ==========================================================
+   IMAGE LIGHT OVERLAY
+========================================================== */
+
+.hero-building-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.10),
+            transparent 35%,
+            rgba(15, 61, 122, 0.06)
+        );
+
+    opacity: 0.7;
+}
+
+
+/* ==========================================================
+   NEXT IMAGE
+========================================================== */
+
+.hero-building-img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    object-fit: cover;
+
+    object-position: center center;
+
+    transform:
+        scale(1.015);
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    -webkit-user-drag: none;
+
+    user-select: none;
+
+    transition:
+        transform 0.8s ease;
+}
+
+
+.hero-building-wrapper:hover .hero-building-img {
+    transform:
+        scale(1.035);
+}
+
+
+.hero-building-wrapper:hover .hero-building-glow {
+    transform:
+        scale(0.985);
+
+    opacity: 1;
+}
+
+
+/* ==========================================================
+   FLOATING VISUAL BADGE
+========================================================== */
+
+.hero-visual-badge {
+    position: absolute;
+
+    z-index: 8;
+
+    left: 5%;
+    bottom: 12%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    max-width:
+        calc(100% - 20px);
+
+    padding:
+        13px 18px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.65);
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 255, 255, 0.92);
+
+    box-shadow:
+        0 15px 35px
+        rgba(15, 61, 122, 0.15);
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+
+    user-select: none;
+
+    transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease;
+}
+
+
+.hero-visual-badge:hover {
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 20px 40px
+        rgba(15, 61, 122, 0.18);
+}
+
+
+/* ==========================================================
+   FLOATING BADGE ICON
+========================================================== */
+
+.hero-visual-badge-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #eaf8ef;
+
+    color: #15803d;
+
+    font-size: 17px;
+
+    font-weight: 800;
+}
+
+
+/* ==========================================================
+   FLOATING BADGE CONTENT
+========================================================== */
+
+.hero-visual-badge-content {
+    min-width: 0;
+}
+
+
+.hero-visual-badge strong {
+    display: block;
+
+    color: #0f3d7a;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+}
+
+
+.hero-visual-badge span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #64748b;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    line-height: 1.3;
+}
+
+
+/* ==========================================================
+   FOCUS ACCESSIBILITY
+========================================================== */
+
+.hero a:focus-visible,
+.hero button:focus-visible {
+    outline:
+        2px solid
+        #f57c00;
+
+    outline-offset: 4px;
+}
+
+
+/* ==========================================================
+   LARGE DESKTOP
+========================================================== */
+
+@media (min-width: 1400px) {
+
+    .hero-container {
+        width: min(
+            1440px,
+            calc(100% - 100px)
+        );
+    }
+
+    .hero-title {
+        font-size: 70px;
+    }
+
+    .hero-building-wrapper {
+        width: 740px;
+        height: 640px;
+        margin-right: -35px;
+    }
+}
+
+
+/* ==========================================================
+   LAPTOP
+========================================================== */
+
+@media (max-width: 1200px) {
+
+    .hero-container {
+        width:
+            calc(100% - 56px);
+
+        gap: 20px;
+
+        padding:
+            52px 0
+            58px;
+    }
+
+    .hero-title {
+        font-size:
+            clamp(
+                40px,
+                4.6vw,
+                58px
+            );
+    }
+
+    .hero-description {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .hero-stats {
+        max-width: 650px;
+        gap: 10px;
+        margin-top: 32px;
+    }
+
+    .hero-stat-card {
+        min-height: 112px;
+        padding: 14px 12px;
+    }
+
+    .hero-stat-value {
+        font-size: 18px;
+    }
+
+    .hero-stat-label {
+        font-size: 10px;
+    }
+
+    .hero-building-wrapper {
+        width: 600px;
+        height: 555px;
+        margin-right: -65px;
+    }
+}
+
+
+/* ==========================================================
+   TABLET / STACKED LAYOUT
+========================================================== */
+
+@media (max-width: 1050px) {
+
+    .hero-container {
+        width:
+            calc(100% - 40px);
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding:
+            50px 0
+            55px;
+    }
+
+    .hero-content {
+        max-width: 760px;
+
+        margin-inline: auto;
+
+        padding: 0;
+
+        text-align: center;
+
+        transform: none;
+    }
+
+    .hero-badge {
+        margin-inline: auto;
+    }
+
+    .hero-title {
+        margin-inline: auto;
+
+        font-size:
+            clamp(
+                40px,
+                6vw,
+                58px
+            );
+    }
+
+    .hero-description {
+        margin-inline: auto;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-stats {
+        max-width: 760px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-visual {
+        width: 100%;
+
+        min-height: 590px;
+
+        justify-content: center;
+
+        transform: none;
+    }
+
+    .hero-building-wrapper {
+        width:
+            min(
+                720px,
+                92vw
+            );
+
+        height: 590px;
+
+        margin-right: 0;
+    }
+
+    .hero-visual-badge {
+        left:
+            calc(50% - 330px);
+
+        bottom: 8%;
+    }
+}
+
+
+/* ==========================================================
+   TABLET PORTRAIT
+========================================================== */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: auto;
+
+        overflow-x: hidden;
+        overflow-y: visible;
+    }
+
+    .hero-container {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        padding:
+            34px
+            16px
+            48px;
+    }
+
+    .hero-content {
+        width: 100%;
+
+        max-width: 680px;
+
+        margin: 0 auto;
+
+        padding: 0;
+
+        text-align: center;
+    }
+
+    /* ------------------------------------------------------
+       BADGE
+    ------------------------------------------------------ */
+
+    .hero-badge {
+        margin: 0 auto;
+
+        padding:
+            9px 15px;
+
+        gap: 8px;
+
+        font-size: 13px;
+
+        line-height: 1.2;
+    }
+
+    .hero-badge-icon {
+        width: 23px;
+        height: 23px;
+
+        font-size: 13px;
+    }
+
+    /* ------------------------------------------------------
+       TITLE
+    ------------------------------------------------------ */
+
+    .hero-title {
+        width: 100%;
+
+        max-width: 650px;
+
+        margin:
+            22px auto 0;
+
+        font-size:
+            clamp(
+                34px,
+                9.5vw,
+                46px
+            );
+
+        line-height: 1.15;
+
+        letter-spacing: -1px;
+    }
+
+    .hero-title-accent::after {
+        bottom: -5px;
+
+        height: 3px;
+    }
+
+    /* ------------------------------------------------------
+       DESCRIPTION
+    ------------------------------------------------------ */
+
+    .hero-description {
+        width: 100%;
+
+        max-width: 620px;
+
+        margin:
+            20px auto 0;
+
+        font-size: 14px;
+
+        line-height: 1.75;
+    }
+
+    /* ------------------------------------------------------
+       BUTTONS
+    ------------------------------------------------------ */
+
+    .hero-actions {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 12px;
+
+        margin-top: 24px;
+    }
+
+    .hero-btn {
+        width: 100%;
+
+        min-width: 0;
+
+        min-height: 54px;
+
+        height: 54px;
+
+        border-radius: 12px;
+    }
+
+    /* ------------------------------------------------------
+       STATS
+    ------------------------------------------------------ */
+
+    .hero-stats {
+        width: 100%;
+
+        max-width: 620px;
+
+        margin:
+            28px auto 0;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+    .hero-stat-card {
+        width: 100%;
+
+        min-height: 105px;
+
+        padding:
+            14px 10px;
+
+        align-items: center;
+
+        justify-content: center;
+
+        text-align: center;
+
+        border-radius: 14px;
+
+        box-shadow:
+            0 7px 22px
+            rgba(15, 61, 122, 0.06);
+    }
+
+    .hero-stat-icon {
+        width: 34px;
+        height: 34px;
+
+        margin-bottom: 7px;
+
+        border-radius: 10px;
+
+        font-size: 17px;
+    }
+
+    .hero-stat-value {
+        font-size: 18px;
+    }
+
+    .hero-stat-label {
+        margin-top: 4px;
+
+        font-size: 10px;
+
+        line-height: 1.3;
+    }
+
+    /* ------------------------------------------------------
+       VISUAL
+    ------------------------------------------------------ */
+
+    .hero-visual {
+        width: 100%;
+
+        min-height: auto;
+
+        height: auto;
+
+        margin-top: 34px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        transform: none;
+    }
+
+    .hero-building-wrapper {
+        width:
+            min(
+                360px,
+                92vw
+            );
+
+        height:
+            min(
+                360px,
+                92vw
+            );
+
+        margin: 0 auto;
+    }
+
+    .hero-building-glow {
+        inset:
+            7%
+            6%
+            5%
+            6%;
+
+        filter: blur(18px);
+
+        transform: scale(0.96);
+
+        opacity: 0.75;
+    }
+
+    .hero-building-image {
+        border-radius: 50%;
+
+        box-shadow:
+            0 18px 45px
+            rgba(15, 61, 122, 0.16);
+    }
+
+    .hero-building-img {
+        transform:
+            scale(1.01);
+    }
+
+    .hero-visual-badge {
+        left: 2px;
+
+        bottom: 10px;
+
+        max-width: 190px;
+
+        gap: 8px;
+
+        padding:
+            10px 13px;
+
+        border-radius: 12px;
+    }
+
+    .hero-visual-badge-icon {
+        width: 30px;
+        height: 30px;
+
+        font-size: 14px;
+    }
+
+    .hero-visual-badge strong {
+        font-size: 11px;
+    }
+
+    .hero-visual-badge span {
+        font-size: 9px;
+
+        margin-top: 2px;
+    }
+
+    /* ------------------------------------------------------
+       DECORATIONS
+    ------------------------------------------------------ */
+
+    .hero-dot-grid {
+        width: 55px;
+        height: 55px;
+
+        background-size: 14px 14px;
+
+        opacity: 0.35;
+    }
+
+    .hero-dot-grid-left {
+        left: -5px;
+        bottom: 25px;
+    }
+
+    .hero-dot-grid-right {
+        right: -5px;
+        top: 10px;
+    }
+
+    .hero-ring {
+        width: 110px;
+        height: 110px;
+    }
+
+    .hero-ring-left {
+        left: -70px;
+        top: 80px;
+    }
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 576px) {
+
+    .hero-container {
+        padding:
+            28px
+            13px
+            42px;
+    }
+
+    .hero-badge {
+        padding:
+            8px 13px;
+
+        font-size: 12px;
+
+        gap: 6px;
+    }
+
+    .hero-badge-icon {
+        width: 21px;
+        height: 21px;
+
+        font-size: 11px;
+    }
+
+    .hero-title {
+        margin-top: 20px;
+
+        font-size:
+            clamp(
+                31px,
+                9.2vw,
+                40px
+            );
+
+        line-height: 1.16;
+
+        letter-spacing: -0.8px;
+    }
+
+    .hero-title-accent::after {
+        height: 3px;
+
+        bottom: -4px;
+    }
+
+    .hero-description {
+        margin-top: 17px;
+
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+    .hero-actions {
+        margin-top: 21px;
+
+        gap: 10px;
+    }
+
+    .hero-btn {
+        min-height: 52px;
+
+        height: 52px;
+
+        font-size: 14px;
+    }
+
+    .hero-stats {
+        gap: 8px;
+
+        margin-top: 24px;
+    }
+
+    .hero-stat-card {
+        min-height: 98px;
+
+        padding:
+            11px 7px;
+
+        border-radius: 13px;
+    }
+
+    .hero-stat-icon {
+        width: 31px;
+        height: 31px;
+
+        font-size: 15px;
+    }
+
+    .hero-stat-value {
+        font-size: 17px;
+    }
+
+    .hero-stat-label {
+        font-size: 9px;
+    }
+
+    .hero-visual {
+        margin-top: 30px;
+    }
+
+    .hero-building-wrapper {
+        width:
+            min(
+                330px,
+                88vw
+            );
+
+        height:
+            min(
+                330px,
+                88vw
+            );
+    }
+
+    .hero-visual-badge {
+        left: 0;
+
+        bottom: 7px;
+
+        padding:
+            9px 11px;
+    }
+}
+
+
+/* ==========================================================
+   EXTRA SMALL MOBILE
+========================================================== */
+
+@media (max-width: 380px) {
+
+    .hero-container {
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+
+    .hero-title {
+        font-size: 30px;
+    }
+
+    .hero-description {
+        font-size: 12.5px;
+    }
+
+    .hero-building-wrapper {
+        width: 300px;
+        height: 300px;
+    }
+
+    .hero-visual-badge {
+        max-width: 175px;
+    }
+
+    .hero-visual-badge strong {
+        font-size: 10px;
+    }
+
+    .hero-visual-badge span {
+        font-size: 8px;
+    }
+}
+
+
+/* ==========================================================
+   VERY SMALL DEVICES
+========================================================== */
+
+@media (max-width: 340px) {
+
+    .hero-container {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+    .hero-title {
+        font-size: 27px;
+    }
+
+    .hero-description {
+        font-size: 12px;
+    }
+
+    .hero-stat-card {
+        min-height: 90px;
+    }
+
+    .hero-stat-icon {
+        width: 29px;
+        height: 29px;
+
+        font-size: 13px;
+    }
+
+    .hero-stat-value {
+        font-size: 15px;
+    }
+
+    .hero-stat-label {
+        font-size: 7.7px;
+    }
+
+    .hero-building-wrapper {
+        width:
+            calc(100vw - 20px);
+
+        height:
+            calc(100vw - 20px);
+    }
+}
+
+
+/* ==========================================================
+   TOUCH DEVICES
+========================================================== */
+
+@media (hover: none) {
+
+    .hero-stat-card:hover {
+        transform: none;
+
+        box-shadow:
+            0 8px 25px
+            rgba(15, 61, 122, 0.07);
+    }
+
+    .hero-building-wrapper:hover
+    .hero-building-img {
+        transform:
+            scale(1.01);
+    }
+
+    .hero-building-wrapper:hover
+    .hero-building-glow {
+        transform:
+            scale(0.96);
+
+        opacity: 0.75;
+    }
+
+    .hero-visual-badge:hover {
+        transform: none;
+
+        box-shadow:
+            0 15px 35px
+            rgba(15, 61, 122, 0.15);
+    }
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero *,
+    .hero *::before,
+    .hero *::after {
+        animation: none !important;
+
+        transition: none !important;
+
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* ==========================================================
+   PRINT
+========================================================== */
+
+@media print {
+
+    .hero {
+        min-height: auto;
+
+        overflow: visible;
+
+        background: #ffffff;
+    }
+
+    .hero-bg-pattern,
+    .hero-building-glow,
+    .hero-visual-badge {
+        display: none !important;
+    }
+}

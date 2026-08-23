@@ -1,0 +1,2137 @@
+/* ==========================================================
+   BHEEM SEVAK SAMITI
+   PATHSHALA MAIN PAGE
+   FINAL PROFESSIONAL CSS
+   VERSION 2.0
+========================================================== */
+
+
+/* ==========================================================
+   ROOT
+========================================================== */
+
+.pathshala-page{
+
+    width:100%;
+    max-width:100%;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    background:#f8fafc;
+
+    color:#172554;
+
+}
+
+
+/* ==========================================================
+   GLOBAL BOX SIZING
+========================================================== */
+
+.pathshala-page,
+.pathshala-page *,
+.pathshala-page *::before,
+.pathshala-page *::after{
+
+    box-sizing:border-box;
+
+}
+
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
+
+.pathshala-container{
+
+    width:min(
+        1180px,
+        calc(100% - 48px)
+    );
+
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+
+/* ==========================================================
+   COMMON EYEBROW
+========================================================== */
+
+.pathshala-eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    color:#f57c00;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:1.4px;
+
+    line-height:1;
+
+    text-transform:uppercase;
+
+}
+
+.pathshala-eyebrow::before{
+
+    content:"";
+
+    width:7px;
+    height:7px;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    background:#f57c00;
+
+}
+
+
+/* ==========================================================
+   COMMON SECTION HEADING
+========================================================== */
+
+.pathshala-section-heading{
+
+    max-width:760px;
+
+    margin-bottom:42px;
+
+}
+
+
+.pathshala-section-title{
+
+    margin-top:16px;
+
+    color:#0b2d61;
+
+    font-size:
+        clamp(
+            32px,
+            4vw,
+            48px
+        );
+
+    font-weight:800;
+
+    line-height:1.16;
+
+    letter-spacing:-1px;
+
+}
+
+.pathshala-section-title span{
+
+    display:inline;
+
+    margin-left:9px;
+
+    color:#f26b21;
+
+}
+
+
+/* ==========================================================
+   BUTTON SYSTEM
+========================================================== */
+
+.pathshala-button{
+
+    position:relative;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    min-height:52px;
+
+    padding:
+        0 22px;
+
+    border-radius:11px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    line-height:1;
+
+    text-decoration:none;
+
+    cursor:pointer;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease,
+        color .3s ease,
+        border-color .3s ease;
+
+}
+
+
+/* ==========================================================
+   PRIMARY BUTTON
+========================================================== */
+
+.pathshala-button--primary{
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f57c00,
+            #ef6c00
+        );
+
+    box-shadow:
+        0 10px 25px
+        rgba(245,124,0,.22);
+
+}
+
+
+.pathshala-button--primary:hover{
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 15px 32px
+        rgba(245,124,0,.30);
+
+}
+
+
+/* ==========================================================
+   SECONDARY BUTTON
+========================================================== */
+
+.pathshala-button--secondary{
+
+    color:#0f3d7a;
+
+    background:#fff;
+
+    border:
+        1px solid
+        #dbe4ef;
+
+    box-shadow:
+        0 7px 20px
+        rgba(15,61,122,.05);
+
+}
+
+
+.pathshala-button--secondary:hover{
+
+    color:#fff;
+
+    background:#0f3d7a;
+
+    border-color:#0f3d7a;
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.pathshala-hero{
+
+    position:relative;
+
+    isolation:isolate;
+
+    width:100%;
+
+    min-height:
+        470px;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7fbff 0%,
+            #ffffff 55%,
+            #fff8ef 100%
+        );
+
+    border-bottom:
+        1px solid
+        rgba(15,61,122,.07);
+
+}
+
+
+/* ==========================================================
+   HERO DECORATION
+========================================================== */
+
+.pathshala-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    right:-190px;
+    top:-250px;
+
+    border-radius:50%;
+
+    background:
+        rgba(245,124,0,.07);
+
+    pointer-events:none;
+
+}
+
+
+.pathshala-hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:360px;
+    height:360px;
+
+    left:-190px;
+    bottom:-230px;
+
+    border-radius:50%;
+
+    background:
+        rgba(15,61,122,.055);
+
+    pointer-events:none;
+
+}
+
+
+/* ==========================================================
+   HERO CONTAINER
+========================================================== */
+
+.pathshala-hero .pathshala-container{
+
+    position:relative;
+
+    z-index:2;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:50px;
+
+    padding:
+        72px 0;
+
+}
+
+
+/* ==========================================================
+   HERO CONTENT
+========================================================== */
+
+.pathshala-hero__content{
+
+    max-width:780px;
+
+}
+
+
+/* ==========================================================
+   HERO EYEBROW
+========================================================== */
+
+.pathshala-hero__eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    padding:
+        10px 15px;
+
+    border:
+        1px solid
+        rgba(245,124,0,.25);
+
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,.9);
+
+    color:#f57c00;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    box-shadow:
+        0 8px 24px
+        rgba(15,61,122,.05);
+
+}
+
+
+.pathshala-hero__eyebrow::before{
+
+    content:"";
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#f57c00;
+
+}
+
+
+/* ==========================================================
+   HERO TITLE
+========================================================== */
+
+.pathshala-hero__title{
+
+    margin-top:24px;
+
+    color:#0b2d61;
+
+    font-size:
+        clamp(
+            48px,
+            6vw,
+            76px
+        );
+
+    font-weight:850;
+
+    line-height:1.02;
+
+    letter-spacing:-2px;
+
+}
+
+
+.pathshala-hero__title span{
+
+    display:block;
+
+    margin-top:5px;
+
+    color:#f26b21;
+
+}
+
+
+/* ==========================================================
+   HERO DESCRIPTION
+========================================================== */
+
+.pathshala-hero__description{
+
+    max-width:680px;
+
+    margin-top:24px;
+
+    color:#64748b;
+
+    font-size:17px;
+
+    font-weight:400;
+
+    line-height:1.85;
+
+}
+
+
+/* ==========================================================
+   HERO ACTIONS
+========================================================== */
+
+.pathshala-hero__actions{
+
+    display:flex;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:31px;
+
+}
+
+
+/* ==========================================================
+   HERO SIDE
+========================================================== */
+
+.pathshala-hero__side{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:16px;
+
+    min-width:100px;
+
+    color:#0f3d7a;
+
+}
+
+
+.pathshala-hero__side-number{
+
+    font-size:42px;
+
+    font-weight:800;
+
+    line-height:1;
+
+    color:
+        rgba(15,61,122,.16);
+
+}
+
+
+.pathshala-hero__side-line{
+
+    width:1px;
+
+    height:95px;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            #f57c00,
+            transparent
+        );
+
+}
+
+
+.pathshala-hero__side-text{
+
+    writing-mode:
+        vertical-rl;
+
+    transform:
+        rotate(180deg);
+
+    color:#94a3b8;
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+}
+
+
+/* ==========================================================
+   INTRODUCTION
+========================================================== */
+
+.pathshala-introduction{
+
+    padding:
+        78px 0;
+
+    background:#fff;
+
+}
+
+
+.pathshala-introduction .pathshala-container{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,.85fr)
+        minmax(0,1.15fr);
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+
+.pathshala-introduction__body{
+
+    max-width:650px;
+
+}
+
+
+.pathshala-introduction__body p{
+
+    color:#64748b;
+
+    font-size:16px;
+
+    line-height:1.9;
+
+}
+
+
+.pathshala-introduction__body p + p{
+
+    margin-top:18px;
+
+}
+
+
+/* ==========================================================
+   INITIATIVES
+========================================================== */
+
+.pathshala-initiatives{
+
+    padding:
+        80px 0;
+
+    background:#f8fafc;
+
+}
+
+
+/* ==========================================================
+   INITIATIVE GRID
+========================================================== */
+
+.pathshala-initiative-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:16px;
+
+}
+
+
+/* ==========================================================
+   INITIATIVE CARD
+========================================================== */
+
+.pathshala-initiative-card{
+
+    position:relative;
+
+    min-height:230px;
+
+    padding:
+        25px 22px;
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        #e4eaf2;
+
+    border-radius:17px;
+
+    background:#fff;
+
+    box-shadow:
+        0 7px 24px
+        rgba(15,61,122,.05);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+
+}
+
+
+.pathshala-initiative-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:-35px;
+    bottom:-45px;
+
+    width:110px;
+    height:110px;
+
+    border-radius:50%;
+
+    background:
+        rgba(245,124,0,.055);
+
+    transition:
+        transform .3s ease;
+
+}
+
+
+.pathshala-initiative-card:hover{
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(245,124,0,.22);
+
+    box-shadow:
+        0 17px 35px
+        rgba(15,61,122,.09);
+
+}
+
+
+.pathshala-initiative-card:hover::after{
+
+    transform:
+        scale(1.35);
+
+}
+
+
+/* ==========================================================
+   CARD NUMBER
+========================================================== */
+
+.pathshala-card-number{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:38px;
+    height:38px;
+
+    margin-bottom:22px;
+
+    border-radius:10px;
+
+    background:#fff3e8;
+
+    color:#f57c00;
+
+    font-size:11px;
+
+    font-weight:800;
+
+}
+
+
+.pathshala-initiative-card h3{
+
+    position:relative;
+
+    z-index:2;
+
+    color:#0f3d7a;
+
+    font-size:18px;
+
+    font-weight:750;
+
+    line-height:1.35;
+
+}
+
+
+.pathshala-initiative-card p{
+
+    position:relative;
+
+    z-index:2;
+
+    margin-top:10px;
+
+    color:#64748b;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+}
+
+
+/* ==========================================================
+   WHAT WE DO
+========================================================== */
+
+.pathshala-work{
+
+    padding:
+        82px 0;
+
+    background:#fff;
+
+}
+
+
+.pathshala-work__heading{
+
+    max-width:650px;
+
+    margin-bottom:40px;
+
+}
+
+
+/* ==========================================================
+   WORK LIST
+========================================================== */
+
+.pathshala-work__list{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:0;
+
+    border-top:
+        1px solid
+        #e5eaf1;
+
+}
+
+
+/* ==========================================================
+   WORK ITEM
+========================================================== */
+
+.pathshala-work__item{
+
+    display:grid;
+
+    grid-template-columns:
+        55px
+        minmax(0,1fr);
+
+    gap:17px;
+
+    padding:
+        25px 20px;
+
+    border-bottom:
+        1px solid
+        #e5eaf1;
+
+}
+
+
+.pathshala-work__item:nth-child(odd){
+
+    border-right:
+        1px solid
+        #e5eaf1;
+
+}
+
+
+.pathshala-work__number{
+
+    color:#f57c00;
+
+    font-size:12px;
+
+    font-weight:800;
+
+}
+
+
+.pathshala-work__item h3{
+
+    color:#0f3d7a;
+
+    font-size:16px;
+
+    font-weight:750;
+
+}
+
+
+.pathshala-work__item p{
+
+    margin-top:6px;
+
+    color:#64748b;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+}
+
+
+/* ==========================================================
+   PRIORITY
+========================================================== */
+
+.pathshala-priority{
+
+    padding:
+        65px 0;
+
+    background:#f8fafc;
+
+}
+
+
+.pathshala-priority__box{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        minmax(0,1fr);
+
+    gap:55px;
+
+    align-items:center;
+
+    padding:
+        42px;
+
+    border:
+        1px solid
+        #e3e9f2;
+
+    border-radius:22px;
+
+    background:#fff;
+
+    box-shadow:
+        0 12px 35px
+        rgba(15,61,122,.06);
+
+}
+
+
+.pathshala-priority__box h2{
+
+    margin-top:14px;
+
+    color:#0b2d61;
+
+    font-size:
+        clamp(
+            28px,
+            3vw,
+            40px
+        );
+
+    font-weight:800;
+
+}
+
+
+.pathshala-priority__box p{
+
+    max-width:520px;
+
+    margin-top:12px;
+
+    color:#64748b;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+}
+
+
+/* ==========================================================
+   PRIORITY POINTS
+========================================================== */
+
+.pathshala-priority__points{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:10px;
+
+}
+
+
+.pathshala-priority__points span{
+
+    display:flex;
+
+    align-items:center;
+
+    min-height:50px;
+
+    padding:
+        0 14px;
+
+    border:
+        1px solid
+        #e8edf4;
+
+    border-radius:10px;
+
+    background:#f9fafb;
+
+    color:#475569;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+
+.pathshala-priority__points span::before{
+
+    content:"✓";
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:21px;
+    height:21px;
+
+    margin-right:8px;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    background:#eaf8ef;
+
+    color:#15803d;
+
+    font-size:11px;
+
+    font-weight:800;
+
+}
+
+
+/* ==========================================================
+   IMPACT
+========================================================== */
+
+.pathshala-impact{
+
+    padding:
+        75px 0;
+
+    background:#fff;
+
+}
+
+
+/* ==========================================================
+   IMPACT GRID
+========================================================== */
+
+.pathshala-impact__grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    border:
+        1px solid
+        #e5eaf1;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    background:#fff;
+
+    box-shadow:
+        0 10px 30px
+        rgba(15,61,122,.05);
+
+}
+
+
+.pathshala-impact__item{
+
+    min-height:155px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:20px;
+
+    border-right:
+        1px solid
+        #e5eaf1;
+
+}
+
+
+.pathshala-impact__item:last-child{
+
+    border-right:none;
+
+}
+
+
+.pathshala-impact__item strong{
+
+    color:#0f3d7a;
+
+    font-size:
+        clamp(
+            26px,
+            3vw,
+            38px
+        );
+
+    font-weight:850;
+
+    line-height:1;
+
+}
+
+
+.pathshala-impact__item span{
+
+    margin-top:10px;
+
+    color:#64748b;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+
+/* ==========================================================
+   VOLUNTEER
+========================================================== */
+
+.pathshala-volunteer{
+
+    padding:
+        75px 0;
+
+    background:#f8fafc;
+
+}
+
+
+.pathshala-volunteer__box{
+
+    max-width:800px;
+
+    margin:0 auto;
+
+    padding:
+        50px 35px;
+
+    text-align:center;
+
+    border:
+        1px solid
+        #e2e8f0;
+
+    border-radius:22px;
+
+    background:#fff;
+
+    box-shadow:
+        0 12px 35px
+        rgba(15,61,122,.06);
+
+}
+
+
+.pathshala-volunteer__box h2{
+
+    margin-top:17px;
+
+    color:#0b2d61;
+
+    font-size:
+        clamp(
+            29px,
+            4vw,
+            45px
+        );
+
+    font-weight:800;
+
+    line-height:1.15;
+
+}
+
+
+.pathshala-volunteer__box h2 span{
+
+    display:block;
+
+    margin-top:4px;
+
+    color:#f26b21;
+
+}
+
+
+.pathshala-volunteer__box p{
+
+    max-width:620px;
+
+    margin:
+        17px auto
+        27px;
+
+    color:#64748b;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+
+/* ==========================================================
+   FINAL CTA
+========================================================== */
+
+.pathshala-final-cta{
+
+    position:relative;
+
+    isolation:isolate;
+
+    overflow:hidden;
+
+    padding:
+        80px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f3d7a 0%,
+            #082b5b 100%
+        );
+
+}
+
+
+.pathshala-final-cta::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:400px;
+    height:400px;
+
+    right:-180px;
+    top:-200px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    box-shadow:
+        0 0 0 45px rgba(255,255,255,.025),
+        0 0 0 90px rgba(255,255,255,.018);
+
+}
+
+
+.pathshala-final-cta__content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:800px;
+
+}
+
+
+.pathshala-final-cta .pathshala-eyebrow{
+
+    color:#ffb35c;
+
+}
+
+
+.pathshala-final-cta .pathshala-eyebrow::before{
+
+    background:#ffb35c;
+
+}
+
+
+.pathshala-final-cta h2{
+
+    margin-top:17px;
+
+    color:#fff;
+
+    font-size:
+        clamp(
+            31px,
+            4vw,
+            50px
+        );
+
+    font-weight:800;
+
+    line-height:1.16;
+
+    letter-spacing:-.8px;
+
+}
+
+
+.pathshala-final-cta h2 span{
+
+    display:block;
+
+    color:#ffad52;
+
+}
+
+
+.pathshala-final-cta__actions{
+
+    display:flex;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:30px;
+
+}
+
+
+/* ==========================================================
+   LIGHT CTA BUTTON
+========================================================== */
+
+.pathshala-button--light{
+
+    color:#0f3d7a;
+
+    background:#fff;
+
+    box-shadow:
+        0 10px 25px
+        rgba(0,0,0,.12);
+
+}
+
+
+.pathshala-button--light:hover{
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 15px 32px
+        rgba(0,0,0,.18);
+
+}
+
+
+/* ==========================================================
+   OUTLINE LIGHT BUTTON
+========================================================== */
+
+.pathshala-button--outline-light{
+
+    color:#fff;
+
+    background:
+        rgba(255,255,255,.04);
+
+    border:
+        1px solid
+        rgba(255,255,255,.35);
+
+}
+
+
+.pathshala-button--outline-light:hover{
+
+    background:
+        rgba(255,255,255,.12);
+
+    border-color:#fff;
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+/* ==========================================================
+   FOCUS
+========================================================== */
+
+.pathshala-page a:focus-visible{
+
+    outline:
+        2px solid
+        #f57c00;
+
+    outline-offset:4px;
+
+}
+
+
+/* ==========================================================
+   LARGE LAPTOP
+========================================================== */
+
+@media (max-width:1200px){
+
+    .pathshala-container{
+
+        width:
+            calc(100% - 40px);
+
+    }
+
+    .pathshala-initiative-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+    }
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:992px){
+
+    .pathshala-hero{
+
+        min-height:auto;
+
+    }
+
+    .pathshala-hero .pathshala-container{
+
+        padding:
+            65px 0;
+
+    }
+
+    .pathshala-hero__side{
+
+        min-width:70px;
+
+    }
+
+    .pathshala-introduction .pathshala-container{
+
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+    }
+
+    .pathshala-priority__box{
+
+        grid-template-columns:1fr;
+
+        gap:30px;
+
+    }
+
+    .pathshala-work__list{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .pathshala-work__item:nth-child(odd){
+
+        border-right:none;
+
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+    .pathshala-container{
+
+        width:
+            calc(100% - 30px);
+
+    }
+
+
+    /* HERO */
+
+    .pathshala-hero .pathshala-container{
+
+        display:block;
+
+        padding:
+            52px 0
+            58px;
+
+    }
+
+    .pathshala-hero__content{
+
+        max-width:100%;
+
+    }
+
+    .pathshala-hero__title{
+
+        font-size:
+            clamp(
+                42px,
+                12vw,
+                58px
+            );
+
+        letter-spacing:-1.3px;
+
+    }
+
+    .pathshala-hero__description{
+
+        font-size:15px;
+
+        line-height:1.75;
+
+    }
+
+    .pathshala-hero__side{
+
+        display:none;
+
+    }
+
+
+    /* SECTIONS */
+
+    .pathshala-introduction,
+    .pathshala-initiatives,
+    .pathshala-work,
+    .pathshala-impact,
+    .pathshala-volunteer{
+
+        padding:
+            58px 0;
+
+    }
+
+
+    .pathshala-section-heading{
+
+        margin-bottom:30px;
+
+    }
+
+    .pathshala-section-title{
+
+        font-size:
+            clamp(
+                29px,
+                8vw,
+                40px
+            );
+
+    }
+
+    .pathshala-section-title span{
+
+        display:block;
+
+        margin:
+            5px 0
+            0;
+
+    }
+
+
+    /* INITIATIVES */
+
+    .pathshala-initiative-grid{
+
+        grid-template-columns:1fr;
+
+        gap:12px;
+
+    }
+
+    .pathshala-initiative-card{
+
+        min-height:auto;
+
+        padding:
+            22px 20px;
+
+    }
+
+
+    /* PRIORITY */
+
+    .pathshala-priority{
+
+        padding:
+            50px 0;
+
+    }
+
+    .pathshala-priority__box{
+
+        padding:
+            28px 22px;
+
+        border-radius:18px;
+
+    }
+
+    .pathshala-priority__points{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    /* IMPACT */
+
+    .pathshala-impact__grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+    }
+
+    .pathshala-impact__item{
+
+        min-height:125px;
+
+    }
+
+    .pathshala-impact__item:nth-child(2){
+
+        border-right:none;
+
+    }
+
+    .pathshala-impact__item:nth-child(-n+2){
+
+        border-bottom:
+            1px solid
+            #e5eaf1;
+
+    }
+
+
+    /* VOLUNTEER */
+
+    .pathshala-volunteer__box{
+
+        padding:
+            38px 22px;
+
+        border-radius:18px;
+
+    }
+
+
+    /* CTA */
+
+    .pathshala-final-cta{
+
+        padding:
+            62px 0;
+
+    }
+
+    .pathshala-final-cta h2{
+
+        font-size:
+            clamp(
+                29px,
+                8vw,
+                40px
+            );
+
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width:576px){
+
+    .pathshala-container{
+
+        width:
+            calc(100% - 24px);
+
+    }
+
+
+    .pathshala-hero .pathshala-container{
+
+        padding:
+            43px 0
+            48px;
+
+    }
+
+
+    .pathshala-hero__eyebrow{
+
+        padding:
+            8px 12px;
+
+        font-size:10px;
+
+    }
+
+
+    .pathshala-hero__title{
+
+        margin-top:19px;
+
+        font-size:
+            clamp(
+                38px,
+                12vw,
+                48px
+            );
+
+        line-height:1.06;
+
+    }
+
+
+    .pathshala-hero__description{
+
+        margin-top:18px;
+
+        font-size:13px;
+
+        line-height:1.75;
+
+    }
+
+
+    .pathshala-hero__actions{
+
+        width:100%;
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        margin-top:25px;
+
+    }
+
+
+    .pathshala-button{
+
+        width:100%;
+
+        min-height:50px;
+
+    }
+
+
+    .pathshala-introduction,
+    .pathshala-initiatives,
+    .pathshala-work,
+    .pathshala-impact,
+    .pathshala-volunteer{
+
+        padding:
+            48px 0;
+
+    }
+
+
+    .pathshala-section-title{
+
+        font-size:29px;
+
+    }
+
+
+    .pathshala-introduction__body p{
+
+        font-size:13px;
+
+        line-height:1.8;
+
+    }
+
+
+    .pathshala-initiative-card{
+
+        padding:
+            20px 18px;
+
+    }
+
+
+    .pathshala-initiative-card h3{
+
+        font-size:16px;
+
+    }
+
+
+    .pathshala-initiative-card p{
+
+        font-size:12px;
+
+    }
+
+
+    .pathshala-work__item{
+
+        grid-template-columns:
+            38px
+            minmax(0,1fr);
+
+        gap:10px;
+
+        padding:
+            20px 8px;
+
+    }
+
+
+    .pathshala-work__item h3{
+
+        font-size:14px;
+
+    }
+
+
+    .pathshala-work__item p{
+
+        font-size:12px;
+
+    }
+
+
+    .pathshala-priority{
+
+        padding:
+            42px 0;
+
+    }
+
+
+    .pathshala-priority__box{
+
+        padding:
+            25px 18px;
+
+    }
+
+
+    .pathshala-priority__box h2{
+
+        font-size:28px;
+
+    }
+
+
+    .pathshala-priority__box p{
+
+        font-size:13px;
+
+    }
+
+
+    .pathshala-priority__points span{
+
+        font-size:11px;
+
+    }
+
+
+    .pathshala-impact__item{
+
+        min-height:110px;
+
+        padding:15px 8px;
+
+    }
+
+
+    .pathshala-impact__item strong{
+
+        font-size:27px;
+
+    }
+
+
+    .pathshala-impact__item span{
+
+        margin-top:7px;
+
+        font-size:10px;
+
+    }
+
+
+    .pathshala-volunteer__box{
+
+        padding:
+            32px 18px;
+
+    }
+
+
+    .pathshala-volunteer__box h2{
+
+        font-size:28px;
+
+    }
+
+
+    .pathshala-volunteer__box p{
+
+        font-size:12px;
+
+    }
+
+
+    .pathshala-final-cta{
+
+        padding:
+            52px 0;
+
+    }
+
+
+    .pathshala-final-cta h2{
+
+        font-size:29px;
+
+    }
+
+
+    .pathshala-final-cta__actions{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+}
+
+
+/* ==========================================================
+   EXTRA SMALL
+========================================================== */
+
+@media (max-width:360px){
+
+    .pathshala-container{
+
+        width:
+            calc(100% - 20px);
+
+    }
+
+
+    .pathshala-hero__title{
+
+        font-size:35px;
+
+    }
+
+
+    .pathshala-section-title{
+
+        font-size:27px;
+
+    }
+
+
+    .pathshala-impact__item strong{
+
+        font-size:24px;
+
+    }
+
+
+    .pathshala-impact__item span{
+
+        font-size:9px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   TOUCH DEVICES
+========================================================== */
+
+@media (hover:none){
+
+    .pathshala-initiative-card:hover{
+
+        transform:none;
+
+        box-shadow:
+            0 7px 24px
+            rgba(15,61,122,.05);
+
+    }
+
+    .pathshala-button--primary:hover,
+    .pathshala-button--secondary:hover,
+    .pathshala-button--light:hover,
+    .pathshala-button--outline-light:hover{
+
+        transform:none;
+
+    }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    .pathshala-page *,
+    .pathshala-page *::before,
+    .pathshala-page *::after{
+
+        animation:none!important;
+
+        transition:none!important;
+
+    }
+
+}
+
+
+/* ==========================================================
+   PRINT
+========================================================== */
+
+@media print{
+
+    .pathshala-page{
+
+        background:#fff;
+
+    }
+
+    .pathshala-hero,
+    .pathshala-introduction,
+    .pathshala-initiatives,
+    .pathshala-work,
+    .pathshala-priority,
+    .pathshala-impact,
+    .pathshala-volunteer,
+    .pathshala-final-cta{
+
+        padding:
+            25px 0;
+
+    }
+
+}

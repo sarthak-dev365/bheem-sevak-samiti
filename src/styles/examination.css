@@ -1,0 +1,878 @@
+/* ==========================================================
+   BHEEM SEVAK SAMITI
+   HOME — EXAMINATION SECTION
+   FINAL PROFESSIONAL CSS
+========================================================== */
+
+
+/* ==========================================================
+   ROOT
+========================================================== */
+
+.examination-section{
+
+    position:relative;
+
+    width:100%;
+
+    overflow:hidden;
+
+    padding:
+        78px 0
+        82px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f8fafc 100%
+        );
+
+    color:#0f2f63;
+
+}
+
+
+/* ==========================================================
+   BOX SIZING
+========================================================== */
+
+.examination-section,
+.examination-section *,
+.examination-section *::before,
+.examination-section *::after{
+
+    box-sizing:border-box;
+
+}
+
+
+/* ==========================================================
+   DECORATIVE BACKGROUND
+========================================================== */
+
+.examination-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:360px;
+
+    height:360px;
+
+    right:-190px;
+
+    top:-170px;
+
+    border-radius:50%;
+
+    background:
+        rgba(245,124,0,.055);
+
+    pointer-events:none;
+
+}
+
+
+.examination-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+
+    height:250px;
+
+    left:-160px;
+
+    bottom:-150px;
+
+    border-radius:50%;
+
+    background:
+        rgba(15,61,122,.045);
+
+    pointer-events:none;
+
+}
+
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
+
+.examination-section__container{
+
+    position:relative;
+
+    z-index:2;
+
+    width:min(
+        1120px,
+        calc(100% - 48px)
+    );
+
+    margin:
+        0 auto;
+
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.examination-section__header{
+
+    max-width:720px;
+
+    margin:
+        0 auto;
+
+    text-align:center;
+
+}
+
+
+/* ==========================================================
+   EYEBROW
+========================================================== */
+
+.examination-section__eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:
+        8px 13px;
+
+    border:
+        1px solid
+        rgba(245,124,0,.24);
+
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,.9);
+
+    color:#f57c00;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    line-height:1;
+
+    letter-spacing:1.5px;
+
+    box-shadow:
+        0 6px 18px
+        rgba(15,61,122,.04);
+
+}
+
+
+.examination-section__eyebrow::before{
+
+    content:"";
+
+    width:6px;
+
+    height:6px;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    background:#f57c00;
+
+}
+
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.examination-section__title{
+
+    margin-top:18px;
+
+    color:#0b2d61;
+
+    font-size:
+        clamp(
+            32px,
+            4.2vw,
+            50px
+        );
+
+    font-weight:800;
+
+    line-height:1.15;
+
+    letter-spacing:-1px;
+
+}
+
+
+.examination-section__title span{
+
+    display:block;
+
+    margin-top:3px;
+
+    color:#f26b21;
+
+}
+
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.examination-section__description{
+
+    max-width:650px;
+
+    margin:
+        17px auto
+        0;
+
+    color:#64748b;
+
+    font-size:15px;
+
+    font-weight:400;
+
+    line-height:1.8;
+
+}
+
+
+/* ==========================================================
+   HIGHLIGHTS
+========================================================== */
+
+.examination-section__highlights{
+
+    width:100%;
+
+    max-width:900px;
+
+    margin:
+        40px auto
+        0;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    border:
+        1px solid
+        #e4eaf2;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    background:#fff;
+
+    box-shadow:
+        0 10px 30px
+        rgba(15,61,122,.055);
+
+}
+
+
+/* ==========================================================
+   HIGHLIGHT
+========================================================== */
+
+.examination-highlight{
+
+    min-height:86px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:
+        18px 22px;
+
+    border-right:
+        1px solid
+        #e7ebf1;
+
+}
+
+
+.examination-highlight:last-child{
+
+    border-right:none;
+
+}
+
+
+/* ==========================================================
+   NUMBER
+========================================================== */
+
+.examination-highlight__number{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:34px;
+
+    height:34px;
+
+    flex-shrink:0;
+
+    border-radius:9px;
+
+    background:#fff3e8;
+
+    color:#f57c00;
+
+    font-size:10px;
+
+    font-weight:800;
+
+}
+
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.examination-highlight__title{
+
+    color:#334155;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    line-height:1.4;
+
+}
+
+
+/* ==========================================================
+   ACTION
+========================================================== */
+
+.examination-section__action{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:28px;
+
+}
+
+
+/* ==========================================================
+   CTA BUTTON
+========================================================== */
+
+.examination-section__button{
+
+    position:relative;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    min-height:50px;
+
+    padding:
+        0 22px;
+
+    border-radius:10px;
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f3d7a,
+            #092f67
+        );
+
+    box-shadow:
+        0 10px 25px
+        rgba(15,61,122,.18);
+
+    font-size:13px;
+
+    font-weight:750;
+
+    line-height:1;
+
+    text-decoration:none;
+
+    overflow:hidden;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.examination-section__button::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            110deg,
+            transparent 20%,
+            rgba(255,255,255,.16) 50%,
+            transparent 80%
+        );
+
+    transform:
+        translateX(-120%);
+
+    transition:
+        transform .6s ease;
+
+}
+
+
+.examination-section__button:hover::before{
+
+    transform:
+        translateX(120%);
+
+}
+
+
+.examination-section__button:hover{
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 15px 32px
+        rgba(15,61,122,.25);
+
+}
+
+
+/* ==========================================================
+   ARROW
+========================================================== */
+
+.examination-section__button-arrow{
+
+    position:relative;
+
+    z-index:2;
+
+    font-size:17px;
+
+    transition:
+        transform .3s ease;
+
+}
+
+
+.examination-section__button:hover
+.examination-section__button-arrow{
+
+    transform:
+        translateX(4px);
+
+}
+
+
+/* ==========================================================
+   FOCUS
+========================================================== */
+
+.examination-section a:focus-visible{
+
+    outline:
+        2px solid
+        #f57c00;
+
+    outline-offset:4px;
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:900px){
+
+    .examination-section{
+
+        padding:
+            65px 0
+            68px;
+
+    }
+
+
+    .examination-section__container{
+
+        width:
+            calc(100% - 40px);
+
+    }
+
+
+    .examination-section__highlights{
+
+        max-width:760px;
+
+    }
+
+
+    .examination-highlight{
+
+        padding:
+            17px 14px;
+
+        gap:10px;
+
+    }
+
+
+    .examination-highlight__title{
+
+        font-size:11px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+    .examination-section{
+
+        padding:
+            55px 0
+            60px;
+
+    }
+
+
+    .examination-section__container{
+
+        width:
+            calc(100% - 30px);
+
+    }
+
+
+    .examination-section__title{
+
+        font-size:
+            clamp(
+                30px,
+                8vw,
+                40px
+            );
+
+    }
+
+
+    .examination-section__description{
+
+        margin-top:15px;
+
+        font-size:13px;
+
+        line-height:1.75;
+
+    }
+
+
+    .examination-section__highlights{
+
+        margin-top:30px;
+
+        grid-template-columns:1fr;
+
+        border-radius:14px;
+
+    }
+
+
+    .examination-highlight{
+
+        min-height:65px;
+
+        padding:
+            14px 16px;
+
+        border-right:none;
+
+        border-bottom:
+            1px solid
+            #e7ebf1;
+
+    }
+
+
+    .examination-highlight:last-child{
+
+        border-bottom:none;
+
+    }
+
+
+    .examination-highlight__number{
+
+        width:32px;
+
+        height:32px;
+
+    }
+
+
+    .examination-highlight__title{
+
+        font-size:11px;
+
+    }
+
+
+    .examination-section__action{
+
+        margin-top:23px;
+
+    }
+
+
+    .examination-section__button{
+
+        min-height:49px;
+
+        padding:
+            0 20px;
+
+        font-size:12px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width:576px){
+
+    .examination-section{
+
+        padding:
+            48px 0
+            52px;
+
+    }
+
+
+    .examination-section__container{
+
+        width:
+            calc(100% - 24px);
+
+    }
+
+
+    .examination-section__eyebrow{
+
+        padding:
+            7px 11px;
+
+        font-size:9px;
+
+    }
+
+
+    .examination-section__title{
+
+        margin-top:16px;
+
+        font-size:
+            clamp(
+                28px,
+                8.8vw,
+                36px
+            );
+
+        letter-spacing:-.7px;
+
+    }
+
+
+    .examination-section__description{
+
+        font-size:12px;
+
+        line-height:1.7;
+
+    }
+
+
+    .examination-section__highlights{
+
+        margin-top:25px;
+
+    }
+
+
+    .examination-highlight{
+
+        min-height:60px;
+
+        padding:
+            12px 13px;
+
+    }
+
+
+    .examination-highlight__number{
+
+        width:30px;
+
+        height:30px;
+
+        border-radius:8px;
+
+        font-size:9px;
+
+    }
+
+
+    .examination-highlight__title{
+
+        font-size:10.5px;
+
+    }
+
+
+    .examination-section__button{
+
+        width:100%;
+
+        max-width:260px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   EXTRA SMALL
+========================================================== */
+
+@media (max-width:360px){
+
+    .examination-section__container{
+
+        width:
+            calc(100% - 20px);
+
+    }
+
+
+    .examination-section__title{
+
+        font-size:27px;
+
+    }
+
+
+    .examination-section__description{
+
+        font-size:11.5px;
+
+    }
+
+
+    .examination-highlight__title{
+
+        font-size:10px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   TOUCH DEVICES
+========================================================== */
+
+@media (hover:none){
+
+    .examination-section__button:hover{
+
+        transform:none;
+
+        box-shadow:
+            0 10px 25px
+            rgba(15,61,122,.18);
+
+    }
+
+    .examination-section__button:hover::before{
+
+        transform:
+            translateX(-120%);
+
+    }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    .examination-section *,
+    .examination-section *::before,
+    .examination-section *::after{
+
+        animation:none!important;
+
+        transition:none!important;
+
+    }
+
+}

@@ -1,0 +1,358 @@
+/* =========================================================
+   HOME PATHSHALA
+   PREMIUM COMPACT HOME SECTION
+   FRESH DESIGN
+========================================================= */
+
+.home-pathshala {
+    width: 100%;
+    padding: 86px 0;
+    background: #f8fafc;
+    color: #102f63;
+    overflow: hidden;
+}
+
+.home-pathshala__container {
+    width: min(1160px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.home-pathshala__header {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.home-pathshala__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 16px;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+
+    color: #e66f20;
+}
+
+.home-pathshala__eyebrow::before,
+.home-pathshala__eyebrow::after {
+    content: "";
+    width: 24px;
+    height: 1px;
+    background: #e66f20;
+}
+
+.home-pathshala__title {
+    margin: 0;
+
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    font-weight: 800;
+
+    color: #102f63;
+}
+
+.home-pathshala__title span {
+    display: inline-block;
+    margin-left: 10px;
+    color: #e66f20;
+}
+
+.home-pathshala__intro {
+    max-width: 650px;
+    margin: 20px auto 0;
+
+    font-size: 15px;
+    line-height: 1.8;
+    color: #64748b;
+}
+
+
+/* =========================================================
+   HIGHLIGHTS
+========================================================= */
+
+.home-pathshala__highlights {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    margin-top: 44px;
+
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+
+    background: #ffffff;
+}
+
+.home-pathshala__item {
+    position: relative;
+
+    min-height: 118px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 20px 26px;
+
+    border-right: 1px solid #e2e8f0;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.home-pathshala__item:last-child {
+    border-right: none;
+}
+
+.home-pathshala__item:hover {
+    background: #fffaf6;
+}
+
+.home-pathshala__item span {
+    margin-bottom: 10px;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+
+    color: #e66f20;
+}
+
+.home-pathshala__item strong {
+    font-size: 17px;
+    line-height: 1.35;
+    font-weight: 700;
+
+    color: #102f63;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.home-pathshala__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    margin-top: 26px;
+}
+
+.home-pathshala__footer-text {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.home-pathshala__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 12px 18px;
+
+    border: 1px solid #102f63;
+    border-radius: 8px;
+
+    background: #102f63;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.home-pathshala__link span:last-child {
+    font-size: 17px;
+    line-height: 1;
+}
+
+.home-pathshala__link:hover {
+    background: #e66f20;
+    border-color: #e66f20;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .home-pathshala {
+        padding: 72px 0;
+    }
+
+    .home-pathshala__highlights {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .home-pathshala__item:nth-child(2) {
+        border-right: none;
+    }
+
+    .home-pathshala__item:nth-child(-n + 2) {
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .home-pathshala {
+        padding: 60px 0;
+    }
+
+    .home-pathshala__container {
+        width: min(100% - 30px, 520px);
+    }
+
+    .home-pathshala__eyebrow {
+        font-size: 9px;
+        letter-spacing: 0.13em;
+    }
+
+    .home-pathshala__eyebrow::before,
+    .home-pathshala__eyebrow::after {
+        width: 18px;
+    }
+
+    .home-pathshala__title {
+        font-size: clamp(34px, 10vw, 46px);
+        line-height: 1.1;
+    }
+
+    .home-pathshala__title span {
+        display: block;
+        margin: 4px 0 0;
+    }
+
+    .home-pathshala__intro {
+        margin-top: 16px;
+        font-size: 13px;
+        line-height: 1.75;
+    }
+
+    .home-pathshala__highlights {
+        margin-top: 32px;
+    }
+
+    .home-pathshala__item {
+        min-height: 100px;
+        padding: 18px 16px;
+    }
+
+    .home-pathshala__item span {
+        margin-bottom: 7px;
+        font-size: 9px;
+    }
+
+    .home-pathshala__item strong {
+        font-size: 14px;
+    }
+
+    .home-pathshala__footer {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 16px;
+
+        margin-top: 22px;
+    }
+
+    .home-pathshala__footer-text {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .home-pathshala__link {
+        width: 100%;
+        padding: 13px 16px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .home-pathshala {
+        padding: 52px 0;
+    }
+
+    .home-pathshala__container {
+        width: calc(100% - 24px);
+    }
+
+    .home-pathshala__title {
+        font-size: 32px;
+    }
+
+    .home-pathshala__intro {
+        font-size: 12.5px;
+    }
+
+    .home-pathshala__item {
+        min-height: 92px;
+        padding: 15px 12px;
+    }
+
+    .home-pathshala__item strong {
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.home-pathshala__link:focus-visible {
+    outline: 2px solid #e66f20;
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .home-pathshala *,
+    .home-pathshala *::before,
+    .home-pathshala *::after {
+        transition: none !important;
+    }
+
+}
