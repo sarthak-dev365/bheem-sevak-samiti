@@ -1,926 +1,1072 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import {
-  Menu,
-  X,
-  Phone,
-  Mail,
-  MapPin,
-  Users,
-  Heart,
-  ShieldCheck,
-  ArrowRight,
+    Menu,
+    X,
+    Phone,
+    Mail,
+    MapPin,
+    Users,
+    Heart,
+    ShieldCheck,
+    ChevronDown,
+    Images,
+    Video,
+    ArrowRight,
+    Home,
+    Info,
+    BriefcaseBusiness,
+    GraduationCap,
+    ClipboardCheck,
+    Route,
+    ContactRound,
 } from "lucide-react";
 
 import {
-  FaFacebookF,
-  FaInstagram,
-  FaYoutube,
-  FaWhatsapp,
-  FaXTwitter,
+    FaFacebookF,
+    FaInstagram,
+    FaYoutube,
+    FaWhatsapp,
+    FaXTwitter,
 } from "react-icons/fa6";
 
 import "../../styles/navbar.css";
 
 import logo from "../../../public/icons/logo.png";
 
-
 /* ==========================================================
    NAVIGATION
 ========================================================== */
 
 const NAV_ITEMS = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Pathshala", href: "/pathshala" },
-  { name: "Examination", href: "/examination" },
-  { name: "Gallery", href: "/gallery" },
-  { name: "Events", href: "/events" },
-  { name: "Contact", href: "/contact" },
+    {
+        name: "Home",
+        href: "/",
+        icon: Home,
+    },
+    {
+        name: "About",
+        href: "/about",
+        icon: Info,
+    },
+    {
+        name: "Services",
+        href: "/services",
+        icon: BriefcaseBusiness,
+    },
+    {
+        name: "Pathshala",
+        href: "/pathshala",
+        icon: GraduationCap,
+    },
+    {
+        name: "Examination",
+        href: "/examination",
+        icon: ClipboardCheck,
+    },
+    {
+        name: "Gallery",
+        href: "/gallery",
+        icon: Images,
+        dropdown: [
+            {
+                name: "Photo Gallery",
+                href: "/gallery/photos",
+                icon: Images,
+                description: "Explore our activities in photos",
+            },
+            {
+                name: "Video Gallery",
+                href: "/gallery/videos",
+                icon: Video,
+                description: "Watch our activities and programmes",
+            },
+        ],
+    },
+    {
+        name: "Our Journey",
+        href: "/our-journey",
+        icon: Route,
+    },
+    {
+        name: "Contact",
+        href: "/contact",
+        icon: ContactRound,
+    },
 ];
-
 
 /* ==========================================================
    NGO INFORMATION
 ========================================================== */
 
 const NGO = {
-  name: "Bheem Sevak Samiti",
+    name: "Bheem Sevak Samiti",
 
-  phone: "+91 9627833744",
+    phone: "+91 9627833744",
 
-  email: "bhimsevaksamiti@gmail.com",
+    email: "bhimsevaksamiti@gmail.com",
 
-  shortLocation: "Saharanpur, U.P.",
+    location: "Saharanpur, U.P.",
 
-  fullAddress:
-    "Gram Kuralki Khurd, Post Dagheda, District Saharanpur, Uttar Pradesh",
+    address:
+        "Gram Kuralki Khurd, Post Dagheda, District Saharanpur, Uttar Pradesh",
 
-  logo,
+    logo,
 
-  registrationStatus: "Registered NGO",
+    registrationStatus: "Registered NGO",
 
-  registrationNumber: "R/SAH/01358/2024-2025",
+    registrationNumber: "R/SAH/01358/2024-2025",
 };
-
 
 /* ==========================================================
    SOCIAL LINKS
 ========================================================== */
 
-const SOCIAL = {
-  facebook:
-    "https://www.facebook.com/share/1E8c1c6nMV/",
+const SOCIAL_LINKS = [
+    {
+        name: "Facebook",
+        href: "https://www.facebook.com/share/1E8c1c6nMV/",
+        icon: FaFacebookF,
+    },
+    {
+        name: "Instagram",
+        href: "https://www.instagram.com/bhimsevaksamiti/",
+        icon: FaInstagram,
+    },
+    {
+        name: "YouTube",
+        href: "https://www.youtube.com/@BhimSevakSamiti",
+        icon: FaYoutube,
+    },
+    {
+        name: "X",
+        href: "https://twitter.com/BhimSevakSamiti",
+        icon: FaXTwitter,
+    },
+    {
+        name: "WhatsApp",
+        href: "https://wa.me/919627833744",
+        icon: FaWhatsapp,
+    },
+];
 
-  instagram:
-    "https://www.instagram.com/bhimsevaksamiti/",
+/* ==========================================================
+   CONSTANTS
+========================================================== */
 
-  youtube:
-    "https://www.youtube.com/@BhimSevakSamiti",
+const MOBILE_BREAKPOINT = 992;
 
-  x:
-    "https://twitter.com/BhimSevakSamiti",
+const MOBILE_DRAWER_ID = "mobile-navigation-drawer";
 
-  whatsapp:
-    "https://wa.me/919627833744",
-};
+const MOBILE_GALLERY_ID = "mobile-gallery-submenu";
 
+const DESKTOP_GALLERY_ID = "gallery-dropdown-menu";
 
 /* ==========================================================
    NAVBAR COMPONENT
 ========================================================== */
 
 export default function Navbar() {
+    const pathname = usePathname();
 
-  const pathname = usePathname();
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [mobileOpen, setMobileOpen] = useState(false);
+    const [galleryOpen, setGalleryOpen] = useState(false);
 
-  const [menuOpen, setMenuOpen] = useState(false);
+    /* ======================================================
+       HELPERS
+    ====================================================== */
 
-  const [isScrolled, setIsScrolled] = useState(false);
+    const isActive = (href) => {
+        if (href === "/") {
+            return pathname === "/";
+        }
 
-
-  /* ==========================================================
-     SCROLL STATE
-  ========================================================== */
-
-  useEffect(() => {
-
-    const handleScroll = () => {
-
-      setIsScrolled(window.scrollY > 30);
-
+        return (
+            pathname === href ||
+            pathname.startsWith(`${href}/`)
+        );
     };
 
-    handleScroll();
-
-    window.addEventListener(
-      "scroll",
-      handleScroll,
-      { passive: true }
-    );
-
-    return () => {
-
-      window.removeEventListener(
-        "scroll",
-        handleScroll
-      );
-
+    const closeMenu = () => {
+        setMobileOpen(false);
+        setGalleryOpen(false);
     };
 
-  }, []);
-
-
-  /* ==========================================================
-     BODY SCROLL LOCK
-  ========================================================== */
-
-  useEffect(() => {
-
-    if (menuOpen) {
-
-      document.body.classList.add(
-        "navbar-menu-open"
-      );
-
-    } else {
-
-      document.body.classList.remove(
-        "navbar-menu-open"
-      );
-
-    }
-
-    return () => {
-
-      document.body.classList.remove(
-        "navbar-menu-open"
-      );
-
+    const toggleMobileMenu = () => {
+        setMobileOpen((current) => !current);
     };
 
-  }, [menuOpen]);
-
-
-  /* ==========================================================
-     ESC KEY SUPPORT
-  ========================================================== */
-
-  useEffect(() => {
-
-    if (!menuOpen) return;
-
-    const handleKeyDown = (event) => {
-
-      if (event.key === "Escape") {
-
-        setMenuOpen(false);
-
-      }
-
+    const toggleGallery = () => {
+        setGalleryOpen((current) => !current);
     };
 
-    window.addEventListener(
-      "keydown",
-      handleKeyDown
-    );
+    const phoneHref = `tel:${NGO.phone.replace(/\s+/g, "")}`;
 
-    return () => {
+    const galleryIsActive =
+        pathname === "/gallery" ||
+        pathname.startsWith("/gallery/");
 
-      window.removeEventListener(
-        "keydown",
-        handleKeyDown
-      );
+    /* ======================================================
+       SCROLL EFFECT
+    ====================================================== */
 
-    };
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 20);
+        };
 
-  }, [menuOpen]);
+        window.addEventListener("scroll", handleScroll, {
+            passive: true,
+        });
 
+        return () => {
+            window.removeEventListener(
+                "scroll",
+                handleScroll
+            );
+        };
+    }, []);
 
-  /* ==========================================================
-     CLOSE MOBILE MENU ON DESKTOP
-  ========================================================== */
+    /* ======================================================
+       BODY SCROLL LOCK
+    ====================================================== */
 
-  useEffect(() => {
+    useEffect(() => {
+        if (mobileOpen) {
+            document.body.classList.add(
+                "navbar-menu-open"
+            );
+        } else {
+            document.body.classList.remove(
+                "navbar-menu-open"
+            );
+        }
 
-    const handleResize = () => {
+        return () => {
+            document.body.classList.remove(
+                "navbar-menu-open"
+            );
+        };
+    }, [mobileOpen]);
 
-      if (window.innerWidth > 992) {
+    /* ======================================================
+       ESCAPE KEY
+    ====================================================== */
 
-        setMenuOpen(false);
+    useEffect(() => {
+        const handleEscape = (event) => {
+            if (event.key === "Escape") {
+                setMobileOpen(false);
+                setGalleryOpen(false);
+            }
+        };
 
-      }
+        window.addEventListener("keydown", handleEscape);
 
-    };
+        return () => {
+            window.removeEventListener(
+                "keydown",
+                handleEscape
+            );
+        };
+    }, []);
 
-    window.addEventListener(
-      "resize",
-      handleResize
-    );
+    /* ======================================================
+       CLOSE MOBILE MENU ON DESKTOP
+    ====================================================== */
 
-    return () => {
+    useEffect(() => {
+        const mediaQuery = window.matchMedia(
+            `(min-width: ${MOBILE_BREAKPOINT + 1}px)`
+        );
 
-      window.removeEventListener(
-        "resize",
-        handleResize
-      );
+        const handleMediaChange = (event) => {
+            if (event.matches) {
+                setMobileOpen(false);
+                setGalleryOpen(false);
+            }
+        };
 
-    };
+        mediaQuery.addEventListener(
+            "change",
+            handleMediaChange
+        );
 
-  }, []);
+        return () => {
+            mediaQuery.removeEventListener(
+                "change",
+                handleMediaChange
+            );
+        };
+    }, []);
 
-
-  /* ==========================================================
-     PHONE LINK
-  ========================================================== */
-
-  const phoneHref =
-    `tel:${NGO.phone.replace(/\s+/g, "")}`;
-
-
-  /* ==========================================================
-     ACTIVE NAVIGATION
-  ========================================================== */
-
-  const isActiveRoute = (href) => {
-
-    if (href === "/") {
-
-      return pathname === "/";
-
-    }
+    /* ======================================================
+       RENDER
+    ====================================================== */
 
     return (
-      pathname === href ||
-      pathname.startsWith(`${href}/`)
-    );
+        <header
+            className={`site-header ${
+                isScrolled ? "is-scrolled" : ""
+            }`}
+        >
+            {/* ==================================================
+                TOP BAR
+            ================================================== */}
 
-  };
+            <div className="navbar-topbar">
+                <div className="navbar-container navbar-topbar-inner">
 
+                    {/* LEFT */}
 
-  /* ==========================================================
-     RENDER
-  ========================================================== */
+                    <div className="navbar-top-left">
 
-  return (
+                        <a
+                            href={phoneHref}
+                            className="navbar-contact-link"
+                            aria-label={`Call ${NGO.name}`}
+                        >
+                            <Phone
+                                size={15}
+                                aria-hidden="true"
+                            />
 
-    <header
-      className={
-        isScrolled
-          ? "header scrolled"
-          : "header"
-      }
-      role="banner"
-    >
+                            <span>{NGO.phone}</span>
+                        </a>
 
+                        <span
+                            className="navbar-top-divider"
+                            aria-hidden="true"
+                        />
 
-      {/* ======================================================
-          TOP TRUST BAR
-      ====================================================== */}
+                        <a
+                            href={`mailto:${NGO.email}`}
+                            className="navbar-contact-link"
+                            aria-label={`Email ${NGO.name}`}
+                        >
+                            <Mail
+                                size={15}
+                                aria-hidden="true"
+                            />
 
-      <div className="topbar">
+                            <span>{NGO.email}</span>
+                        </a>
 
-        <div className="container topbar-content">
+                    </div>
 
+                    {/* CENTER */}
 
-          {/* ==================================================
-              LEFT
-          ================================================== */}
+                    <div className="navbar-top-center">
 
-          <div className="topbar-left">
+                        <div className="navbar-location">
 
-            <a
-              href={phoneHref}
-              className="topbar-link"
-              aria-label="Call Bheem Sevak Samiti"
-            >
+                            <MapPin
+                                size={15}
+                                aria-hidden="true"
+                            />
 
-              <Phone
-                size={15}
-                strokeWidth={2.2}
-              />
+                            <span>{NGO.location}</span>
 
-              <span>
-                {NGO.phone}
-              </span>
+                        </div>
 
-            </a>
+                    </div>
 
+                    {/* RIGHT */}
 
-            <span
-              className="topbar-divider"
-              aria-hidden="true"
-            />
+                    <div className="navbar-top-right">
 
+                        <div
+                            className="navbar-registration"
+                            title={`${NGO.registrationStatus} - ${NGO.registrationNumber}`}
+                        >
+                            <ShieldCheck
+                                size={17}
+                                aria-hidden="true"
+                            />
 
-            <a
-              href={`mailto:${NGO.email}`}
-              className="topbar-link"
-              aria-label="Email Bheem Sevak Samiti"
-            >
+                            <div>
+                                <strong>
+                                    {NGO.registrationStatus}
+                                </strong>
 
-              <Mail
-                size={15}
-                strokeWidth={2.2}
-              />
+                                <small>
+                                    {NGO.registrationNumber}
+                                </small>
+                            </div>
+                        </div>
 
-              <span>
-                {NGO.email}
-              </span>
+                        <div
+                            className="navbar-social"
+                            aria-label="Social media links"
+                        >
+                            {SOCIAL_LINKS.map(
+                                ({
+                                    name,
+                                    href,
+                                    icon: Icon,
+                                }) => (
+                                    <a
+                                        key={name}
+                                        href={href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={name}
+                                    >
+                                        <Icon
+                                            aria-hidden="true"
+                                        />
+                                    </a>
+                                )
+                            )}
+                        </div>
 
-            </a>
+                    </div>
 
-          </div>
-
-
-          {/* ==================================================
-              CENTER
-          ================================================== */}
-
-          <div className="topbar-center">
-
-            <div className="topbar-location">
-
-              <MapPin
-                size={15}
-                strokeWidth={2.2}
-              />
-
-              <span>
-                {NGO.shortLocation}
-              </span>
-
+                </div>
             </div>
 
-          </div>
+            {/* ==================================================
+                MAIN NAVBAR
+            ================================================== */}
 
+            <nav
+                className="main-navbar"
+                aria-label="Main Navigation"
+            >
+                <div className="navbar-container navbar-main-inner">
 
-          {/* ==================================================
-              RIGHT
-          ================================================== */}
+                    {/* LOGO */}
 
-          <div className="topbar-right">
+                    <Link
+                        href="/"
+                        className="navbar-logo"
+                        aria-label={`${NGO.name} Home`}
+                        onClick={closeMenu}
+                    >
+                        <Image
+                            src={NGO.logo}
+                            alt={`${NGO.name} Official Logo`}
+                            width={240}
+                            height={80}
+                            priority
+                            className="navbar-logo-image"
+                        />
+                    </Link>
 
+                    {/* DESKTOP NAVIGATION */}
 
-            {/* REGISTERED NGO */}
+                    <ul
+                        className="desktop-nav"
+                        aria-label="Primary navigation"
+                    >
+                        {NAV_ITEMS.map((item) => {
 
-            <div className="ngo-badge">
+                            if (!item.dropdown) {
+                                const active = isActive(
+                                    item.href
+                                );
 
-              <ShieldCheck
-                size={17}
-                strokeWidth={2.2}
-              />
+                                const Icon = item.icon;
 
-              <div className="badge-content">
+                                return (
+                                    <li key={item.name}>
+                                        <Link
+                                            href={item.href}
+                                            className={
+                                                active
+                                                    ? "nav-link active"
+                                                    : "nav-link"
+                                            }
+                                            aria-current={
+                                                active
+                                                    ? "page"
+                                                    : undefined
+                                            }
+                                        >
+                                            <Icon
+                                                className="nav-link-icon"
+                                                size={17}
+                                                strokeWidth={2}
+                                                aria-hidden="true"
+                                            />
 
-                <strong>
-                  {NGO.registrationStatus}
-                </strong>
+                                            <span>
+                                                {item.name}
+                                            </span>
+                                        </Link>
+                                    </li>
+                                );
+                            }
 
-                <small>
-                  {NGO.registrationNumber}
-                </small>
+                            {/* GALLERY */}
 
-              </div>
+                            const GalleryIcon = item.icon;
 
-            </div>
+                            return (
+                                <li
+                                    key={item.name}
+                                    className={`gallery-dropdown ${
+                                        galleryOpen
+                                            ? "dropdown-open"
+                                            : ""
+                                    }`}
+                                >
+                                    <div className="gallery-trigger">
 
+                                        <Link
+                                            href={item.href}
+                                            className={
+                                                galleryIsActive
+                                                    ? "nav-link active"
+                                                    : "nav-link"
+                                            }
+                                            aria-current={
+                                                galleryIsActive
+                                                    ? "page"
+                                                    : undefined
+                                            }
+                                        >
+                                            <GalleryIcon
+                                                className="nav-link-icon"
+                                                size={17}
+                                                strokeWidth={2}
+                                                aria-hidden="true"
+                                            />
 
-            {/* SOCIAL */}
+                                            <span>
+                                                {item.name}
+                                            </span>
+                                        </Link>
+
+                                        <button
+                                            type="button"
+                                            className="gallery-toggle"
+                                            onClick={
+                                                toggleGallery
+                                            }
+                                            aria-label={
+                                                galleryOpen
+                                                    ? "Close Gallery menu"
+                                                    : "Open Gallery menu"
+                                            }
+                                            aria-expanded={
+                                                galleryOpen
+                                            }
+                                            aria-haspopup="menu"
+                                            aria-controls={
+                                                DESKTOP_GALLERY_ID
+                                            }
+                                        >
+                                            <ChevronDown
+                                                size={15}
+                                                aria-hidden="true"
+                                            />
+                                        </button>
+
+                                    </div>
+
+                                    {/* DROPDOWN */}
+
+                                    <div
+                                        id={
+                                            DESKTOP_GALLERY_ID
+                                        }
+                                        className="gallery-menu"
+                                        role="menu"
+                                    >
+                                        {item.dropdown.map(
+                                            (subItem) => {
+
+                                                const Icon =
+                                                    subItem.icon;
+
+                                                const active =
+                                                    isActive(
+                                                        subItem.href
+                                                    );
+
+                                                return (
+                                                    <Link
+                                                        key={
+                                                            subItem.name
+                                                        }
+                                                        href={
+                                                            subItem.href
+                                                        }
+                                                        className={
+                                                            active
+                                                                ? "gallery-menu-item active"
+                                                                : "gallery-menu-item"
+                                                        }
+                                                        role="menuitem"
+                                                        aria-current={
+                                                            active
+                                                                ? "page"
+                                                                : undefined
+                                                        }
+                                                    >
+                                                        <span className="gallery-menu-icon">
+                                                            <Icon
+                                                                size={18}
+                                                                aria-hidden="true"
+                                                            />
+                                                        </span>
+
+                                                        <span className="gallery-menu-content">
+                                                            <strong>
+                                                                {
+                                                                    subItem.name
+                                                                }
+                                                            </strong>
+
+                                                            <small>
+                                                                {
+                                                                    subItem.description
+                                                                }
+                                                            </small>
+                                                        </span>
+
+                                                        <ArrowRight
+                                                            size={15}
+                                                            className="gallery-menu-arrow"
+                                                            aria-hidden="true"
+                                                        />
+                                                    </Link>
+                                                );
+                                            }
+                                        )}
+                                    </div>
+                                </li>
+                            );
+                        })}
+                    </ul>
+
+                    {/* ACTIONS */}
+
+                    <div className="navbar-actions">
+
+                        <Link
+                            href="/join-us"
+                            className="join-button"
+                            onClick={closeMenu}
+                        >
+                            <Users
+                                size={18}
+                                aria-hidden="true"
+                            />
+
+                            <span>Join Us</span>
+                        </Link>
+
+                        <Link
+                            href="/donate-us"
+                            className="donate-button"
+                            onClick={closeMenu}
+                        >
+                            <Heart
+                                size={18}
+                                fill="currentColor"
+                                aria-hidden="true"
+                            />
+
+                            <span>Donate Now</span>
+                        </Link>
+
+                        <button
+                            type="button"
+                            className="mobile-menu-button"
+                            onClick={toggleMobileMenu}
+                            aria-label={
+                                mobileOpen
+                                    ? "Close navigation menu"
+                                    : "Open navigation menu"
+                            }
+                            aria-expanded={
+                                mobileOpen
+                            }
+                            aria-controls={
+                                MOBILE_DRAWER_ID
+                            }
+                        >
+                            {mobileOpen ? (
+                                <X
+                                    size={27}
+                                    aria-hidden="true"
+                                />
+                            ) : (
+                                <Menu
+                                    size={27}
+                                    aria-hidden="true"
+                                />
+                            )}
+                        </button>
+
+                    </div>
+
+                </div>
+            </nav>
+
+            {/* ==================================================
+                MOBILE OVERLAY
+            ================================================== */}
 
             <div
-              className="social-icons"
-              aria-label="Social media links"
-            >
-
-              <a
-                href={SOCIAL.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Official Facebook"
-              >
-                <FaFacebookF />
-              </a>
-
-
-              <a
-                href={SOCIAL.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Official Instagram"
-              >
-                <FaInstagram />
-              </a>
-
-
-              <a
-                href={SOCIAL.youtube}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Official YouTube"
-              >
-                <FaYoutube />
-              </a>
-
-
-              <a
-                href={SOCIAL.x}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Official X"
-              >
-                <FaXTwitter />
-              </a>
-
-
-              <a
-                href={SOCIAL.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Official WhatsApp"
-              >
-                <FaWhatsapp />
-              </a>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      {/* ======================================================
-          MAIN NAVBAR
-      ====================================================== */}
-
-      <nav
-        className="navbar"
-        role="navigation"
-        aria-label="Main Navigation"
-      >
-
-        <div className="container navbar-content">
-
-
-          {/* ==================================================
-              LOGO
-          ================================================== */}
-
-          <Link
-            href="/"
-            className="logo"
-            aria-label={`${NGO.name} Home`}
-          >
-
-            <Image
-              src={NGO.logo}
-              alt={`${NGO.name} Official Logo`}
-              priority
-              width={240}
-              height={80}
-              className={
-                isScrolled
-                  ? "logo-image shrink"
-                  : "logo-image"
-              }
+                className={`mobile-overlay ${
+                    mobileOpen ? "active" : ""
+                }`}
+                onClick={closeMenu}
+                aria-hidden="true"
             />
 
-          </Link>
+            {/* ==================================================
+                MOBILE DRAWER
+            ================================================== */}
 
+            <aside
+                id={MOBILE_DRAWER_ID}
+                className={`mobile-drawer ${
+                    mobileOpen ? "active" : ""
+                }`}
+                aria-hidden={!mobileOpen}
+                aria-label="Mobile navigation"
+            >
+                {/* HEADER */}
 
-          {/* ==================================================
-              DESKTOP NAVIGATION
-          ================================================== */}
+                <div className="mobile-drawer-header">
 
-          <ul className="nav-links">
+                    <Link
+                        href="/"
+                        onClick={closeMenu}
+                        aria-label={`${NGO.name} Home`}
+                    >
+                        <Image
+                            src={NGO.logo}
+                            alt={`${NGO.name} Logo`}
+                            width={180}
+                            height={70}
+                            priority
+                            className="mobile-logo"
+                        />
+                    </Link>
 
-            {NAV_ITEMS.map((item) => (
+                    <button
+                        type="button"
+                        className="mobile-close-button"
+                        onClick={closeMenu}
+                        aria-label="Close navigation menu"
+                    >
+                        <X
+                            size={24}
+                            aria-hidden="true"
+                        />
+                    </button>
 
-              <li key={item.name}>
+                </div>
 
-                <Link
-                  href={item.href}
-                  className={
-                    isActiveRoute(item.href)
-                      ? "active-link"
-                      : ""
-                  }
+                {/* REGISTRATION */}
+
+                <div className="mobile-registration">
+
+                    <ShieldCheck
+                        size={19}
+                        aria-hidden="true"
+                    />
+
+                    <div>
+                        <strong>
+                            {NGO.registrationStatus}
+                        </strong>
+
+                        <small>
+                            {NGO.registrationNumber}
+                        </small>
+                    </div>
+
+                </div>
+
+                {/* MOBILE NAV */}
+
+                <ul
+                    className="mobile-nav"
+                    aria-label="Mobile navigation links"
                 >
-
-                  {item.name}
-
-                </Link>
-
-              </li>
-
-            ))}
-
-          </ul>
-
-
-          {/* ==================================================
-              RIGHT ACTIONS
-          ================================================== */}
-
-          <div className="nav-actions">
-
-
-            {/* JOIN US */}
-
-            <Link
-              href="/join-us"
-              className="join-btn"
-              aria-label="Join Bheem Sevak Samiti"
-            >
-
-              <Users
-                size={18}
-                strokeWidth={2.2}
-              />
-
-              <span>
-                Join Us
-              </span>
-
-            </Link>
-
-
-            {/* DONATE */}
-
-            <Link
-              href="/donate-us"
-              className="donate-btn"
-              aria-label="Donate to Bheem Sevak Samiti"
-            >
-
-              <Heart
-                size={18}
-                fill="currentColor"
-                strokeWidth={2}
-              />
-
-              <span>
-                Donate Now
-              </span>
-
-            </Link>
-
-
-            {/* MOBILE MENU TOGGLE */}
-
-            <button
-              type="button"
-              className="menu-toggle"
-              aria-label={
-                menuOpen
-                  ? "Close navigation menu"
-                  : "Open navigation menu"
-              }
-              aria-expanded={menuOpen}
-              aria-controls="mobile-navigation"
-              onClick={() =>
-                setMenuOpen((prev) => !prev)
-              }
-            >
-
-              {menuOpen ? (
-
-                <X
-                  size={28}
-                  strokeWidth={2.2}
-                />
-
-              ) : (
-
-                <Menu
-                  size={28}
-                  strokeWidth={2.2}
-                />
-
-              )}
-
-            </button>
-
-          </div>
-
-        </div>
-
-      </nav>
-
-
-      {/* ======================================================
-          MOBILE DRAWER
-      ====================================================== */}
-
-      <aside
-        id="mobile-navigation"
-        className={
-          menuOpen
-            ? "mobile-menu active"
-            : "mobile-menu"
-        }
-        aria-hidden={!menuOpen}
-      >
-
-
-        {/* ==================================================
-            MOBILE HEADER
-        ================================================== */}
-
-        <div className="mobile-header">
-
-
-          <Link
-            href="/"
-            className="mobile-logo-link"
-            onClick={() =>
-              setMenuOpen(false)
-            }
-          >
-
-            <Image
-              src={NGO.logo}
-              alt={`${NGO.name} Official Logo`}
-              width={170}
-              height={70}
-              priority
-              className="mobile-logo"
-            />
-
-          </Link>
-
-
-          {/* CLOSE BUTTON */}
-
-          <button
-            type="button"
-            className="mobile-close"
-            aria-label="Close navigation menu"
-            onClick={() =>
-              setMenuOpen(false)
-            }
-          >
-
-            <X
-              size={25}
-              strokeWidth={2.2}
-            />
-
-          </button>
-
-        </div>
-
-
-        {/* ==================================================
-            MOBILE NGO BADGE
-        ================================================== */}
-
-        <div className="mobile-ngo-badge">
-
-          <ShieldCheck
-            size={18}
-            strokeWidth={2.2}
-          />
-
-          <div>
-
-            <strong>
-              {NGO.registrationStatus}
-            </strong>
-
-            <small>
-              {NGO.registrationNumber}
-            </small>
-
-          </div>
-
-        </div>
-
-
-        {/* ==================================================
-            MOBILE NAVIGATION
-        ================================================== */}
-
-        <ul className="mobile-nav-links">
-
-          {NAV_ITEMS.map((item) => (
-
-            <li key={item.name}>
-
-              <Link
-                href={item.href}
-                className={
-                  isActiveRoute(item.href)
-                    ? "active-link"
-                    : ""
-                }
-                onClick={() =>
-                  setMenuOpen(false)
-                }
-              >
-
-                <span>
-                  {item.name}
-                </span>
-
-                <ArrowRight
-                  size={18}
-                  strokeWidth={1.8}
-                />
-
-              </Link>
-
-            </li>
-
-          ))}
-
-        </ul>
-
-
-        {/* ==================================================
-            MOBILE ACTION BUTTONS
-        ================================================== */}
-
-        <div className="mobile-buttons">
-
-          <Link
-            href="/join-us"
-            className="join-btn"
-            onClick={() =>
-              setMenuOpen(false)
-            }
-          >
-
-            <Users
-              size={18}
-              strokeWidth={2.2}
-            />
-
-            <span>
-              Join Us
-            </span>
-
-          </Link>
-
-
-          <Link
-            href="/donate-us"
-            className="donate-btn"
-            onClick={() =>
-              setMenuOpen(false)
-            }
-          >
-
-            <Heart
-              size={18}
-              fill="currentColor"
-            />
-
-            <span>
-              Donate Now
-            </span>
-
-          </Link>
-
-        </div>
-
-
-        {/* ==================================================
-            CONTACT INFORMATION
-        ================================================== */}
-
-        <div className="mobile-contact">
-
-          <h4>
-            Contact Information
-          </h4>
-
-
-          <a href={phoneHref}>
-
-            <Phone size={16} />
-
-            <span>
-              {NGO.phone}
-            </span>
-
-          </a>
-
-
-          <a
-            href={`mailto:${NGO.email}`}
-          >
-
-            <Mail size={16} />
-
-            <span>
-              {NGO.email}
-            </span>
-
-          </a>
-
-
-          <div>
-
-            <MapPin size={16} />
-
-            <span>
-              {NGO.fullAddress}
-            </span>
-
-          </div>
-
-        </div>
-
-
-        {/* ==================================================
-            MOBILE SOCIAL
-        ================================================== */}
-
-        <div
-          className="mobile-social"
-          aria-label="Social media links"
-        >
-
-          <a
-            href={SOCIAL.facebook}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-          >
-            <FaFacebookF />
-          </a>
-
-
-          <a
-            href={SOCIAL.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-          >
-            <FaInstagram />
-          </a>
-
-
-          <a
-            href={SOCIAL.youtube}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="YouTube"
-          >
-            <FaYoutube />
-          </a>
-
-
-          <a
-            href={SOCIAL.x}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="X"
-          >
-            <FaXTwitter />
-          </a>
-
-
-          <a
-            href={SOCIAL.whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="WhatsApp"
-          >
-            <FaWhatsapp />
-          </a>
-
-        </div>
-
-      </aside>
-
-
-      {/* ======================================================
-          MOBILE OVERLAY
-      ====================================================== */}
-
-      <div
-        className={
-          menuOpen
-            ? "mobile-overlay active"
-            : "mobile-overlay"
-        }
-        aria-hidden="true"
-        onClick={() =>
-          setMenuOpen(false)
-        }
-      />
-
-    </header>
-  );
+                    {NAV_ITEMS.map((item) => {
+
+                        if (!item.dropdown) {
+                            const active = isActive(
+                                item.href
+                            );
+
+                            const Icon = item.icon;
+
+                            return (
+                                <li key={item.name}>
+                                    <Link
+                                        href={item.href}
+                                        onClick={closeMenu}
+                                        className={
+                                            active
+                                                ? "active"
+                                                : ""
+                                        }
+                                        aria-current={
+                                            active
+                                                ? "page"
+                                                : undefined
+                                        }
+                                    >
+                                        <span className="mobile-nav-left">
+
+                                            <Icon
+                                                size={19}
+                                                aria-hidden="true"
+                                            />
+
+                                            <span>
+                                                {item.name}
+                                            </span>
+
+                                        </span>
+
+                                        <ArrowRight
+                                            size={17}
+                                            aria-hidden="true"
+                                        />
+                                    </Link>
+                                </li>
+                            );
+                        }
+
+                        return (
+                            <li
+                                key={item.name}
+                                className={`mobile-gallery ${
+                                    galleryOpen
+                                        ? "open"
+                                        : ""
+                                }`}
+                            >
+                                <div className="mobile-gallery-row">
+
+                                    <Link
+                                        href="/gallery"
+                                        onClick={closeMenu}
+                                        className={
+                                            galleryIsActive
+                                                ? "active"
+                                                : ""
+                                        }
+                                    >
+                                        <span className="mobile-nav-left">
+
+                                            <Images
+                                                size={19}
+                                                aria-hidden="true"
+                                            />
+
+                                            <span>
+                                                Gallery
+                                            </span>
+
+                                        </span>
+                                    </Link>
+
+                                    <button
+                                        type="button"
+                                        onClick={
+                                            toggleGallery
+                                        }
+                                        aria-label={
+                                            galleryOpen
+                                                ? "Collapse Gallery submenu"
+                                                : "Expand Gallery submenu"
+                                        }
+                                        aria-expanded={
+                                            galleryOpen
+                                        }
+                                    >
+                                        <ChevronDown
+                                            size={20}
+                                            aria-hidden="true"
+                                        />
+                                    </button>
+
+                                </div>
+
+                                {/* SUBMENU */}
+
+                                <div
+                                    id={
+                                        MOBILE_GALLERY_ID
+                                    }
+                                    className="mobile-gallery-submenu"
+                                >
+                                    <div className="mobile-gallery-submenu-inner">
+
+                                        {item.dropdown.map(
+                                            (subItem) => {
+
+                                                const Icon =
+                                                    subItem.icon;
+
+                                                const active =
+                                                    isActive(
+                                                        subItem.href
+                                                    );
+
+                                                return (
+                                                    <Link
+                                                        key={
+                                                            subItem.name
+                                                        }
+                                                        href={
+                                                            subItem.href
+                                                        }
+                                                        onClick={
+                                                            closeMenu
+                                                        }
+                                                        className={
+                                                            active
+                                                                ? "active"
+                                                                : ""
+                                                        }
+                                                    >
+                                                        <Icon
+                                                            size={18}
+                                                            aria-hidden="true"
+                                                        />
+
+                                                        <span>
+                                                            {
+                                                                subItem.name
+                                                            }
+                                                        </span>
+
+                                                        <ArrowRight
+                                                            size={15}
+                                                            aria-hidden="true"
+                                                        />
+                                                    </Link>
+                                                );
+                                            }
+                                        )}
+
+                                    </div>
+                                </div>
+                            </li>
+                        );
+                    })}
+                </ul>
+
+                {/* MOBILE ACTIONS */}
+
+                <div className="mobile-actions">
+
+                    <Link
+                        href="/join-us"
+                        className="join-button"
+                        onClick={closeMenu}
+                    >
+                        <Users
+                            size={18}
+                            aria-hidden="true"
+                        />
+
+                        <span>Join Us</span>
+                    </Link>
+
+                    <Link
+                        href="/donate-us"
+                        className="donate-button"
+                        onClick={closeMenu}
+                    >
+                        <Heart
+                            size={18}
+                            fill="currentColor"
+                            aria-hidden="true"
+                        />
+
+                        <span>Donate Now</span>
+                    </Link>
+
+                </div>
+
+                {/* CONTACT */}
+
+                <div className="mobile-contact-box">
+
+                    <h4>Contact Information</h4>
+
+                    <a
+                        href={phoneHref}
+                        aria-label={`Call ${NGO.name}`}
+                    >
+                        <Phone
+                            size={16}
+                            aria-hidden="true"
+                        />
+
+                        <span>{NGO.phone}</span>
+                    </a>
+
+                    <a
+                        href={`mailto:${NGO.email}`}
+                        aria-label={`Email ${NGO.name}`}
+                    >
+                        <Mail
+                            size={16}
+                            aria-hidden="true"
+                        />
+
+                        <span>{NGO.email}</span>
+                    </a>
+
+                    <div>
+                        <MapPin
+                            size={16}
+                            aria-hidden="true"
+                        />
+
+                        <span>{NGO.address}</span>
+                    </div>
+
+                </div>
+
+                {/* SOCIAL */}
+
+                <div
+                    className="mobile-social"
+                    aria-label="Social media links"
+                >
+                    {SOCIAL_LINKS.map(
+                        ({
+                            name,
+                            href,
+                            icon: Icon,
+                        }) => (
+                            <a
+                                key={name}
+                                href={href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={name}
+                            >
+                                <Icon
+                                    aria-hidden="true"
+                                />
+                            </a>
+                        )
+                    )}
+                </div>
+
+            </aside>
+        </header>
+    );
 }
+

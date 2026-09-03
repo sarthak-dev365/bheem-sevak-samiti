@@ -56,8 +56,8 @@ const exploreLinks = [
         href: "/gallery",
     },
     {
-        label: "Events",
-        href: "/events",
+        label: "Our Journey",
+        href: "/our-journey",
     },
     {
         label: "Contact Us",

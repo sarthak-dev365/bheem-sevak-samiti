@@ -9,12 +9,11 @@ import {
     FiBookOpen,
     FiFileText,
     FiImage,
-    FiCalendar,
+    FiMap,
     FiMail,
     FiUsers,
     FiHeart,
     FiShield,
-    FiMap,
 } from "react-icons/fi";
 
 import Footer from "../../components/layout/Footer";
@@ -23,31 +22,31 @@ import Footer from "../../components/layout/Footer";
 const mainPages = [
     {
         title: "Home",
-        description: "हमारी website का मुख्य पेज",
+        description: "Explore the main page of our website",
         href: "/",
         icon: FiHome,
     },
     {
         title: "About Us",
-        description: "संस्था और हमारे उद्देश्य के बारे में",
+        description: "Learn more about our organization, vision, and mission",
         href: "/about",
         icon: FiInfo,
     },
     {
         title: "Services",
-        description: "हमारी प्रमुख सेवाएं और गतिविधियां",
+        description: "Discover our services, initiatives, and community activities",
         href: "/services",
         icon: FiBriefcase,
     },
     {
         title: "Pathshala",
-        description: "शैक्षिक गतिविधियों और कार्यक्रमों की जानकारी",
+        description: "Explore our educational programs, activities, and initiatives",
         href: "/pathshala",
         icon: FiBookOpen,
     },
     {
         title: "Examination",
-        description: "परीक्षा से संबंधित जानकारी",
+        description: "Find examination-related information, updates, and resources",
         href: "/examination",
         icon: FiFileText,
     },
@@ -57,25 +56,25 @@ const mainPages = [
 const discoverPages = [
     {
         title: "Gallery",
-        description: "हमारी गतिविधियों की तस्वीरें",
+        description: "View photos and memories from our activities and events",
         href: "/gallery",
         icon: FiImage,
     },
     {
-        title: "Events",
-        description: "संस्था के कार्यक्रम और events",
-        href: "/events",
-        icon: FiCalendar,
+        title: "Our Journey",
+        description: "Explore our journey, milestones, programs, and achievements",
+        href: "/our-journey",
+        icon: FiMap,
     },
     {
         title: "Join Us",
-        description: "संस्था से जुड़ने के लिए",
+        description: "Become a part of our mission and make a meaningful difference",
         href: "/join-us",
         icon: FiUsers,
     },
     {
         title: "Contact Us",
-        description: "हमसे संपर्क करने के लिए",
+        description: "Get in touch with us for questions, support, or inquiries",
         href: "/contact",
         icon: FiMail,
     },
@@ -85,7 +84,7 @@ const discoverPages = [
 const supportPages = [
     {
         title: "Donate Us",
-        description: "संस्था के कार्यों में सहयोग करें",
+        description: "Support our mission and help us create a positive impact in society",
         href: "/donate-us",
         icon: FiHeart,
     },
@@ -95,13 +94,13 @@ const supportPages = [
 const legalPages = [
     {
         title: "Privacy Policy",
-        description: "हमारी privacy और information policy",
+        description: "Learn how we collect, use, and protect your information",
         href: "/privacy-policy",
         icon: FiShield,
     },
     {
         title: "Terms & Conditions",
-        description: "Website के उपयोग की terms",
+        description: "Read the terms and conditions governing the use of our website",
         href: "/terms",
         icon: FiFileText,
     },
@@ -109,7 +108,6 @@ const legalPages = [
 
 
 function SitemapCard({ page }) {
-
     const Icon = page.icon;
 
     return (
@@ -117,13 +115,11 @@ function SitemapCard({ page }) {
             href={page.href}
             className="sitemap-card"
         >
-
             <div className="sitemap-card__icon">
                 <Icon />
             </div>
 
             <div className="sitemap-card__content">
-
                 <h3>
                     {page.title}
                 </h3>
@@ -131,30 +127,25 @@ function SitemapCard({ page }) {
                 <p>
                     {page.description}
                 </p>
-
             </div>
 
             <span className="sitemap-card__arrow">
                 <FiArrowRight />
             </span>
-
         </Link>
     );
 }
 
 
 export default function SitemapPage() {
-
     return (
         <main className="sitemap-page">
-
 
             {/* ==================================================
                 HERO
             ================================================== */}
 
             <section className="sitemap-hero">
-
                 <div className="sitemap-container">
 
                     <Link
@@ -188,9 +179,7 @@ export default function SitemapPage() {
                     </div>
 
                 </div>
-
             </section>
-
 
 
             {/* ==================================================
@@ -198,7 +187,6 @@ export default function SitemapPage() {
             ================================================== */}
 
             <section className="sitemap-content-section">
-
                 <div className="sitemap-container">
 
 
@@ -215,7 +203,6 @@ export default function SitemapPage() {
                             </span>
 
                             <div>
-
                                 <small>
                                     MAIN NAVIGATION
                                 </small>
@@ -223,7 +210,6 @@ export default function SitemapPage() {
                                 <h2>
                                     Main Pages
                                 </h2>
-
                             </div>
 
                         </div>
@@ -243,7 +229,6 @@ export default function SitemapPage() {
                     </div>
 
 
-
                     {/* ==================================================
                         DISCOVER
                     ================================================== */}
@@ -257,7 +242,6 @@ export default function SitemapPage() {
                             </span>
 
                             <div>
-
                                 <small>
                                     DISCOVER
                                 </small>
@@ -265,7 +249,6 @@ export default function SitemapPage() {
                                 <h2>
                                     Explore More
                                 </h2>
-
                             </div>
 
                         </div>
@@ -285,7 +268,6 @@ export default function SitemapPage() {
                     </div>
 
 
-
                     {/* ==================================================
                         SUPPORT
                     ================================================== */}
@@ -299,7 +281,6 @@ export default function SitemapPage() {
                             </span>
 
                             <div>
-
                                 <small>
                                     SUPPORT OUR MISSION
                                 </small>
@@ -307,7 +288,6 @@ export default function SitemapPage() {
                                 <h2>
                                     Support
                                 </h2>
-
                             </div>
 
                         </div>
@@ -327,7 +307,6 @@ export default function SitemapPage() {
                     </div>
 
 
-
                     {/* ==================================================
                         LEGAL
                     ================================================== */}
@@ -341,7 +320,6 @@ export default function SitemapPage() {
                             </span>
 
                             <div>
-
                                 <small>
                                     INFORMATION
                                 </small>
@@ -349,7 +327,6 @@ export default function SitemapPage() {
                                 <h2>
                                     Legal & Policies
                                 </h2>
-
                             </div>
 
                         </div>
@@ -367,7 +344,6 @@ export default function SitemapPage() {
                         </div>
 
                     </div>
-
 
 
                     {/* ==================================================
@@ -413,9 +389,7 @@ export default function SitemapPage() {
                     </div>
 
                 </div>
-
             </section>
-
 
 
             {/* ==================================================
@@ -427,3 +401,4 @@ export default function SitemapPage() {
         </main>
     );
 }
+

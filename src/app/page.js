@@ -10,7 +10,7 @@ export const metadata = {
 import HeroSection from "@/components/home/HeroSection";
 import Navbar from "@/components/layout/Navbar";
 import HomeAbout from "@/components/sections/about/HomeAbout";
-import HomeEvents from "@/components/sections/events/HomeEvents";
+
 import HomeExamination from "@/components/sections/examination/HomeExamination";
 import HomeGallery from "@/components/sections/gallery/HomeGallery";
 import ImpactSection from "@/components/sections/impact/ImpactSection";
@@ -18,6 +18,7 @@ import HomePathshala from "@/components/sections/pathshala/HomePathshala";
 import HomeServices from "@/components/sections/services/HomeServices";
 import HomeActionCTA from "@/components/sections/cta/HomeActionCTA";
 import Footer from "@/components/layout/Footer";
+import HomeOurJourney from "@/components/sections/our journey/HomeOurJourney";
 
 
 export default function Home() {
@@ -42,7 +43,7 @@ export default function Home() {
 
       <HomeGallery />
 
-      <HomeEvents />
+      <HomeOurJourney />
 
       <HomeActionCTA />
 

@@ -5,7 +5,7 @@ const routes = [
     "/pathshala",
     "/examination",
     "/gallery",
-    "/events",
+    "/our-journey",
     "/contact",
     "/join-us",
     "/donate-us",

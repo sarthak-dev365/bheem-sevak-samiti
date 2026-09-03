@@ -1,0 +1,1061 @@
+/* =========================================================
+   BHEEM SEVAK SAMITI
+   EXAMINATION PORTAL
+   PROFESSIONAL WHITE HEADER
+========================================================= */
+
+:root {
+  --exam-primary: #174a86;
+  --exam-primary-dark: #123b6d;
+
+  --header-text: #26364a;
+  --header-muted: #718096;
+
+  --header-border: #e9eef4;
+
+  --header-white: #ffffff;
+  --header-soft: #f8fafc;
+
+  --header-height: 86px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.exam-header {
+  position: relative;
+  z-index: 1000;
+
+  width: 100%;
+  height: var(--header-height);
+
+  background: var(--header-white);
+
+  border-bottom: 1px solid var(--header-border);
+
+  box-shadow:
+    0 1px 8px rgba(15, 23, 42, 0.025);
+}
+
+
+/* =========================================================
+   HEADER INNER
+========================================================= */
+
+.exam-header__inner {
+  width: min(
+    calc(100% - 56px),
+    1360px
+  );
+
+  height: 100%;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(270px, 1fr)
+    auto
+    minmax(270px, 1fr);
+
+  align-items: center;
+
+  column-gap: 34px;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.exam-header__brand {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+
+  color: inherit;
+  text-decoration: none;
+
+  outline: none;
+}
+
+.exam-header__brand:focus-visible {
+  outline: 2px solid var(--exam-primary);
+
+  outline-offset: 5px;
+
+  border-radius: 6px;
+}
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
+
+.exam-header__navigation {
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   NAVIGATION LINK
+========================================================= */
+
+.exam-header__nav-link {
+  position: relative;
+
+  height: 100%;
+
+  min-width: 92px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 0 10px;
+
+  color: var(--header-text);
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  line-height: 1;
+
+  text-decoration: none;
+
+  transition:
+    color 180ms ease;
+}
+
+
+/* =========================================================
+   NAV ICON
+========================================================= */
+
+.exam-header__nav-icon {
+  width: 17px;
+  height: 17px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #8b98a8;
+
+  transition:
+    color 180ms ease;
+}
+
+.exam-header__nav-icon svg {
+  width: 15px;
+  height: 15px;
+
+  display: block;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.7;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   NAV HOVER
+========================================================= */
+
+.exam-header__nav-link:hover {
+  color: var(--exam-primary);
+}
+
+.exam-header__nav-link:hover .exam-header__nav-icon {
+  color: var(--exam-primary);
+}
+
+
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
+
+.exam-header__nav-link--active {
+  color: var(--exam-primary);
+}
+
+.exam-header__nav-link--active .exam-header__nav-icon {
+  color: var(--exam-primary);
+}
+
+
+/* =========================================================
+   NAV UNDERLINE
+========================================================= */
+
+.exam-header__nav-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 10px;
+
+  width: 0;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: var(--exam-primary);
+
+  transform: translateX(-50%);
+
+  transition:
+    width 180ms ease;
+}
+
+
+/* ACTIVE */
+
+.exam-header__nav-link--active::after {
+  width: 24px;
+}
+
+
+/* HOVER */
+
+.exam-header__nav-link:hover::after {
+  width: 18px;
+}
+
+
+/* ACTIVE + HOVER */
+
+.exam-header__nav-link--active:hover::after {
+  width: 24px;
+}
+
+
+/* =========================================================
+   KEYBOARD FOCUS
+========================================================= */
+
+.exam-header__nav-link:focus-visible {
+  outline: 2px solid var(--exam-primary);
+
+  outline-offset: -4px;
+
+  border-radius: 5px;
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.exam-header__actions {
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 10px;
+}
+
+
+/* =========================================================
+   MAIN WEBSITE BUTTON
+========================================================= */
+
+.exam-header__main-website {
+  height: 42px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 0 16px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce3eb;
+
+  border-radius: 8px;
+
+  color: #334155;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  text-decoration: none;
+
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+
+/* HOVER */
+
+.exam-header__main-website:hover {
+  color: var(--exam-primary);
+
+  border-color: #c6d3e1;
+
+  background: #fafbfd;
+
+  transform: translateY(-1px);
+}
+
+
+/* ACTIVE */
+
+.exam-header__main-website:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   WEBSITE ICON
+========================================================= */
+
+.exam-header__button-icon {
+  width: 16px;
+  height: 16px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #718096;
+}
+
+.exam-header__button-icon svg {
+  width: 15px;
+  height: 15px;
+
+  display: block;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.7;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.exam-header__main-website:hover
+.exam-header__button-icon {
+  color: var(--exam-primary);
+}
+
+
+/* =========================================================
+   STUDENT LOGIN
+========================================================= */
+
+.exam-header__login {
+  height: 42px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 0 17px;
+
+  background: var(--exam-primary);
+
+  border: 1px solid var(--exam-primary);
+
+  border-radius: 8px;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 4px 12px rgba(23, 74, 134, 0.12);
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+
+/* LOGIN HOVER */
+
+.exam-header__login:hover {
+  background: var(--exam-primary-dark);
+
+  border-color: var(--exam-primary-dark);
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 7px 18px rgba(23, 74, 134, 0.17);
+}
+
+
+/* LOGIN ACTIVE */
+
+.exam-header__login:active {
+  transform: translateY(0);
+
+  box-shadow:
+    0 3px 8px rgba(23, 74, 134, 0.12);
+}
+
+
+/* =========================================================
+   LOGIN ICON
+========================================================= */
+
+.exam-header__login-icon {
+  width: 16px;
+  height: 16px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+}
+
+.exam-header__login-icon svg {
+  width: 15px;
+  height: 15px;
+
+  display: block;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.7;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   LOGIN ARROW
+========================================================= */
+
+.exam-header__login-arrow {
+  font-size: 15px;
+
+  line-height: 1;
+
+  transition:
+    transform 180ms ease;
+}
+
+.exam-header__login:hover
+.exam-header__login-arrow {
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   BUTTON FOCUS
+========================================================= */
+
+.exam-header__main-website:focus-visible,
+.exam-header__login:focus-visible {
+  outline: 2px solid var(--exam-primary);
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.exam-header__menu-button {
+  width: 42px;
+  height: 42px;
+
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  padding: 0;
+
+  background: #ffffff;
+
+  border: 1px solid #dbe3eb;
+
+  border-radius: 8px;
+
+  color: var(--exam-primary);
+
+  cursor: pointer;
+
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+
+/* HOVER */
+
+.exam-header__menu-button:hover {
+  border-color: #c4d2e0;
+
+  background: #fafbfd;
+}
+
+
+/* HAMBURGER */
+
+.exam-header__menu-button span {
+  width: 18px;
+  height: 2px;
+
+  display: block;
+
+  border-radius: 999px;
+
+  background: currentColor;
+
+  transition:
+    transform 180ms ease,
+    opacity 180ms ease;
+}
+
+
+/* =========================================================
+   MOBILE MENU OPEN
+========================================================= */
+
+.exam-header__menu-button--open
+span:nth-child(1) {
+  transform:
+    translateY(7px)
+    rotate(45deg);
+}
+
+.exam-header__menu-button--open
+span:nth-child(2) {
+  opacity: 0;
+}
+
+.exam-header__menu-button--open
+span:nth-child(3) {
+  transform:
+    translateY(-7px)
+    rotate(-45deg);
+}
+
+
+/* =========================================================
+   MOBILE MENU FOCUS
+========================================================= */
+
+.exam-header__menu-button:focus-visible {
+  outline: 2px solid var(--exam-primary);
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   MOBILE PANEL
+========================================================= */
+
+.exam-header__mobile {
+  display: none;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  max-height: 0;
+
+  opacity: 0;
+
+  background: #ffffff;
+
+  border-top: 1px solid var(--header-border);
+
+  box-shadow:
+    0 10px 24px rgba(15, 23, 42, 0.055);
+
+  transition:
+    max-height 240ms ease,
+    opacity 180ms ease;
+}
+
+
+.exam-header__mobile--open {
+  max-height: 620px;
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+.exam-header__mobile-navigation {
+  width: min(
+    calc(100% - 32px),
+    620px
+  );
+
+  margin: 0 auto;
+
+  padding: 8px 0 20px;
+}
+
+
+/* =========================================================
+   MOBILE LINKS
+========================================================= */
+
+.exam-header__mobile-link {
+  min-height: 52px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 4px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #edf1f5;
+
+  color: var(--header-text);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    color 180ms ease,
+    padding-left 180ms ease;
+}
+
+
+.exam-header__mobile-link:hover {
+  padding-left: 9px;
+
+  color: var(--exam-primary);
+}
+
+
+/* =========================================================
+   MOBILE LEFT CONTENT
+========================================================= */
+
+.exam-header__mobile-link-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+}
+
+
+/* =========================================================
+   MOBILE ICON
+========================================================= */
+
+.exam-header__mobile-icon {
+  width: 32px;
+  height: 32px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #fafbfd;
+
+  border: 1px solid #e3eaf2;
+
+  border-radius: 7px;
+
+  color: #64748b;
+}
+
+.exam-header__mobile-icon svg {
+  width: 15px;
+  height: 15px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.7;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   MOBILE ACTIVE
+========================================================= */
+
+.exam-header__mobile-link--active {
+  color: var(--exam-primary);
+}
+
+.exam-header__mobile-link--active
+.exam-header__mobile-icon {
+  color: var(--exam-primary);
+
+  border-color: #d6e3f0;
+
+  background: #f7fafd;
+}
+
+
+/* =========================================================
+   MOBILE ARROW
+========================================================= */
+
+.exam-header__mobile-arrow {
+  color: #94a3b8;
+
+  font-size: 16px;
+
+  transition:
+    transform 180ms ease,
+    color 180ms ease;
+}
+
+
+.exam-header__mobile-link:hover
+.exam-header__mobile-arrow {
+  color: var(--exam-primary);
+
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   MOBILE ACTIONS
+========================================================= */
+
+.exam-header__mobile-actions {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9px;
+
+  padding-top: 14px;
+}
+
+
+/* =========================================================
+   MOBILE ACTION BUTTONS
+========================================================= */
+
+.exam-header__mobile-main,
+.exam-header__mobile-login {
+  width: 100%;
+  min-height: 45px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   MOBILE MAIN WEBSITE
+========================================================= */
+
+.exam-header__mobile-main {
+  background: #ffffff;
+
+  border: 1px solid #d8e0e9;
+
+  color: #334155;
+}
+
+
+.exam-header__mobile-main:hover {
+  background: #fafbfd;
+
+  border-color: #c2cfdd;
+
+  color: var(--exam-primary);
+}
+
+
+/* =========================================================
+   MOBILE LOGIN
+========================================================= */
+
+.exam-header__mobile-login {
+  background: var(--exam-primary);
+
+  border: 1px solid var(--exam-primary);
+
+  color: #ffffff;
+}
+
+
+.exam-header__mobile-login:hover {
+  background: var(--exam-primary-dark);
+
+  border-color: var(--exam-primary-dark);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .exam-header__inner {
+    width: min(
+      calc(100% - 40px),
+      1200px
+    );
+
+    grid-template-columns:
+      minmax(230px, 1fr)
+      auto
+      minmax(230px, 1fr);
+
+    column-gap: 20px;
+  }
+
+
+  .exam-header__navigation {
+    gap: 2px;
+  }
+
+
+  .exam-header__nav-link {
+    min-width: auto;
+
+    padding-inline: 8px;
+
+    font-size: 12px;
+  }
+
+
+  .exam-header__main-website {
+    padding-inline: 13px;
+  }
+
+
+  .exam-header__login {
+    padding-inline: 14px;
+  }
+}
+
+
+/* =========================================================
+   SMALL TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .exam-header {
+    height: 76px;
+  }
+
+
+  .exam-header__inner {
+    width: calc(100% - 32px);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+  }
+
+
+  .exam-header__brand {
+    flex: 1 1 auto;
+
+    min-width: 0;
+  }
+
+
+  .exam-header__navigation,
+  .exam-header__actions {
+    display: none;
+  }
+
+
+  .exam-header__menu-button {
+    display: flex;
+
+    flex: 0 0 42px;
+  }
+
+
+  .exam-header__mobile {
+    display: block;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .exam-header {
+    height: 70px;
+  }
+
+
+  .exam-header__inner {
+    width: calc(100% - 28px);
+
+    gap: 12px;
+  }
+
+
+  .exam-header__menu-button {
+    width: 40px;
+    height: 40px;
+
+    flex-basis: 40px;
+  }
+
+
+  .exam-header__mobile-navigation {
+    width: calc(100% - 28px);
+
+    padding-top: 6px;
+    padding-bottom: 16px;
+  }
+
+
+  .exam-header__mobile-link {
+    min-height: 50px;
+
+    font-size: 12.5px;
+  }
+
+
+  .exam-header__mobile-main,
+  .exam-header__mobile-login {
+    min-height: 44px;
+
+    font-size: 12.5px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .exam-header {
+    height: 66px;
+  }
+
+
+  .exam-header__inner {
+    width: calc(100% - 20px);
+  }
+
+
+  .exam-header__menu-button {
+    width: 38px;
+    height: 38px;
+
+    flex-basis: 38px;
+  }
+
+
+  .exam-header__mobile-navigation {
+    width: calc(100% - 20px);
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .exam-header *,
+  .exam-header *::before,
+  .exam-header *::after {
+    transition: none !important;
+  }
+}

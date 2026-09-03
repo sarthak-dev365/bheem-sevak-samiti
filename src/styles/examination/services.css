@@ -1,0 +1,464 @@
+/* =========================================================
+   BHEEM SEVAK SAMITI
+   EXAMINATION PORTAL
+   SERVICES SECTION
+========================================================= */
+
+
+/* =========================================================
+   SERVICES SECTION
+========================================================= */
+
+.exam-services {
+  width: 100%;
+
+  padding: 96px 24px 104px;
+  
+background:
+  linear-gradient(
+    135deg,
+    #FFF8F3 0%,
+    #FBEDE2 100%
+  );
+
+  border-top:
+    1px solid #edf1f5;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.exam-services__container {
+  width: 100%;
+
+  max-width: 1180px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.exam-services__heading {
+  margin-bottom: 52px;
+
+  text-align: center;
+}
+
+
+.exam-services__heading h2 {
+  margin: 0;
+
+  color: #14213d;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      38px,
+      4vw,
+      56px
+    );
+
+  font-weight: 700;
+
+  line-height: 1.12;
+
+  letter-spacing: -1.4px;
+}
+
+
+/* =========================================================
+   SERVICES GRID
+========================================================= */
+
+.exam-services__grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+
+/* =========================================================
+   SERVICE CARD
+========================================================= */
+
+.exam-service-card {
+  position: relative;
+
+  min-height: 250px;
+
+  padding: 30px 34px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border:
+    1px solid #e1e7ee;
+
+  border-radius: 14px;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 2px 8px
+    rgba(20, 33, 61, 0.025);
+
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+
+/* =========================================================
+   CARD TOP ACCENT
+========================================================= */
+
+.exam-service-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background: #234a7d;
+
+  transform: scaleX(0);
+
+  transform-origin: left;
+
+  transition:
+    transform 220ms ease;
+}
+
+
+.exam-service-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #c4d1df;
+
+  box-shadow:
+    0 18px 45px
+    rgba(20, 33, 61, 0.09);
+}
+
+
+.exam-service-card:hover::before {
+  transform: scaleX(1);
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.exam-service-card__header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 34px;
+}
+
+
+/* =========================================================
+   SERVICE NUMBER
+========================================================= */
+
+.exam-service-card__number {
+  color: #8a98a8;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.exam-service-card__arrow {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border:
+    1px solid #e0e7ef;
+
+  border-radius: 50%;
+
+  background: #f8fafc;
+
+  color: #234a7d;
+
+  font-size: 19px;
+
+  line-height: 1;
+
+  transition:
+    transform 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease;
+}
+
+
+.exam-service-card:hover
+.exam-service-card__arrow {
+  background: #f0f5fa;
+
+  border-color: #c8d6e4;
+
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.exam-service-card__content {
+  max-width: 480px;
+
+  margin-top: auto;
+}
+
+
+.exam-service-card__content h3 {
+  margin: 0 0 13px;
+
+  color: #14213d;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      22px,
+      2vw,
+      26px
+    );
+
+  font-weight: 700;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.35px;
+
+  transition:
+    color 220ms ease;
+}
+
+
+.exam-service-card__content p {
+  margin: 0;
+
+  color: #68788b;
+
+  font-size: 15px;
+
+  font-weight: 400;
+
+  line-height: 1.7;
+}
+
+
+.exam-service-card:hover
+.exam-service-card__content h3 {
+  color: #234a7d;
+}
+
+
+/* =========================================================
+   FOCUS STATE
+========================================================= */
+
+.exam-service-card:focus-visible {
+  outline:
+    2px solid #234a7d;
+
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .exam-services {
+    padding:
+      82px
+      20px
+      88px;
+  }
+
+
+  .exam-services__heading {
+    margin-bottom: 42px;
+  }
+
+
+  .exam-service-card {
+    min-height: 230px;
+
+    padding: 28px;
+  }
+
+
+  .exam-service-card__header {
+    margin-bottom: 28px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .exam-services {
+    padding:
+      70px
+      16px
+      76px;
+  }
+
+
+  .exam-services__heading {
+    margin-bottom: 34px;
+  }
+
+
+  .exam-services__heading h2 {
+    font-size:
+      clamp(
+        34px,
+        10vw,
+        42px
+      );
+  }
+
+
+  .exam-services__grid {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+
+  .exam-service-card {
+    min-height: 205px;
+
+    padding: 24px;
+
+    border-radius: 12px;
+  }
+
+
+  .exam-service-card__header {
+    margin-bottom: 26px;
+  }
+
+
+  .exam-service-card__content h3 {
+    margin-bottom: 10px;
+
+    font-size: 22px;
+  }
+
+
+  .exam-service-card__content p {
+    font-size: 14px;
+
+    line-height: 1.65;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .exam-services {
+    padding-left: 12px;
+
+    padding-right: 12px;
+  }
+
+
+  .exam-service-card {
+    padding: 21px;
+  }
+
+
+  .exam-service-card__content h3 {
+    font-size: 20px;
+  }
+
+
+  .exam-service-card__arrow {
+    width: 35px;
+    height: 35px;
+
+    font-size: 17px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .exam-service-card,
+  .exam-service-card::before,
+  .exam-service-card__arrow,
+  .exam-service-card__content h3 {
+    transition: none !important;
+  }
+
+}

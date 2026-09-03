@@ -1,33 +1,43 @@
 import Link from "next/link";
+import {
+    ArrowUpRight,
+    HandHeart,
+    Mail,
+    UsersRound,
+} from "lucide-react";
+
 import "../../../styles/contact-cta.css";
 
 const actionItems = [
     {
         number: "01",
         label: "CONTACT US",
-        title: "हमसे संपर्क करें",
+        title: "Let's Connect",
         description:
-            "संस्था के कार्यों, कार्यक्रमों और अन्य जानकारी के लिए हमसे संपर्क करें।",
+            "Have a question or want to know more about our work? We would be happy to hear from you.",
         href: "/contact",
         action: "Contact Us",
+        icon: Mail,
     },
     {
         number: "02",
         label: "JOIN OUR MISSION",
-        title: "हमसे जुड़ें",
+        title: "Join Our Mission",
         description:
-            "स्वयंसेवक के रूप में जुड़कर शिक्षा और सामाजिक कार्यों में अपना योगदान दें।",
+            "Become a part of our journey and contribute your time, skills and ideas towards meaningful change.",
         href: "/join-us",
         action: "Join Us",
+        icon: UsersRound,
     },
     {
         number: "03",
         label: "SUPPORT OUR WORK",
-        title: "हमारा सहयोग करें",
+        title: "Support Our Work",
         description:
-            "आपका सहयोग जरूरतमंद बच्चों और समुदाय तक शिक्षा एवं सामाजिक सहायता पहुँचाने में मदद कर सकता है।",
+            "Your support helps us create better opportunities through education, social service and community initiatives.",
         href: "/donate-us",
-        action: "Donate Us",
+        action: "Support Us",
+        icon: HandHeart,
     },
 ];
 
@@ -37,103 +47,120 @@ export default function HomeActionCTA() {
             className="home-action-cta"
             aria-labelledby="home-action-cta-title"
         >
+            {/* Decorative background elements */}
+            <div
+                className="home-action-cta__orb home-action-cta__orb--one"
+                aria-hidden="true"
+            />
+
+            <div
+                className="home-action-cta__orb home-action-cta__orb--two"
+                aria-hidden="true"
+            />
+
             <div className="home-action-cta__container">
 
-                {/* ==================================================
-                   HEADER
-                ================================================== */}
+                {/* =========================================
+                    SECTION HEADER
+                ========================================= */}
 
-                <div className="home-action-cta__header">
+                <header className="home-action-cta__header">
 
                     <span className="home-action-cta__eyebrow">
-                        BE A PART OF THE CHANGE
+                        <span className="home-action-cta__eyebrow-line" />
+                        LET&apos;S CONNECT
+                        <span className="home-action-cta__eyebrow-line" />
                     </span>
 
                     <h2 id="home-action-cta-title">
-                        बदलाव की इस यात्रा में
-                        <span>आप भी भागीदार बनें।</span>
+                        Be a Part of
+                        <span>Something Meaningful.</span>
                     </h2>
 
-                    <p>
-                        चाहे आप संस्था से संपर्क करना चाहते हों,
-                        सामाजिक कार्यों से जुड़ना चाहते हों या
-                        संस्था के कार्यों में सहयोग करना चाहते हों —
-                        आपके लिए एक रास्ता यहाँ है।
-                    </p>
 
-                </div>
+                </header>
 
 
-                {/* ==================================================
-                   ACTION CARDS
-                ================================================== */}
+                {/* =========================================
+                    ACTION CARDS
+                ========================================= */}
 
                 <div className="home-action-cta__grid">
 
-                    {actionItems.map((item) => (
-                        <article
-                            className="home-action-cta__card"
-                            key={item.number}
-                        >
+                    {actionItems.map((item) => {
+                        const Icon = item.icon;
 
-                            <div className="home-action-cta__card-top">
-
-                                <span className="home-action-cta__number">
-                                    {item.number}
-                                </span>
-
-                                <span className="home-action-cta__label">
-                                    {item.label}
-                                </span>
-
-                            </div>
-
-
-                            <div className="home-action-cta__card-content">
-
-                                <h3>
-                                    {item.title}
-                                </h3>
-
-                                <p>
-                                    {item.description}
-                                </p>
-
-                            </div>
-
-
-                            <Link
-                                href={item.href}
-                                className="home-action-cta__button"
+                        return (
+                            <article
+                                className="home-action-cta__card"
+                                key={item.number}
                             >
-                                <span>
-                                    {item.action}
-                                </span>
+                                {/* Decorative top design */}
+                                <div
+                                    className="home-action-cta__card-decoration"
+                                    aria-hidden="true"
+                                >
+                                    <span />
+                                    <span />
+                                    <span />
+                                </div>
 
-                                <span aria-hidden="true">
-                                    →
-                                </span>
-                            </Link>
+                                {/* Card top */}
+                                <div className="home-action-cta__card-top">
 
-                        </article>
-                    ))}
+                                    <div
+                                        className="home-action-cta__icon"
+                                        aria-hidden="true"
+                                    >
+                                        <Icon
+                                            size={23}
+                                            strokeWidth={1.8}
+                                        />
+                                    </div>
 
-                </div>
+                                    <span className="home-action-cta__number">
+                                        {item.number}
+                                    </span>
+
+                                    <span className="home-action-cta__label">
+                                        {item.label}
+                                    </span>
+
+                                </div>
 
 
-                {/* ==================================================
-                   CLOSING MESSAGE
-                ================================================== */}
+                                {/* Card content */}
+                                <div className="home-action-cta__content">
 
-                <div className="home-action-cta__closing">
+                                    <h3>{item.title}</h3>
 
-                    <span>
-                        SHIKSHIT BANO · SANGATHIT RAHO · SANGHARSH KARO
-                    </span>
+                                    <p>{item.description}</p>
 
-                    <p>
-                        “शिक्षित बनो, संगठित रहो, संघर्ष करो”
-                    </p>
+                                </div>
+
+
+                                {/* Card action */}
+                                <Link
+                                    href={item.href}
+                                    className="home-action-cta__button"
+                                    aria-label={`${item.action} - ${item.title}`}
+                                >
+                                    <span>{item.action}</span>
+
+                                    <span
+                                        className="home-action-cta__button-icon"
+                                        aria-hidden="true"
+                                    >
+                                        <ArrowUpRight
+                                            size={17}
+                                            strokeWidth={2}
+                                        />
+                                    </span>
+                                </Link>
+
+                            </article>
+                        );
+                    })}
 
                 </div>
 

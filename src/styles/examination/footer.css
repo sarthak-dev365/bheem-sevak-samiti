@@ -1,0 +1,400 @@
+/* =========================================================
+   BHEEM SEVAK SAMITI
+   EXAMINATION PORTAL
+   FOOTER
+========================================================= */
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.exam-footer {
+  width: 100%;
+
+  padding: 75px 24px 0;
+
+  background: #14213d;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.exam-footer__container {
+  width: 100%;
+
+  max-width: 1180px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   TOP SECTION
+========================================================= */
+
+.exam-footer__top {
+  display: grid;
+
+  grid-template-columns:
+    minmax(260px, 1.6fr)
+    minmax(150px, 1fr)
+    minmax(170px, 1fr)
+    minmax(190px, 1.2fr);
+
+  gap: 55px;
+
+  padding-bottom: 65px;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.exam-footer__brand {
+  min-width: 0;
+}
+
+
+.exam-footer__logo {
+  width: fit-content;
+
+  display: inline-flex;
+
+  text-decoration: none;
+}
+
+
+.exam-footer__brand p {
+  max-width: 330px;
+
+  margin: 24px 0 0;
+
+  color: #aebccd;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   FOOTER COLUMN
+========================================================= */
+
+.exam-footer__column {
+  min-width: 0;
+}
+
+
+.exam-footer__column h3 {
+  margin: 0 0 22px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+.exam-footer__links {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 14px;
+}
+
+
+.exam-footer__links a {
+  width: fit-content;
+
+  color: #aebccd;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  text-decoration: none;
+
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+
+.exam-footer__links a:hover {
+  color: #ffffff;
+
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   ORGANIZATION
+========================================================= */
+
+.exam-footer__organization p {
+  margin: 0 0 20px;
+
+  color: #aebccd;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   MAIN WEBSITE BUTTON
+========================================================= */
+
+.exam-footer__website-button {
+  min-height: 44px;
+
+  width: fit-content;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 17px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 8px;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+
+.exam-footer__website-button:hover {
+  background: var(--exam-primary);
+
+  border-color: var(--exam-primary);
+
+  transform: translateY(-2px);
+}
+
+
+.exam-footer__website-button span:last-child {
+  font-size: 17px;
+
+  transition:
+    transform 180ms ease;
+}
+
+
+.exam-footer__website-button:hover span:last-child {
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.exam-footer__bottom {
+  min-height: 75px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.exam-footer__bottom p {
+  margin: 0;
+
+  color: #8291a6;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   BOTTOM LINKS
+========================================================= */
+
+.exam-footer__bottom-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 24px;
+}
+
+
+.exam-footer__bottom-links a {
+  color: #8291a6;
+
+  font-size: 12px;
+
+  text-decoration: none;
+
+  transition:
+    color 180ms ease;
+}
+
+
+.exam-footer__bottom-links a:hover {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .exam-footer {
+    padding:
+      65px
+      20px
+      0;
+  }
+
+
+  .exam-footer__top {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap:
+      50px
+      40px;
+  }
+
+
+  .exam-footer__brand p {
+    max-width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .exam-footer {
+    padding:
+      55px
+      16px
+      0;
+  }
+
+
+  .exam-footer__top {
+    grid-template-columns: 1fr;
+
+    gap: 38px;
+
+    padding-bottom: 50px;
+  }
+
+
+  .exam-footer__brand p {
+    margin-top: 20px;
+
+    font-size: 13px;
+  }
+
+
+  .exam-footer__column h3 {
+    margin-bottom: 17px;
+  }
+
+
+  .exam-footer__bottom {
+    min-height: auto;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    padding:
+      22px
+      0;
+  }
+
+
+  .exam-footer__bottom-links {
+    flex-wrap: wrap;
+
+    gap:
+      10px
+      20px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .exam-footer__website-button {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .exam-footer *,
+  .exam-footer *::before,
+  .exam-footer *::after {
+    transition: none !important;
+  }
+
+}

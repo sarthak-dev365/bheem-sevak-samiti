@@ -1,9 +1,34 @@
+/* =========================================================
+   EXAMINATION PORTAL
+   LAYOUT
+========================================================= */
+
+import "@/styles/examination/header.css";
+import "@/styles/examination/logo.css";
+
+
+/* =========================================================
+   METADATA
+========================================================= */
+
 export const metadata = {
-  title: "Examination | Bheem Sevak Samiti",
+  title: "Examination Portal | Bheem Sevak Samiti",
+
   description:
-    "Explore examination resources and educational support from Bheem Sevak Samiti to help students prepare for exams, strengthen their learning and achieve their academic goals.",
+    "Official student examination portal of Bheem Sevak Samiti.",
 };
 
-export default function ExaminationLayout({ children }) {
-  return children;
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+export default function ExaminationLayout({
+  children,
+}) {
+  return (
+    <div className="examination-portal">
+      {children}
+    </div>
+  );
 }

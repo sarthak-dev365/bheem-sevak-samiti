@@ -2,6 +2,9 @@
 const nextConfig = {
     reactCompiler: true,
 
+    // Allow mobile/device access during development
+    allowedDevOrigins: ["192.168.29.3"],
+
     // Static website export for InfinityFree
     output: "export",
 

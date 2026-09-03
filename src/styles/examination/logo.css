@@ -1,0 +1,105 @@
+/* =========================================================
+   BHEEM SEVAK SAMITI
+   EXAMINATION PORTAL
+   OFFICIAL PORTAL LOGO
+========================================================= */
+
+.exam-portal-logo {
+  width: 100%;
+
+  min-width: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  line-height: 0;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   LOGO IMAGE
+========================================================= */
+
+.exam-portal-logo__image {
+  width: 292px;
+
+  height: auto;
+
+  max-width: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  object-position: left center;
+}
+
+
+/* =========================================================
+   TABLET / SMALL DESKTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .exam-portal-logo__image {
+    width: 265px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .exam-portal-logo__image {
+    width: 250px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .exam-portal-logo__image {
+    width: 235px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .exam-portal-logo__image {
+    width: 215px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .exam-portal-logo__image {
+    width: 190px;
+  }
+
+}

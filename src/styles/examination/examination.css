@@ -1,0 +1,540 @@
+/* =========================================================
+   BHEEM SEVAK SAMITI
+   EXAMINATION PORTAL
+   GLOBAL FOUNDATION
+   ========================================================= */
+
+
+/* =========================================================
+   DESIGN TOKENS
+========================================================= */
+
+.examination-portal {
+  --exam-primary: #173f7a;
+  --exam-primary-dark: #0d2d5c;
+  --exam-primary-soft: #eef4fb;
+
+  --exam-heading: #142039;
+  --exam-text: #26364d;
+  --exam-secondary: #59687c;
+  --exam-muted: #8996a7;
+
+  --exam-border: #dfe5ec;
+  --exam-border-light: #edf1f5;
+
+  --exam-background: #f5f8fc;
+  --exam-surface: #ffffff;
+  --exam-surface-soft: #f9fbfd;
+
+  --exam-success: #24734d;
+  --exam-success-soft: #edf8f2;
+
+  --exam-warning: #946c20;
+  --exam-warning-soft: #fff8e8;
+
+  --exam-danger: #a64b4b;
+  --exam-danger-soft: #fff1f1;
+
+  --exam-container: 1240px;
+
+  --exam-radius-sm: 6px;
+  --exam-radius-md: 9px;
+  --exam-radius-lg: 14px;
+
+  --exam-shadow-sm:
+    0 2px 12px rgba(15, 23, 42, 0.035);
+
+  --exam-shadow-md:
+    0 10px 30px rgba(15, 23, 42, 0.055);
+
+  --exam-transition:
+    180ms ease;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f8fafc 0%,
+      #f3f7fb 100%
+    );
+
+  color: var(--exam-text);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+
+/* =========================================================
+   BOX MODEL
+========================================================= */
+
+.examination-portal *,
+.examination-portal *::before,
+.examination-portal *::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BODY SAFETY
+========================================================= */
+
+.examination-portal {
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+.examination-portal h1,
+.examination-portal h2,
+.examination-portal h3,
+.examination-portal h4,
+.examination-portal h5,
+.examination-portal h6,
+.examination-portal p {
+  margin-top: 0;
+}
+
+.examination-portal h1,
+.examination-portal h2,
+.examination-portal h3,
+.examination-portal h4,
+.examination-portal h5,
+.examination-portal h6 {
+  color: var(--exam-heading);
+}
+
+.examination-portal p {
+  color: var(--exam-secondary);
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+.examination-portal a {
+  color: inherit;
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   FORM ELEMENTS
+========================================================= */
+
+.examination-portal button,
+.examination-portal input,
+.examination-portal select,
+.examination-portal textarea {
+  font: inherit;
+}
+
+.examination-portal button {
+  border: 0;
+
+  outline: none;
+}
+
+
+/* =========================================================
+   IMAGES
+========================================================= */
+
+.examination-portal img {
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   COMMON CONTAINER
+========================================================= */
+
+.exam-container {
+  width: min(
+    calc(100% - 48px),
+    var(--exam-container)
+  );
+
+  margin-inline: auto;
+}
+
+
+/* =========================================================
+   COMMON PAGE
+========================================================= */
+
+.exam-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   COMMON SECTION
+========================================================= */
+
+.exam-section {
+  width: 100%;
+
+  padding: 64px 0;
+}
+
+
+/* =========================================================
+   COMMON EYEBROW
+========================================================= */
+
+.exam-eyebrow {
+  display: inline-block;
+
+  margin: 0 0 9px;
+
+  color: var(--exam-primary);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+
+  line-height: 1.3;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   COMMON BUTTON BASE
+========================================================= */
+
+.exam-button {
+  min-height: 42px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 0 17px;
+
+  border-radius: var(--exam-radius-sm);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background-color var(--exam-transition),
+    border-color var(--exam-transition),
+    color var(--exam-transition),
+    transform var(--exam-transition),
+    box-shadow var(--exam-transition);
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.exam-button--primary {
+  background: var(--exam-primary);
+
+  border: 1px solid var(--exam-primary);
+
+  color: #ffffff;
+}
+
+.exam-button--primary:hover {
+  background: var(--exam-primary-dark);
+
+  border-color: var(--exam-primary-dark);
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 5px 14px rgba(23, 63, 122, 0.16);
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+.exam-button--secondary {
+  background: #ffffff;
+
+  border: 1px solid #cbd5e1;
+
+  color: var(--exam-text);
+}
+
+.exam-button--secondary:hover {
+  background: #f5f8fb;
+
+  border-color: var(--exam-primary);
+
+  color: var(--exam-primary);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   BUTTON FOCUS
+========================================================= */
+
+.exam-button:focus-visible {
+  outline: 2px solid var(--exam-primary);
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   STATUS BASE
+========================================================= */
+
+.exam-status {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 25px;
+
+  padding: 0 9px;
+
+  border: 1px solid transparent;
+
+  border-radius: 999px;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   SUCCESS
+========================================================= */
+
+.exam-status--success {
+  background: var(--exam-success-soft);
+
+  border-color: #cce8d9;
+
+  color: var(--exam-success);
+}
+
+
+/* =========================================================
+   WARNING
+========================================================= */
+
+.exam-status--warning {
+  background: var(--exam-warning-soft);
+
+  border-color: #f0dfae;
+
+  color: var(--exam-warning);
+}
+
+
+/* =========================================================
+   DANGER
+========================================================= */
+
+.exam-status--danger {
+  background: var(--exam-danger-soft);
+
+  border-color: #efcccc;
+
+  color: var(--exam-danger);
+}
+
+
+/* =========================================================
+   INFO
+========================================================= */
+
+.exam-status--info {
+  background: var(--exam-primary-soft);
+
+  border-color: #cbdcf2;
+
+  color: var(--exam-primary);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.exam-empty-state {
+  padding: 55px 25px;
+
+  background: var(--exam-surface);
+
+  border: 1px solid var(--exam-border);
+
+  border-radius: var(--exam-radius-lg);
+
+  text-align: center;
+
+  box-shadow: var(--exam-shadow-sm);
+}
+
+.exam-empty-state h2 {
+  margin: 0;
+
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.exam-empty-state p {
+  max-width: 500px;
+
+  margin: 9px auto 0;
+
+  font-size: 11px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   LOADING STATE
+========================================================= */
+
+.exam-loading {
+  width: 100%;
+
+  min-height: 300px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.exam-loading__content {
+  color: var(--exam-muted);
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.exam-divider {
+  width: 100%;
+
+  height: 1px;
+
+  background: var(--exam-border-light);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .exam-container {
+    width: min(
+      calc(100% - 40px),
+      760px
+    );
+  }
+
+  .exam-section {
+    padding: 50px 0;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .exam-container {
+    width: calc(100% - 28px);
+  }
+
+  .exam-section {
+    padding: 40px 0;
+  }
+
+  .exam-button {
+    min-height: 40px;
+
+    padding-inline: 15px;
+
+    font-size: 10px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .exam-container {
+    width: calc(100% - 20px);
+  }
+
+  .exam-section {
+    padding: 34px 0;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .examination-portal *,
+  .examination-portal *::before,
+  .examination-portal *::after {
+    scroll-behavior: auto !important;
+
+    transition: none !important;
+
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+}

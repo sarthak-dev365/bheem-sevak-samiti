@@ -1,5 +1,6 @@
 import Link from "next/link";
 import "../../styles/services-page.css";
+import Navbar from "@/components/layout/Navbar";
 
 
 export const metadata = {
@@ -167,6 +168,12 @@ export default function ServicesPage() {
 
     return (
         <main className="services-page">
+
+            {/* ==================================================
+                NAVBAR
+            ================================================== */}
+
+                <Navbar />
 
             {/* ==================================================
                HERO

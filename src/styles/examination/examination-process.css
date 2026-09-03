@@ -1,0 +1,535 @@
+/* =========================================================
+   BHEEM SEVAK SAMITI
+   EXAMINATION PORTAL
+   EXAMINATION PROCESS
+========================================================= */
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.exam-process {
+  width: 100%;
+
+  padding: 105px 24px;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.exam-process__container {
+  width: 100%;
+
+  max-width: 1180px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.exam-process__heading {
+  max-width: 620px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+
+.exam-process__eyebrow {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color: var(--exam-primary);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+
+.exam-process__heading h2 {
+  margin: 0;
+
+  color: #14213d;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(38px, 4vw, 54px);
+
+  font-weight: 700;
+
+  line-height: 1.1;
+
+  letter-spacing: -1.2px;
+}
+
+
+.exam-process__heading p {
+  margin: 18px 0 0;
+
+  color: #64748b;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   PROCESS STEPS
+========================================================= */
+
+.exam-process__steps {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 0;
+
+  margin-top: 70px;
+}
+
+
+/* =========================================================
+   STEP
+========================================================= */
+
+.exam-process__step {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   STEP TOP
+========================================================= */
+
+.exam-process__step-top {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  margin-bottom: 26px;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.exam-process__number {
+  position: relative;
+
+  z-index: 2;
+
+  width: 58px;
+  height: 58px;
+
+  flex: 0 0 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid #dce5ee;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: var(--exam-primary);
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease;
+}
+
+
+.exam-process__step:hover
+.exam-process__number {
+  border-color: var(--exam-primary);
+
+  background: var(--exam-primary);
+
+  color: #ffffff;
+
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   CONNECTING LINE
+========================================================= */
+
+.exam-process__line {
+  position: absolute;
+
+  left: 58px;
+  right: 0;
+
+  height: 1px;
+
+  background: #dfe6ee;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.exam-process__content {
+  padding-right: 20px;
+}
+
+
+.exam-process__content h3 {
+  margin: 0;
+
+  color: #24344a;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  letter-spacing: -0.3px;
+}
+
+
+.exam-process__content p {
+  margin: 10px 0 0;
+
+  color: #718096;
+
+  font-size: 13px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.exam-process__footer {
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 60px;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.exam-process__button {
+  min-height: 50px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  padding: 0 21px;
+
+  border: 1px solid var(--exam-primary);
+
+  border-radius: 7px;
+
+  background: var(--exam-primary);
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 8px 20px
+    rgba(23, 74, 134, 0.12);
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+
+.exam-process__button:hover {
+  background: var(--exam-primary-dark);
+
+  border-color: var(--exam-primary-dark);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 25px
+    rgba(23, 74, 134, 0.18);
+}
+
+
+.exam-process__button-arrow {
+  font-size: 18px;
+
+  line-height: 1;
+
+  transition:
+    transform 180ms ease;
+}
+
+
+.exam-process__button:hover
+.exam-process__button-arrow {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.exam-process__button:focus-visible {
+  outline: 2px solid var(--exam-primary);
+
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .exam-process__steps {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 42px 28px;
+  }
+
+
+  .exam-process__line {
+    display: none;
+  }
+
+
+  .exam-process__content {
+    padding-right: 0;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .exam-process {
+    padding:
+      75px
+      20px;
+  }
+
+
+  .exam-process__heading h2 {
+    font-size: 38px;
+  }
+
+
+  .exam-process__heading p {
+    font-size: 14px;
+  }
+
+
+  .exam-process__steps {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+
+    margin-top: 48px;
+  }
+
+
+  .exam-process__step {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+      58px
+      minmax(0, 1fr);
+
+    column-gap: 20px;
+
+    padding-bottom: 30px;
+  }
+
+
+  .exam-process__step:last-child {
+    padding-bottom: 0;
+  }
+
+
+  .exam-process__step-top {
+    margin: 0;
+  }
+
+
+  .exam-process__line {
+    display: block;
+
+    top: 58px;
+
+    left: 28px;
+    right: auto;
+
+    width: 1px;
+
+    height: calc(100% - 58px);
+
+    background: #dfe6ee;
+  }
+
+
+  .exam-process__content {
+    padding-top: 8px;
+  }
+
+
+  .exam-process__content h3 {
+    font-size: 18px;
+  }
+
+
+  .exam-process__footer {
+    margin-top: 48px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .exam-process {
+    padding:
+      65px
+      16px;
+  }
+
+
+  .exam-process__heading h2 {
+    font-size: 34px;
+  }
+
+
+  .exam-process__eyebrow {
+    font-size: 9px;
+  }
+
+
+  .exam-process__step {
+    grid-template-columns:
+      52px
+      minmax(0, 1fr);
+
+    column-gap: 16px;
+  }
+
+
+  .exam-process__number {
+    width: 52px;
+    height: 52px;
+
+    flex-basis: 52px;
+
+    font-size: 12px;
+  }
+
+
+  .exam-process__line {
+    top: 52px;
+
+    left: 25px;
+
+    height: calc(100% - 52px);
+  }
+
+
+  .exam-process__content h3 {
+    font-size: 17px;
+  }
+
+
+  .exam-process__content p {
+    font-size: 12.5px;
+  }
+
+
+  .exam-process__button {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .exam-process *,
+  .exam-process *::before,
+  .exam-process *::after {
+    transition: none !important;
+  }
+
+}

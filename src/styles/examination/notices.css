@@ -1,0 +1,486 @@
+/* =========================================================
+   BHEEM SEVAK SAMITI
+   EXAMINATION PORTAL
+   OFFICIAL NOTICES
+========================================================= */
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.exam-notices {
+  width: 100%;
+
+  padding: 60px 20px;
+
+  background:
+  linear-gradient(
+    180deg,
+    #FBFAF7 0%,
+    #F6F4EF 100%
+  );
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.exam-notices__container {
+  width: 100%;
+
+  max-width: 1180px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.exam-notices__heading {
+  text-align: center;
+
+  margin-bottom: 55px;
+}
+
+
+.exam-notices__eyebrow {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: var(--exam-primary);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  line-height: 1;
+}
+
+
+.exam-notices__heading h2 {
+  margin: 0;
+
+  color: #14213d;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(38px, 4vw, 56px);
+
+  font-weight: 700;
+
+  line-height: 1.15;
+
+  letter-spacing: -1.2px;
+}
+
+
+/* =========================================================
+   NOTICE LIST
+========================================================= */
+
+.exam-notices__list {
+  width: 100%;
+
+  border-top:
+    1px solid #dfe6ee;
+}
+
+
+/* =========================================================
+   NOTICE ROW
+========================================================= */
+
+.exam-notice {
+  position: relative;
+
+  min-height: 150px;
+
+  display: grid;
+
+  grid-template-columns:
+    80px
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 30px;
+
+  padding: 28px 30px;
+
+  background: transparent;
+
+  border-bottom:
+    1px solid #dfe6ee;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  transition:
+    background-color 220ms ease,
+    padding 220ms ease;
+}
+
+
+/* =========================================================
+   NOTICE HOVER
+========================================================= */
+
+.exam-notice:hover {
+  background: #f7f9fc;
+
+  padding-left: 38px;
+
+  padding-right: 38px;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.exam-notice__number {
+  color: #9aa8b8;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.exam-notice__content {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.exam-notice__category {
+  display: block;
+
+  margin-bottom: 11px;
+
+  color: var(--exam-primary);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   NOTICE TITLE
+========================================================= */
+
+.exam-notice h3 {
+  margin: 0;
+
+  color: #1c2938;
+
+  font-size: clamp(17px, 1.7vw, 21px);
+
+  font-weight: 650;
+
+  line-height: 1.5;
+
+  transition:
+    color 200ms ease;
+}
+
+
+.exam-notice:hover h3 {
+  color: var(--exam-primary);
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.exam-notice__action {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 14px;
+
+  color: var(--exam-primary);
+
+  white-space: nowrap;
+}
+
+
+.exam-notice__action-text {
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2px;
+}
+
+
+.exam-notice__arrow {
+  font-size: 22px;
+
+  line-height: 1;
+
+  transition:
+    transform 200ms ease;
+}
+
+
+.exam-notice:hover
+.exam-notice__arrow {
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.exam-notices__footer {
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 40px;
+}
+
+
+/* =========================================================
+   VIEW ALL BUTTON
+========================================================= */
+
+.exam-notices__view-all {
+  min-height: 48px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 11px;
+
+  padding: 0 22px;
+
+  background: var(--exam-primary);
+
+  border: 1px solid var(--exam-primary);
+
+  border-radius: var(--exam-radius-sm);
+
+  color: #ffffff !important;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+
+.exam-notices__view-all span {
+  color: #ffffff !important;
+}
+
+
+.exam-notices__view-all:hover {
+  background: var(--exam-primary-dark);
+
+  border-color: var(--exam-primary-dark);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 24px
+    rgba(23, 63, 122, 0.16);
+}
+
+
+.exam-notices__view-all span:last-child {
+  font-size: 17px;
+
+  transition:
+    transform 200ms ease;
+}
+
+
+.exam-notices__view-all:hover span:last-child {
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .exam-notices {
+    padding: 85px 20px;
+  }
+
+
+  .exam-notices__heading {
+    margin-bottom: 42px;
+  }
+
+
+  .exam-notice {
+    grid-template-columns:
+      55px
+      minmax(0, 1fr)
+      auto;
+
+    gap: 20px;
+
+    padding: 26px 20px;
+  }
+
+
+  .exam-notice:hover {
+    padding-left: 26px;
+
+    padding-right: 26px;
+  }
+
+
+  .exam-notice__action-text {
+    display: none;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .exam-notices {
+    padding: 70px 16px;
+  }
+
+
+  .exam-notices__heading {
+    margin-bottom: 35px;
+  }
+
+
+  .exam-notices__heading h2 {
+    font-size: 38px;
+  }
+
+
+  .exam-notice {
+    min-height: 125px;
+
+    grid-template-columns:
+      38px
+      minmax(0, 1fr)
+      24px;
+
+    gap: 12px;
+
+    padding: 22px 6px;
+  }
+
+
+  .exam-notice:hover {
+    padding-left: 10px;
+
+    padding-right: 10px;
+  }
+
+
+  .exam-notice__number {
+    align-self: start;
+
+    padding-top: 3px;
+
+    font-size: 10px;
+  }
+
+
+  .exam-notice__category {
+    margin-bottom: 8px;
+
+    font-size: 9px;
+
+    letter-spacing: 1.1px;
+  }
+
+
+  .exam-notice h3 {
+    font-size: 15px;
+
+    line-height: 1.5;
+  }
+
+
+  .exam-notice__arrow {
+    font-size: 19px;
+  }
+
+
+  .exam-notices__footer {
+    margin-top: 30px;
+  }
+
+
+  .exam-notices__view-all {
+    width: 100%;
+
+    min-height: 48px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .exam-notices *,
+  .exam-notices *::before,
+  .exam-notices *::after {
+    transition: none !important;
+  }
+
+}
