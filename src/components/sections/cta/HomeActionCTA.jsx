@@ -6,7 +6,7 @@ import {
     UsersRound,
 } from "lucide-react";
 
-import "../../../styles/contact-cta.css";
+import "@/styles/contact.css";
 
 const actionItems = [
     {

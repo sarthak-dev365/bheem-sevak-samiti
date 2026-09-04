@@ -3,55 +3,38 @@
 import { useEffect, useState } from "react";
 import { FiHeart } from "react-icons/fi";
 
-
 /* ==========================================================
    ORGANIZATION
 ========================================================== */
 
-const ORGANIZATION_NAME =
-    "Bheem Sevak Samiti";
-
+const ORGANIZATION_NAME = "Bheem Sevak Samiti";
 
 /* ==========================================================
-   VALIDATE DONATION AMOUNT
+   GET VALID DONATION AMOUNT
 ========================================================== */
 
 function getValidDonationAmount() {
-
     try {
-
         const savedAmount =
-            sessionStorage.getItem(
-                "donationAmount"
-            );
-
+            sessionStorage.getItem("donationAmount");
 
         if (!savedAmount) {
             return null;
         }
 
-
-        const numericAmount =
-            Number(savedAmount);
-
+        const numericAmount = Number(savedAmount);
 
         if (
-            !Number.isFinite(
-                numericAmount
-            ) ||
+            !Number.isFinite(numericAmount) ||
             numericAmount <= 0
         ) {
-
             return null;
         }
 
+        const amount = Math.round(numericAmount);
 
-        return Math.round(
-            numericAmount
-        );
-
+        return amount > 0 ? amount : null;
     } catch (error) {
-
         console.error(
             "Unable to read donation amount:",
             error
@@ -61,139 +44,89 @@ function getValidDonationAmount() {
     }
 }
 
-
 /* ==========================================================
    SELECTED DONATION AMOUNT
 ========================================================== */
 
 export default function SelectedDonationAmount() {
-
-    const [amount, setAmount] =
-        useState(null);
-
+    const [amount, setAmount] = useState(null);
 
     /* ======================================================
-       LOAD CURRENT AMOUNT
+       LOAD DONATION AMOUNT
     ====================================================== */
 
     useEffect(() => {
-
-        const loadAmount = () => {
-
-            const validAmount =
-                getValidDonationAmount();
-
-
-            setAmount(
-                validAmount
-            );
-
+        const updateAmount = () => {
+            setAmount(getValidDonationAmount());
         };
 
-
         /*
-            Initial state
+            Load current value
         */
 
-        loadAmount();
-
+        updateAmount();
 
         /*
-            Listen for amount selection
+            Listen for changes from
+            DonationAmountSelector
         */
 
         window.addEventListener(
             "donationAmountChanged",
-            loadAmount
+            updateAmount
         );
-
 
         /*
             Cleanup
         */
 
         return () => {
-
             window.removeEventListener(
                 "donationAmountChanged",
-                loadAmount
+                updateAmount
             );
-
         };
-
     }, []);
 
-
     /* ======================================================
-       NO AMOUNT SELECTED
+       PAYMENT SUMMARY
     ====================================================== */
 
-    if (!amount) {
-
-        return (
-
-            <div className="donate-payment-selected donate-payment-selected--organization">
-
-                <div className="donate-payment-selected__icon">
-
-                    <FiHeart />
-
-                </div>
-
-
-                <div>
-
-                    <span>
-                        OFFICIAL DONATION
-                    </span>
-
-
-                    <strong>
-                        {ORGANIZATION_NAME}
-                    </strong>
-
-                </div>
-
-            </div>
-
-        );
-
-    }
-
-
-    /* ======================================================
-       AMOUNT SELECTED
-    ====================================================== */
+    const formattedAmount = amount
+        ? `₹${amount.toLocaleString("en-IN")}`
+        : null;
 
     return (
-
-        <div className="donate-payment-selected donate-payment-selected--amount">
-
+        <div
+            className={`donate-payment-selected ${
+                amount
+                    ? "donate-payment-selected--amount"
+                    : "donate-payment-selected--organization"
+            }`}
+        >
             <div className="donate-payment-selected__icon">
-
-                <FiHeart />
-
+                <FiHeart aria-hidden="true" />
             </div>
 
-
-            <div>
-
+            <div className="donate-payment-selected__content">
                 <span>
-                    YOUR SELECTED DONATION
+                    {amount
+                        ? "YOUR SELECTED DONATION"
+                        : "OFFICIAL DONATION"}
                 </span>
 
-
                 <strong>
-                    ₹
-                    {amount.toLocaleString(
-                        "en-IN"
-                    )}
+                    {amount
+                        ? formattedAmount
+                        : ORGANIZATION_NAME}
                 </strong>
 
+                <small>
+                    {amount
+                        ? "This amount will be used as your selected contribution."
+                        : "Thank you for supporting our community initiatives."}
+                </small>
             </div>
-
         </div>
-
     );
-
 }

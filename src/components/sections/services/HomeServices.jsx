@@ -1,136 +1,76 @@
 import Link from "next/link";
+import {
+  FiBookOpen,
+  FiUsers,
+  FiGlobe,
+  FiArrowRight,
+} from "react-icons/fi";
+
 import "../../../styles/services.css";
 
 const services = [
-    {
-        number: "01",
-        name: "शिक्षा",
-        english: "Education",
-    },
-    {
-        number: "02",
-        name: "सामाजिक सुधार",
-        english: "Social Reform",
-    },
-    {
-        number: "03",
-        name: "पर्यावरण संरक्षण",
-        english: "Environment Protection",
-    },
-    {
-        number: "04",
-        name: "जन-जागरूकता",
-        english: "Public Awareness",
-    },
-    {
-        number: "05",
-        name: "युवा सशक्तिकरण",
-        english: "Youth Empowerment",
-    },
-    {
-        number: "06",
-        name: "सामुदायिक सेवा",
-        english: "Community Service",
-    },
+  {
+    title: "Education",
+    icon: <FiBookOpen />,
+  },
+  {
+    title: "Social Reform",
+    icon: <FiUsers />,
+  },
+  {
+    title: "Environment Protection",
+    icon: <FiGlobe />,
+  },
 ];
 
 export default function HomeService() {
-    return (
-        <section
-            className="home-service"
-            id="services"
-            aria-labelledby="home-service-title"
-        >
-            <div className="home-service__container">
+  return (
+    <section className="home-service" id="services">
+      <div className="home-service__container">
 
-                {/* ================================
-                    HEADER
-                ================================= */}
+        {/* Heading */}
+        <div className="home-service__heading">
+          <span className="home-service__eyebrow">
+            OUR SERVICES
+          </span>
 
-                <div className="home-service__header">
+          <h2 className="home-service__title">
+            Creating Positive Change
+          </h2>
+        </div>
 
-                    <span className="home-service__eyebrow">
-                        OUR SERVICES
-                    </span>
+        {/* Services */}
+        <div className="home-service__grid">
+          {services.map((service) => (
+            <Link
+              href="/services"
+              className="home-service__card"
+              key={service.title}
+            >
+              <span className="home-service__icon">
+                {service.icon}
+              </span>
 
-                    <h2
-                        id="home-service-title"
-                        className="home-service__title"
-                    >
-                        Explore Our
-                        <span>Services</span>
-                    </h2>
+              <span className="home-service__name">
+                {service.title}
+              </span>
 
-                    <p className="home-service__intro">
-                        शिक्षा, सामाजिक सुधार, पर्यावरण संरक्षण और
-                        जन-जागरूकता के माध्यम से समाज के जरूरतमंद
-                        वर्गों के लिए हमारी प्रमुख सेवाएँ।
-                    </p>
+              <span className="home-service__card-arrow">
+                <FiArrowRight />
+              </span>
+            </Link>
+          ))}
+        </div>
 
-                </div>
+        {/* Explore Button */}
+        <div className="home-service__action">
+          <Link href="/services" className="home-service__button">
+            <span>Explore All Services</span>
+            <FiArrowRight />
+          </Link>
+        </div>
 
-
-                {/* ================================
-                    SERVICE LIST
-                ================================= */}
-
-                <div className="home-service__list">
-
-                    {services.map((service) => (
-                        <Link
-                            href="/services"
-                            className="home-service__item"
-                            key={service.number}
-                            aria-label={`${service.name} service`}
-                        >
-                            <span className="home-service__number">
-                                {service.number}
-                            </span>
-
-                            <div className="home-service__name">
-                                <strong>
-                                    {service.name}
-                                </strong>
-
-                                <span>
-                                    {service.english}
-                                </span>
-                            </div>
-
-                            <span
-                                className="home-service__arrow"
-                                aria-hidden="true"
-                            >
-                                →
-                            </span>
-                        </Link>
-                    ))}
-
-                </div>
-
-
-                {/* ================================
-                    MAIN SERVICES LINK
-                ================================= */}
-
-                <div className="home-service__footer">
-
-                    <Link
-                        href="/services"
-                        className="home-service__button"
-                    >
-                        <span>
-                            Explore All Services
-                        </span>
-
-                        <span aria-hidden="true">
-                            →
-                        </span>
-                    </Link>
-
-                </div>
-
-            </div>
-        </section>
-    );
+      </div>
+    </section>
+  );
 }

@@ -11,7 +11,12 @@
 
 @import "../styles/theme.css";
 
+@import "../styles/hero.css";
+
+@import "../styles/about.css";
 @import "../styles/about-page.css";
+
+@import "../styles/impact.css";
 
 @import "../styles/services.css";
 @import "../styles/services-page.css";
@@ -29,7 +34,7 @@
 @import "../styles/our-journey-page.css";
 
 @import "../styles/contact.css";
-@import "../styles/contact-cta.css";
+@import "../styles/contact-page.css";
 
 @import "../styles/footer.css";
 

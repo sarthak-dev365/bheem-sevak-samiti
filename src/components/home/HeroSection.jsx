@@ -2,39 +2,40 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import "../../styles/hero.css";
+import {
+  FiArrowRight,
+  FiBookOpen,
+  FiHeart,
+  FiUsers,
+  FiGlobe,
+  FiCheckCircle,
+} from "react-icons/fi";
 
-/*
-============================================================
-BHEEM SEVAK SAMITI
-HERO SECTION
-FINAL PRODUCTION VERSION
-============================================================
-*/
+import "../../styles/hero.css";
 
 const IMPACT_STATS = [
   {
     value: "500+",
     label: "Students Educated",
-    icon: "🎓",
+    icon: <FiBookOpen />,
     accent: "orange",
   },
   {
     value: "100+",
     label: "Trees Planted",
-    icon: "🌱",
+    icon: <FiGlobe />,
     accent: "green",
   },
   {
     value: "50+",
     label: "Community Programs",
-    icon: "👥",
+    icon: <FiUsers />,
     accent: "blue",
   },
   {
     value: "1000+",
     label: "Lives Impacted",
-    icon: "❤",
+    icon: <FiHeart />,
     accent: "red",
   },
 ];
@@ -42,210 +43,167 @@ const IMPACT_STATS = [
 export default function Hero() {
   return (
     <section className="hero" id="home">
-      {/* ======================================================
-          BACKGROUND DECORATION
-      ====================================================== */}
+      {/* =====================================================
+          BACKGROUND
+      ===================================================== */}
 
-      <div className="hero-bg-pattern" aria-hidden="true">
-        <span className="hero-dot-grid hero-dot-grid-left" />
-        <span className="hero-dot-grid hero-dot-grid-right" />
-        <span className="hero-ring hero-ring-left" />
+      <div className="hero__background" aria-hidden="true">
+        <span className="hero__grid hero__grid--left" />
+        <span className="hero__grid hero__grid--right" />
+        <span className="hero__orb hero__orb--one" />
+        <span className="hero__orb hero__orb--two" />
       </div>
 
-      {/* ======================================================
-          MAIN HERO CONTAINER
-      ====================================================== */}
+      {/* =====================================================
+          CONTAINER
+      ===================================================== */}
 
-      <div className="hero-container">
-        {/* ====================================================
+      <div className="hero__container">
+
+        {/* ===================================================
             LEFT CONTENT
-        ==================================================== */}
+        =================================================== */}
 
-        <div className="hero-content">
-          {/* TRUST BADGE */}
+        <div className="hero__content">
 
-          <div className="hero-badge">
-            <span className="hero-badge-icon" aria-hidden="true">
-              👥
+          {/* Trust Badge */}
+
+          <div className="hero__badge">
+            <span className="hero__badge-icon" aria-hidden="true">
+              <FiUsers />
             </span>
 
-            <span className="hero-badge-text">
+            <span className="hero__badge-title">
               Registered NGO
             </span>
 
-            <span
-              className="hero-badge-separator"
-              aria-hidden="true"
-            >
+            <span className="hero__badge-dot" aria-hidden="true">
               •
             </span>
 
-            <span className="hero-badge-year">
+            <span className="hero__badge-year">
               Since 2018
             </span>
           </div>
 
-          {/* ==================================================
-              MAIN HEADING
-          ================================================== */}
+          {/* Main Heading */}
 
-          <h1 className="hero-title">
-            शिक्षा से{" "}
-            <span className="hero-title-primary">
-              सशक्त समाज,
-            </span>
-
-            <br />
-
-            सेवा से{" "}
-            <span className="hero-title-accent">
-              बेहतर भविष्य।
-            </span>
+          <h1 className="hero__title">
+            Empowering society
+            <span>through education,</span>
+            <strong>service &amp; change.</strong>
           </h1>
 
-          {/* ==================================================
-              DESCRIPTION
-          ================================================== */}
+          {/* Description */}
 
-          <p className="hero-description">
-            भीम सेवक समिति शिक्षा, सामाजिक उत्थान, पर्यावरण
-            संरक्षण तथा मानव सेवा के माध्यम से समाज के अंतिम
-            व्यक्ति तक अवसर, सम्मान, समानता और विकास पहुँचाने
-            के लिए प्रतिबद्ध है।
+          <p className="hero__description">
+            Bheem Sevak Samiti works for education, social development,
+            environmental protection and community welfare—creating
+            opportunities for a stronger and more inclusive society.
           </p>
 
-          {/* ==================================================
-              CTA BUTTONS
-          ================================================== */}
+          {/* CTA */}
 
-          <div className="hero-actions">
+          <div className="hero__actions">
             <Link
               href="/donate-us"
-              className="hero-btn hero-btn-primary"
-              aria-label="Donate Now"
+              className="hero__button hero__button--primary"
             >
-              <span
-                className="hero-btn-icon"
-                aria-hidden="true"
-              >
-                ♡
-              </span>
+              <FiHeart aria-hidden="true" />
 
               <span>Donate Now</span>
 
-              <span
-                className="hero-btn-arrow"
+              <FiArrowRight
+                className="hero__button-arrow"
                 aria-hidden="true"
-              >
-                →
-              </span>
+              />
             </Link>
 
             <Link
               href="/join-us"
-              className="hero-btn hero-btn-secondary"
-              aria-label="Join Us"
+              className="hero__button hero__button--secondary"
             >
-              <span
-                className="hero-btn-icon"
-                aria-hidden="true"
-              >
-                ♧
-              </span>
+              <FiUsers aria-hidden="true" />
 
               <span>Join Us</span>
             </Link>
           </div>
 
-          {/* ==================================================
-              IMPACT STATISTICS
-          ================================================== */}
+          {/* Impact Statistics */}
 
           <div
-            className="hero-stats"
+            className="hero__stats"
             aria-label="Our impact statistics"
           >
             {IMPACT_STATS.map((stat) => (
               <div
-                className={`hero-stat-card hero-stat-${stat.accent}`}
+                className={`hero__stat hero__stat--${stat.accent}`}
                 key={stat.label}
               >
-                <div
-                  className="hero-stat-icon"
-                  aria-hidden="true"
-                >
+                <div className="hero__stat-icon" aria-hidden="true">
                   {stat.icon}
                 </div>
 
-                <div className="hero-stat-content">
-                  <strong className="hero-stat-value">
-                    {stat.value}
-                  </strong>
-
-                  <span className="hero-stat-label">
-                    {stat.label}
-                  </span>
+                <div className="hero__stat-content">
+                  <strong>{stat.value}</strong>
+                  <span>{stat.label}</span>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* ====================================================
+        {/* ===================================================
             RIGHT VISUAL
-        ==================================================== */}
+        =================================================== */}
 
-        <div className="hero-visual">
-          {/* ==================================================
-              BUILDING VISUAL
-          ================================================== */}
+        <div className="hero__visual">
 
-          <div className="hero-building-wrapper">
+          <div className="hero__image-area">
+
+            {/* Decorative Ring */}
+
             <div
-              className="hero-building-glow"
+              className="hero__image-ring"
               aria-hidden="true"
             />
 
-            <div className="hero-building-image">
+            {/* Main Image */}
+
+            <div className="hero__image">
               <Image
                 src="/images/hero/hero-building.png"
                 alt="Bheem Sevak Samiti building"
                 fill
-                loading="eager"
-                fetchPriority="high"
-                quality={75}
+                priority
+                quality={80}
                 sizes="
-                  (max-width: 576px) 88vw,
-                  (max-width: 768px) 90vw,
-                  (max-width: 1050px) 80vw,
-                  (max-width: 1200px) 55vw,
-                  50vw
+                  (max-width: 640px) 90vw,
+                  (max-width: 900px) 82vw,
+                  (max-width: 1200px) 50vw,
+                  48vw
                 "
-                className="hero-building-img"
+                className="hero__image-img"
               />
             </div>
-          </div>
 
-          {/* ==================================================
-              FLOATING IMAGE BADGE
-          ================================================== */}
+            {/* Small Floating Badge */}
 
-          <div className="hero-visual-badge">
-            <span
-              className="hero-visual-badge-icon"
-              aria-hidden="true"
-            >
-              ✓
-            </span>
+            <div className="hero__service-card">
+              <div className="hero__service-icon">
+                <FiCheckCircle aria-hidden="true" />
+              </div>
 
-            <div className="hero-visual-badge-content">
-              <strong>Serving Society</strong>
+              <div className="hero__service-content">
+                <strong>Serving Society</strong>
 
-              <span>
-                Education • Service • Environment
-              </span>
+                <span>
+                  Education • Service • Environment
+                </span>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>

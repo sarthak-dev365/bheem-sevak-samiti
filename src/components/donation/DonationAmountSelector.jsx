@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { FiArrowRight } from "react-icons/fi";
-
+import { FiArrowRight, FiCheck } from "react-icons/fi";
 
 /* ==========================================================
    SUGGESTED DONATION AMOUNTS
@@ -12,169 +11,90 @@ const amounts = [
     {
         amount: 500,
         title: "Education Support",
-        description:
-            "शैक्षिक गतिविधियों में सहयोग",
+        description: "Support education and learning initiatives.",
     },
     {
         amount: 1000,
         title: "Community Support",
-        description:
-            "सामुदायिक सेवा में सहयोग",
+        description: "Support community welfare activities.",
     },
     {
         amount: 1500,
         title: "Campaign Support",
-        description:
-            "जागरूकता अभियानों में सहयोग",
+        description: "Support awareness and social campaigns.",
     },
-    // {
-        
-    //     title: "Mission Support",
-    //     description:
-    //         "संस्था के व्यापक कार्यों में सहयोग",
-    // },
 ];
-
 
 /* ==========================================================
    DONATION AMOUNT SELECTOR
 ========================================================== */
 
 export default function DonationAmountSelector() {
+    const [selectedAmount, setSelectedAmount] = useState(null);
+    const [customAmount, setCustomAmount] = useState("");
 
-    const [
-        selectedAmount,
-        setSelectedAmount,
-    ] = useState(null);
-
-
-    const [
-        customAmount,
-        setCustomAmount,
-    ] = useState("");
-
-
-    /*
-        Custom amount को priority दी जाएगी।
-    */
+    /* ======================================================
+       ACTIVE AMOUNT
+    ====================================================== */
 
     const activeAmount =
         customAmount !== ""
-            ? customAmount
+            ? Number(customAmount)
             : selectedAmount;
-
 
     /* ======================================================
        PRESET AMOUNT SELECT
     ====================================================== */
 
     const handleAmountSelect = (amount) => {
-
         setSelectedAmount(amount);
-
         setCustomAmount("");
-
     };
 
-
     /* ======================================================
-       CUSTOM AMOUNT CHANGE
+       CUSTOM AMOUNT
     ====================================================== */
 
     const handleCustomAmount = (event) => {
-
-        const value =
-            event.target.value;
-
-
-        /*
-            Empty input
-        */
+        const value = event.target.value;
 
         if (value === "") {
-
             setCustomAmount("");
-
             setSelectedAmount(null);
-
             return;
         }
 
-
         /*
-            Positive numbers only
+            Digits only
         */
 
-        const numericValue =
-            Number(value);
-
-
-        if (
-            !Number.isFinite(
-                numericValue
-            ) ||
-            numericValue <= 0
-        ) {
-
+        if (!/^\d+$/.test(value)) {
             return;
         }
 
+        const numericValue = Number(value);
 
-        /*
-            Custom amount selected
-        */
+        if (!Number.isSafeInteger(numericValue) || numericValue <= 0) {
+            return;
+        }
 
         setCustomAmount(value);
-
         setSelectedAmount(null);
-
     };
-
 
     /* ======================================================
        CONTINUE TO PAYMENT
     ====================================================== */
 
     const handleContinue = () => {
+        const amount = Math.round(Number(activeAmount));
 
-        /*
-            No amount selected
-        */
-
-        if (
-            !activeAmount ||
-            Number(activeAmount) <= 0
-        ) {
-
+        if (!Number.isSafeInteger(amount) || amount <= 0) {
             return;
         }
 
-
         /*
-            Convert to valid integer amount
-        */
-
-        const amount =
-            Math.round(
-                Number(activeAmount)
-            );
-
-
-        /*
-            Safety validation
-        */
-
-        if (
-            !Number.isFinite(amount) ||
-            amount <= 0
-        ) {
-
-            return;
-        }
-
-
-        /*
-            Save current donation amount
+            Save selected donation amount
         */
 
         sessionStorage.setItem(
@@ -182,43 +102,31 @@ export default function DonationAmountSelector() {
             String(amount)
         );
 
-
         /*
-            Notify SelectedDonationAmount
+            Notify payment summary component
         */
 
         window.dispatchEvent(
-            new Event(
-                "donationAmountChanged"
-            )
+            new Event("donationAmountChanged")
         );
-
 
         /*
             Scroll to payment section
         */
 
         const paymentSection =
-            document.getElementById(
-                "payment-options"
-            );
-
+            document.getElementById("payment-options");
 
         if (paymentSection) {
-
             paymentSection.scrollIntoView({
                 behavior: "smooth",
                 block: "start",
             });
-
         }
-
     };
 
-
     return (
-
-        <>
+        <div className="donation-selector">
 
             {/* ==================================================
                 SUGGESTED AMOUNTS
@@ -227,119 +135,93 @@ export default function DonationAmountSelector() {
             <div className="donate-amount-grid">
 
                 {amounts.map((item) => {
-
                     const isSelected =
-                        Number(
-                            selectedAmount
-                        ) === item.amount;
-
+                        selectedAmount === item.amount;
 
                     return (
-
                         <button
-                            type="button"
-
                             key={item.amount}
-
+                            type="button"
                             className={`donate-amount-card ${
                                 isSelected
                                     ? "is-selected"
                                     : ""
                             }`}
-
                             onClick={() =>
-                                handleAmountSelect(
-                                    item.amount
-                                )
+                                handleAmountSelect(item.amount)
                             }
-
-                            aria-pressed={
-                                isSelected
-                            }
+                            aria-pressed={isSelected}
                         >
 
+                            <div className="donate-amount-card__top">
+
+                                <span className="donate-amount-card__radio">
+                                    {isSelected && (
+                                        <FiCheck />
+                                    )}
+                                </span>
+
+                                <span className="donate-amount-card__arrow">
+                                    <FiArrowRight />
+                                </span>
+
+                            </div>
+
                             <span className="donate-amount-card__amount">
-
-                                ₹
-                                {item.amount.toLocaleString(
-                                    "en-IN"
-                                )}
-
+                                ₹{item.amount.toLocaleString("en-IN")}
                             </span>
-
 
                             <strong>
                                 {item.title}
                             </strong>
 
-
                             <small>
                                 {item.description}
                             </small>
 
-
-                            <span className="donate-amount-card__arrow">
-
-                                <FiArrowRight />
-
-                            </span>
-
                         </button>
-
                     );
-
                 })}
 
             </div>
 
-
-
             {/* ==================================================
-                CUSTOM AMOUNT
+                CUSTOM CONTRIBUTION
             ================================================== */}
 
             <div className="donate-custom-box">
 
-                <div>
+                <div className="donate-custom-content">
 
-                    <span>
+                    <span className="donate-custom-label">
                         CUSTOM CONTRIBUTION
                     </span>
 
-
                     <h3>
-                        अपनी राशि दर्ज करें
+                        Enter your own amount
                     </h3>
+
+                    <p>
+                        Choose any contribution amount that
+                        works for you.
+                    </p>
 
                 </div>
 
-
                 <div className="donate-custom-input">
 
-                    <span>
+                    <span aria-hidden="true">
                         ₹
                     </span>
 
-
                     <input
                         type="number"
-
                         min="1"
-
                         step="1"
-
                         inputMode="numeric"
-
-                        value={
-                            customAmount
-                        }
-
-                        onChange={
-                            handleCustomAmount
-                        }
-
+                        value={customAmount}
+                        onChange={handleCustomAmount}
                         placeholder="Enter amount"
-
                         aria-label="Custom donation amount"
                     />
 
@@ -347,61 +229,43 @@ export default function DonationAmountSelector() {
 
             </div>
 
-
-
             {/* ==================================================
                 SELECTED DONATION SUMMARY
             ================================================== */}
 
             <div className="donate-selected-amount">
 
-                <div>
+                <div className="donate-selected-amount__info">
 
                     <span>
-                        SELECTED DONATION
+                        YOUR CONTRIBUTION
                     </span>
 
-
                     <strong>
-
                         {activeAmount
-                            ? `₹${Number(
-                                activeAmount
-                            ).toLocaleString(
+                            ? `₹${Number(activeAmount).toLocaleString(
                                 "en-IN"
                             )}`
-                            : "Amount not selected"}
-
+                            : "Select an amount"}
                     </strong>
 
                 </div>
 
-
                 <button
                     type="button"
-
                     className="donate-selected-amount__button"
-
-                    onClick={
-                        handleContinue
-                    }
-
+                    onClick={handleContinue}
                     disabled={
                         !activeAmount ||
                         Number(activeAmount) <= 0
                     }
                 >
-
                     Continue to Payment
-
                     <FiArrowRight />
-
                 </button>
 
             </div>
 
-        </>
-
+        </div>
     );
-
 }

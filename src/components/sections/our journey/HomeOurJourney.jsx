@@ -1,102 +1,98 @@
 import Link from "next/link";
+import {
+  FiFlag,
+  FiBookOpen,
+  FiUsers,
+  FiArrowRight,
+} from "react-icons/fi";
+
 import "../../../styles/home-our-journey.css";
 
 const journeyItems = [
-{
-id: "01",
-label: "THE BEGINNING",
-title: "एक सोच से हुई शुरुआत",
-description:
-"समाज के जरूरतमंद लोगों तक शिक्षा, सहयोग और जागरूकता पहुँचाने के उद्देश्य से भीम सेवक समिति की यात्रा शुरू हुई।",
-},
-{
-id: "02",
-label: "EDUCATION",
-title: "शिक्षा को बनाया प्राथमिकता",
-description:
-"बच्चों और विद्यार्थियों को बेहतर शैक्षिक अवसरों से जोड़ने तथा शिक्षा के प्रति जागरूकता बढ़ाने की दिशा में महत्वपूर्ण पहल की गई।",
-},
-{
-id: "03",
-label: "SOCIAL SERVICE",
-title: "समाज के साथ आगे बढ़ते कदम",
-description:
-"सामाजिक जागरूकता, जनसेवा और सकारात्मक बदलाव के लिए संस्था ने समुदाय के साथ मिलकर विभिन्न गतिविधियों को आगे बढ़ाया।",
-},
+  {
+    id: "01",
+    icon: <FiFlag />,
+    title: "The Beginning",
+    description:
+      "Bheem Sevak Samiti began with a vision to support communities through education, social service and awareness.",
+  },
+  {
+    id: "02",
+    icon: <FiBookOpen />,
+    title: "Education First",
+    description:
+      "Education became a key priority, creating better learning opportunities and encouraging awareness among students.",
+  },
+  {
+    id: "03",
+    icon: <FiUsers />,
+    title: "Growing Together",
+    description:
+      "The organization continues to work with communities through social initiatives and meaningful service.",
+  },
 ];
 
 export default function HomeOurJourney() {
-return ( <section
-         className="home-journey"
-         id="our-journey"
-         aria-labelledby="home-journey-title"
-     > <div className="home-journey__container">
+  return (
+    <section
+      className="home-journey"
+      id="our-journey"
+      aria-labelledby="home-journey-title"
+    >
+      <div className="home-journey__container">
 
-```
-            {/* Section Heading */}
-            <header className="home-journey__header">
-                <span className="home-journey__eyebrow">
-                    OUR JOURNEY
+        {/* Heading */}
+        <header className="home-journey__header">
+          <span className="home-journey__eyebrow">
+            OUR JOURNEY
+          </span>
+
+          <h2 id="home-journey-title">
+            From an idea to a journey
+            <span> of positive change.</span>
+          </h2>
+        </header>
+
+        {/* Journey Cards */}
+        <div className="home-journey__grid">
+          {journeyItems.map((item) => (
+            <article
+              className="home-journey__card"
+              key={item.id}
+            >
+              <div className="home-journey__top">
+                <span className="home-journey__number">
+                  {item.id}
                 </span>
 
-                <h2 id="home-journey-title">
-                    एक उद्देश्य से शुरू हुई,
-                    <span> बदलाव की यात्रा।</span>
-                </h2>
+                <span className="home-journey__icon">
+                  {item.icon}
+                </span>
+              </div>
 
-                <p>
-                    भीम सेवक समिति की यात्रा शिक्षा, समाज सेवा और
-                    सकारात्मक परिवर्तन के लिए किए जा रहे निरंतर
-                    प्रयासों की कहानी है।
-                </p>
-            </header>
+              <h3>{item.title}</h3>
 
-            {/* Journey Cards */}
-            <div className="home-journey__grid">
-                {journeyItems.map((item) => (
-                    <article
-                        className="home-journey__card"
-                        key={item.id}
-                    >
-                        <div className="home-journey__card-top">
-                            <span className="home-journey__number">
-                                {item.id}
-                            </span>
+              <p>{item.description}</p>
 
-                            <span className="home-journey__label">
-                                {item.label}
-                            </span>
-                        </div>
-
-                        <div className="home-journey__card-content">
-                            <h3>{item.title}</h3>
-
-                            <p>{item.description}</p>
-                        </div>
-                    </article>
-                ))}
-            </div>
-
-            {/* Compact CTA */}
-            <div className="home-journey__action">
-                <Link
-                    href="/our-journey"
-                    className="home-journey__button"
-                    aria-label="Explore Our Journey"
-                >
-                    <span>Explore Our Journey</span>
-                    <span
-                        className="home-journey__button-arrow"
-                        aria-hidden="true"
-                    >
-                        →
-                    </span>
-                </Link>
-            </div>
-
+              <span className="home-journey__arrow">
+                <FiArrowRight />
+              </span>
+            </article>
+          ))}
         </div>
+
+        {/* CTA */}
+        <div className="home-journey__action">
+          <Link
+            href="/our-journey"
+            className="home-journey__button"
+          >
+            <span>Explore Our Journey</span>
+            <FiArrowRight />
+          </Link>
+        </div>
+
+      </div>
     </section>
-);
-
-
+  );
 }

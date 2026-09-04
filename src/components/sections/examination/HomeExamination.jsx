@@ -1,24 +1,28 @@
 import Link from "next/link";
-import "../../../styles/examination.css";
+import {
+    FiInfo,
+    FiFileText,
+    FiAward,
+    FiArrowRight,
+} from "react-icons/fi";
 
-/* ==========================================================
-   BHEEM SEVAK SAMITI
-   HOME — EXAMINATION SECTION
-   FRESH PROFESSIONAL VERSION
-========================================================== */
+import "../../../styles/examination.css";
 
 const EXAMINATION_HIGHLIGHTS = [
     {
         number: "01",
         title: "Examination Information",
+        icon: <FiInfo />,
     },
     {
         number: "02",
         title: "Registration & Admit Card",
+        icon: <FiFileText />,
     },
     {
         number: "03",
         title: "Results & Announcements",
+        icon: <FiAward />,
     },
 ];
 
@@ -31,12 +35,8 @@ export default function Examinations() {
         >
             <div className="examination-section__container">
 
-                {/* ==================================================
-                    SECTION HEADER
-                ================================================== */}
-
-                <div className="examination-section__header">
-
+                {/* Section Heading */}
+                <header className="examination-section__header">
                     <span className="examination-section__eyebrow">
                         EXAMINATION
                     </span>
@@ -45,65 +45,53 @@ export default function Examinations() {
                         id="examination-section-title"
                         className="examination-section__title"
                     >
-                        शिक्षा से आगे,
-                        <span>अवसरों की ओर।</span>
+                        Learn. Register. <span>Achieve.</span>
                     </h2>
-
-                    <p className="examination-section__description">
-                        विद्यार्थियों को शैक्षिक एवं प्रतियोगी अवसरों से
-                        जोड़ने के लिए examinations की जानकारी और आवश्यक
-                        सुविधाएँ एक ही स्थान पर।
-                    </p>
-
-                </div>
+                </header>
 
 
-                {/* ==================================================
-                    HIGHLIGHTS
-                ================================================== */}
-
+                {/* Examination Cards */}
                 <div className="examination-section__highlights">
-
                     {EXAMINATION_HIGHLIGHTS.map((item) => (
-                        <div
+                        <Link
+                            href="/examination"
                             className="examination-highlight"
                             key={item.number}
                         >
-                            <span className="examination-highlight__number">
-                                {item.number}
-                            </span>
+                            <div className="examination-highlight__top">
+                                <span className="examination-highlight__number">
+                                    {item.number}
+                                </span>
 
-                            <span className="examination-highlight__title">
+                                <span className="examination-highlight__icon">
+                                    {item.icon}
+                                </span>
+                            </div>
+
+                            <h3 className="examination-highlight__title">
                                 {item.title}
-                            </span>
-                        </div>
-                    ))}
+                            </h3>
 
+                            <span
+                                className="examination-highlight__arrow"
+                                aria-hidden="true"
+                            >
+                                <FiArrowRight />
+                            </span>
+                        </Link>
+                    ))}
                 </div>
 
 
-                {/* ==================================================
-                    CTA
-                ================================================== */}
-
+                {/* CTA */}
                 <div className="examination-section__action">
-
                     <Link
                         href="/examination"
                         className="examination-section__button"
                     >
-                        <span>
-                            Explore Examination
-                        </span>
-
-                        <span
-                            className="examination-section__button-arrow"
-                            aria-hidden="true"
-                        >
-                            →
-                        </span>
+                        <span>Explore Examination</span>
+                        <FiArrowRight />
                     </Link>
-
                 </div>
 
             </div>

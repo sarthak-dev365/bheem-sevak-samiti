@@ -1,346 +1,289 @@
-import Navbar from "@/components/layout/Navbar";
 import Image from "next/image";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import "../../styles/about-page.css";
+
 export const metadata = {
   title: "About Bheem Sevak Samiti | Our Mission & Vision",
   description:
-    "Learn about Bheem Sevak Samiti, Uttar Pradesh — its history, vision, mission, objectives, programs, impact and commitment to education, social reform and environmental protection.",
+    "Learn about Bheem Sevak Samiti, its journey, mission, vision and commitment to education, social reform, environmental protection and community development.",
 };
+
+const focusAreas = [
+  {
+    number: "01",
+    title: "Education",
+    text: "Creating learning opportunities for children and encouraging students to pursue education.",
+  },
+  {
+    number: "02",
+    title: "Social Reform",
+    text: "Promoting equality, awareness, social responsibility and positive change in communities.",
+  },
+  {
+    number: "03",
+    title: "Environment",
+    text: "Encouraging environmental awareness, tree plantation and responsible community action.",
+  },
+  {
+    number: "04",
+    title: "Community Service",
+    text: "Supporting people and communities through meaningful social and educational initiatives.",
+  },
+];
+
+const objectives = [
+  "Provide educational support to children from underprivileged and needy communities.",
+  "Promote free learning opportunities and educational resources in rural areas.",
+  "Create awareness among students and families about the importance of education.",
+  "Conduct awareness campaigns against social evils, substance abuse and child marriage.",
+  "Promote environmental protection and tree plantation.",
+  "Encourage youth and volunteers to participate in social service.",
+  "Promote equality, brotherhood, social justice and humanitarian values.",
+  "Encourage students through educational, competitive and recognition programs.",
+];
+
+const priorities = [
+  "Expand educational opportunities for more children.",
+  "Strengthen free learning initiatives in rural communities.",
+  "Connect more young people and volunteers with social service.",
+  "Increase environmental awareness and plantation activities.",
+];
 
 export default function AboutPage() {
   return (
     <main className="about-page">
       {/* ==================================================
-               NAVBAR
-            ================================================== */}
-
+          ORIGINAL NAVBAR — DO NOT MODIFY
+      ================================================== */}
       <Navbar />
 
       {/* ==================================================
-               ABOUT PAGE HERO
-            ================================================== */}
+          HERO
+      ================================================== */}
+      <section className="about-hero">
+        <div className="about-container">
+          <div className="about-hero-content">
+            <span className="about-kicker">ABOUT BHEEM SEVAK SAMITI</span>
 
-      <section className="about-page-hero" aria-labelledby="about-page-title">
-        <div className="about-page-container">
-          <div className="about-page-hero-content">
-            <span className="about-page-eyebrow">About Bheem Sevak Samiti</span>
-
-            <h1 id="about-page-title">
-              Building an Educated,
-              <span>Aware & Equal Society</span>
+            <h1>
+              Building a more
+              <span>educated & equal society.</span>
             </h1>
 
             <p>
-              भीम सेवक समिति, उत्तर प्रदेश एक सामाजिक एवं शैक्षिक संस्था है, जो
-              शिक्षा, सामाजिक सुधार, पर्यावरण संरक्षण एवं जन-जागरूकता के माध्यम
-              से समाज के गरीब, वंचित एवं जरूरतमंद वर्गों को सशक्त बनाने के लिए
-              कार्य कर रही है।
+              Bheem Sevak Samiti is a social and educational organization
+              working to create meaningful change through education, social
+              awareness, environmental protection and community service.
             </p>
 
-            <div className="about-page-hero-meta">
-              <div>
-                <strong>9 April 2018</strong>
-
+            <div className="about-hero-details">
+              <div className="about-hero-detail">
+                <strong>2018</strong>
                 <span>Established</span>
               </div>
 
-              <div>
+              <div className="about-hero-detail">
                 <strong>Uttar Pradesh</strong>
-
-                <span>Primary Working Region</span>
+                <span>Primary working region</span>
               </div>
 
-              <div>
-                <strong>500+ Volunteers</strong>
-
-                <span>Community Participation</span>
+              <div className="about-hero-detail">
+                <strong>Community</strong>
+                <span>Driven by service</span>
               </div>
             </div>
           </div>
 
-          {/* Hero visual placeholder */}
-
-          <div className="about-page-hero-visual">
-            <div className="about-page-hero-card">
-              <span>Our Message</span>
-
-              <strong>“शिक्षित बनो, संगठित रहो, संघर्ष करो”</strong>
-
-              <small>Bheem Sevak Samiti</small>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ==================================================
-               WHO WE ARE
-            ================================================== */}
-
-      <section className="about-story-section" id="who-we-are">
-        <div className="about-page-container">
-          <div className="about-section-heading">
-            <span>Who We Are</span>
-
-            <h2>
-              शिक्षा और सामाजिक जागरूकता
-              <strong>हमारे परिवर्तन की नींव</strong>
-            </h2>
-          </div>
-
-          <div className="about-story-grid">
-            <div className="about-story-content">
-              <p>
-                भीम सेवक समिति, उत्तर प्रदेश की स्थापना 9 अप्रैल 2018 को ग्राम
-                सुनेहटी खड़खड़ी, जनपद सहारनपुर, उत्तर प्रदेश में की गई।
-              </p>
-
-              <p>
-                संस्था की स्थापना समाज में शिक्षा, सामाजिक जागरूकता, सामाजिक
-                सुधार एवं पर्यावरण संरक्षण के उद्देश्य से की गई। संस्था शिक्षा
-                और सामाजिक समानता के माध्यम से समाज के वंचित एवं जरूरतमंद वर्गों
-                को सशक्त बनाने के लिए निरंतर कार्य कर रही है।
-              </p>
-
-              <p>
-                संस्था का प्रयास है कि शिक्षा के माध्यम से व्यक्ति को जागरूक
-                बनाया जाए और जागरूक व्यक्ति के माध्यम से समाज में सकारात्मक
-                परिवर्तन लाया जाए।
-              </p>
-            </div>
-
-            <div className="about-story-highlight">
-              <span>Since</span>
-
-              <strong>2018</strong>
-
-              <p>समाज के लिए शिक्षा, समानता और सेवा की निरंतर यात्रा</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ==================================================
-               FOUNDER
-            ================================================== */}
-
-      <section className="about-founder-section" id="founder">
-        <div className="about-page-container">
-          <div className="about-section-heading">
-            <span>Leadership</span>
-
-            <h2>
-              संस्था के
-              <strong>संस्थापक एवं राष्ट्रीय अध्यक्ष</strong>
-            </h2>
-          </div>
-
-          <div className="about-founder-card">
-            <div className="about-founder-visual">
+          <div className="about-hero-visual">
+            <div className="about-hero-image-wrap">
               <Image
                 src="/images/about/founder.png"
-                alt="Shri Vikas Kumar - Founder and National President of Bheem Sevak Samiti"
+                alt="Founder of Bheem Sevak Samiti"
+                width={650}
+                height={650}
+                priority
+                className="about-hero-image"
+              />
+
+              <div className="about-hero-badge">
+                <span>OUR JOURNEY</span>
+                <strong>Since 2018</strong>
+              </div>
+            </div>
+
+            <div className="about-hero-note">
+              <span>Our belief</span>
+              <strong>
+                Education can become the beginning of lasting social change.
+              </strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ==================================================
+          OUR STORY
+      ================================================== */}
+      <section className="about-story" id="who-we-are">
+        <div className="about-container">
+          <div className="about-story-intro">
+            <span className="about-kicker">WHO WE ARE</span>
+
+            <h2>
+              A journey built around
+              <span>education, awareness & service.</span>
+            </h2>
+          </div>
+
+          <div className="about-story-body">
+            <p>
+              Bheem Sevak Samiti was established on 9 April 2018 in Sunehti
+              Khadkhadi, Saharanpur, Uttar Pradesh.
+            </p>
+
+            <p>
+              The organization was founded with a focus on education, social
+              awareness, social reform and environmental protection. Its
+              efforts are aimed at supporting underprivileged and needy
+              communities and creating opportunities for positive development.
+            </p>
+
+            <p>
+              The organization believes that an educated and aware individual
+              can contribute to a stronger, more equal and responsible society.
+            </p>
+
+            <div className="about-story-signature">
+              <span>Established</span>
+              <strong>09.04.2018</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ==================================================
+          FOUNDER
+      ================================================== */}
+      <section className="about-founder" id="founder">
+        <div className="about-container">
+          <div className="about-founder-card">
+            <div className="about-founder-photo">
+              <Image
+                src="/images/about/founder.png"
+                alt="Shri Vikas Kumar, Founder and National President"
+                width={700}
+                height={700}
                 className="about-founder-image"
-                width={600}
-                height={600}
               />
             </div>
 
             <div className="about-founder-content">
-              <span>Founder & National President</span>
+              <span className="about-kicker">LEADERSHIP</span>
 
-              <h3>श्री विकास कुमार</h3>
+              <h2>
+                Shri Vikas Kumar
+                <span>Founder & National President</span>
+              </h2>
 
               <p>
-                संस्था के गठन एवं विस्तार में श्री विकास कुमार की महत्वपूर्ण
-                भूमिका रही है। उनके नेतृत्व में संस्था द्वारा विभिन्न क्षेत्रों
-                में शैक्षिक, सामाजिक एवं पर्यावरणीय गतिविधियाँ संचालित की जा रही
-                हैं।
+                Shri Vikas Kumar has played an important role in establishing
+                and developing Bheem Sevak Samiti. Under his leadership, the
+                organization continues to work across educational, social and
+                environmental initiatives.
               </p>
+
+              <div className="about-founder-line">
+                <span />
+                <small>Bheem Sevak Samiti</small>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ==================================================
-               VISION & MISSION
-            ================================================== */}
-
-      <section className="about-vision-section" id="vision-mission">
-        <div className="about-page-container">
+          VISION & MISSION
+      ================================================== */}
+      <section className="about-direction" id="vision-mission">
+        <div className="about-container">
           <div className="about-section-heading">
-            <span>Our Direction</span>
+            <span className="about-kicker">OUR DIRECTION</span>
 
             <h2>
-              हमारी सोच और
-              <strong>हमारा मिशन</strong>
+              What we believe.
+              <span>What we work for.</span>
             </h2>
           </div>
 
-          <div className="about-vision-grid">
-            <article className="about-vision-card">
-              <span>Vision</span>
+          <div className="about-direction-grid">
+            <article className="about-direction-card about-direction-card--vision">
+              <span className="about-card-number">01</span>
 
-              <h3>एक समानतापूर्ण और संवेदनशील समाज</h3>
+              <div>
+                <small>OUR VISION</small>
 
-              <p>
-                भीम सेवक समिति का उद्देश्य एक ऐसे शिक्षित, जागरूक, संगठित,
-                समानतापूर्ण एवं संवेदनशील समाज का निर्माण करना है, जिसमें
-                प्रत्येक व्यक्ति को शिक्षा, सम्मान, समान अवसर और सामाजिक न्याय
-                प्राप्त हो।
-              </p>
+                <h3>An educated, aware and equal society.</h3>
+
+                <p>
+                  We envision a society where every individual has access to
+                  education, dignity, equal opportunity and social justice.
+                </p>
+              </div>
             </article>
 
-            <article className="about-vision-card">
-              <span>Mission</span>
+            <article className="about-direction-card about-direction-card--mission">
+              <span className="about-card-number">02</span>
 
-              <h3>शिक्षा और जागरूकता के माध्यम से सशक्तिकरण</h3>
+              <div>
+                <small>OUR MISSION</small>
 
-              <p>
-                शिक्षा के प्रसार, सामाजिक सुधार, पर्यावरण संरक्षण एवं
-                जन-जागरूकता के माध्यम से समाज के कमजोर एवं वंचित वर्गों को सशक्त
-                बनाना तथा उन्हें समाज की मुख्यधारा से जोड़ना संस्था का प्रमुख
-                मिशन है।
-              </p>
+                <h3>Empower communities through education and awareness.</h3>
+
+                <p>
+                  Our mission is to support weaker and underserved communities
+                  through education, social reform, environmental awareness and
+                  community participation.
+                </p>
+              </div>
             </article>
           </div>
         </div>
       </section>
 
       {/* ==================================================
-               OBJECTIVES
-            ================================================== */}
+          FOCUS AREAS
+      ================================================== */}
+      <section className="about-focus" id="work-areas">
+        <div className="about-container">
+          <div className="about-focus-header">
+            <div>
+              <span className="about-kicker">WHAT WE DO</span>
 
-      <section className="about-objectives-section" id="objectives">
-        <div className="about-page-container">
-          <div className="about-section-heading">
-            <span>Our Objectives</span>
+              <h2>
+                Four areas.
+                <span>One purpose.</span>
+              </h2>
+            </div>
 
-            <h2>
-              हमारे प्रमुख
-              <strong>उद्देश्य</strong>
-            </h2>
+            <p>
+              Our work focuses on practical initiatives that encourage
+              education, awareness, responsibility and community development.
+            </p>
           </div>
 
-          <div className="about-objectives-grid">
-            {[
-              "गरीब एवं जरूरतमंद बच्चों को निःशुल्क शिक्षा उपलब्ध कराना।",
-              "ग्रामीण क्षेत्रों में निःशुल्क पाठशालाओं का संचालन करना।",
-              "शिक्षा के प्रति बच्चों एवं अभिभावकों में जागरूकता उत्पन्न करना।",
-              "विद्यार्थियों को पुस्तकें एवं अध्ययन सामग्री उपलब्ध कराना।",
-              "सामाजिक कुरीतियों के विरुद्ध जन-जागरूकता अभियान चलाना।",
-              "नशा मुक्ति एवं नशे के दुष्प्रभावों के प्रति जागरूकता फैलाना।",
-              "बाल विवाह जैसी सामाजिक कुरीतियों के विरुद्ध अभियान चलाना।",
-              "पर्यावरण संरक्षण एवं वृक्षारोपण को बढ़ावा देना।",
-              "युवाओं एवं स्वयंसेवकों को सामाजिक कार्यों से जोड़ना।",
-              "समानता, भाईचारा, सामाजिक न्याय एवं मानवतावादी मूल्यों को बढ़ावा देना।",
-              "विद्यार्थियों को शिक्षा एवं प्रतियोगी परीक्षाओं के लिए प्रोत्साहित करना।",
-              "प्रतिभाशाली एवं जरूरतमंद विद्यार्थियों का सम्मान एवं प्रोत्साहन करना.",
-            ].map((objective, index) => (
-              <article className="about-objective-card" key={index}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
+          <div className="about-focus-grid">
+            {focusAreas.map((area) => (
+              <article className="about-focus-card" key={area.number}>
+                <span className="about-focus-number">{area.number}</span>
 
-                <p>{objective}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ==================================================
-               WORK AREAS
-            ================================================== */}
-
-      <section className="about-work-section" id="work-areas">
-        <div className="about-page-container">
-          <div className="about-section-heading">
-            <span>What We Do</span>
-
-            <h2>
-              हमारे प्रमुख
-              <strong>कार्य क्षेत्र</strong>
-            </h2>
-          </div>
-
-          <div className="about-work-grid">
-            {[
-              "शिक्षा",
-              "सामाजिक सुधार",
-              "पर्यावरण संरक्षण",
-              "जन-जागरूकता",
-              "युवा सशक्तिकरण",
-              "सामुदायिक सेवा",
-            ].map((area, index) => (
-              <article className="about-work-card" key={area}>
-                <span>0{index + 1}</span>
-
-                <h3>{area}</h3>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ==================================================
-               PROGRAMS
-            ================================================== */}
-
-      <section className="about-programs-section" id="programs">
-        <div className="about-page-container">
-          <div className="about-section-heading">
-            <span>Our Programs</span>
-
-            <h2>
-              समाज के लिए हमारे
-              <strong>प्रमुख कार्यक्रम</strong>
-            </h2>
-          </div>
-
-          <div className="about-programs-list">
-            {[
-              [
-                "01",
-                "निःशुल्क शिक्षा कार्यक्रम",
-                "ग्रामीण एवं जरूरतमंद क्षेत्रों के बच्चों को शिक्षा से जोड़ने का प्रयास।",
-              ],
-              [
-                "02",
-                "निःशुल्क पाठशालाएँ",
-                "विभिन्न ग्रामीण क्षेत्रों में बच्चों को बिना शुल्क शिक्षा उपलब्ध कराने का प्रयास।",
-              ],
-              [
-                "03",
-                "पुस्तक एवं अध्ययन सामग्री वितरण",
-                "जरूरतमंद विद्यार्थियों तक पुस्तकें, कॉपियाँ एवं अन्य शैक्षिक सामग्री पहुँचाना।",
-              ],
-              [
-                "04",
-                "सामाजिक जागरूकता अभियान",
-                "सामाजिक कुरीतियों, अंधविश्वास, नशे और बाल विवाह के विरुद्ध जागरूकता।",
-              ],
-              [
-                "05",
-                "पर्यावरण संरक्षण",
-                "वृक्षारोपण और पर्यावरण संरक्षण के लिए जागरूकता एवं गतिविधियाँ।",
-              ],
-              [
-                "06",
-                "विद्यार्थी प्रोत्साहन कार्यक्रम",
-                "शैक्षिक कार्यक्रम, प्रतियोगिताएँ, परीक्षा एवं सम्मान समारोह।",
-              ],
-              [
-                "07",
-                "स्वयंसेवक सहभागिता",
-                "युवाओं एवं स्वयंसेवकों को सामाजिक कार्यों से जोड़ना।",
-              ],
-            ].map(([number, title, description]) => (
-              <article className="about-program-item" key={number}>
-                <span>{number}</span>
-
-                <div>
-                  <h3>{title}</h3>
-
-                  <p>{description}</p>
+                <div className="about-focus-icon">
+                  <span />
                 </div>
+
+                <h3>{area.title}</h3>
+
+                <p>{area.text}</p>
               </article>
             ))}
           </div>
@@ -348,97 +291,99 @@ export default function AboutPage() {
       </section>
 
       {/* ==================================================
-               IMPACT
-            ================================================== */}
+          OBJECTIVES
+      ================================================== */}
+      <section className="about-objectives" id="objectives">
+        <div className="about-container">
+          <div className="about-objectives-layout">
+            <div className="about-objectives-heading">
+              <span className="about-kicker">OUR OBJECTIVES</span>
 
-      <section className="about-impact-section" id="impact">
-        <div className="about-page-container">
-          <div className="about-section-heading">
-            <span>Our Impact</span>
+              <h2>
+                Turning our
+                <span>purpose into action.</span>
+              </h2>
 
-            <h2>
-              प्रयासों से
-              <strong>सकारात्मक प्रभाव</strong>
-            </h2>
-          </div>
-
-          <div className="about-impact-grid">
-            <div className="about-impact-card">
-              <strong>50+</strong>
-              <span>ग्रामीण क्षेत्र</span>
+              <p>
+                Our objectives guide the way we design and support educational,
+                social and environmental initiatives.
+              </p>
             </div>
 
-            <div className="about-impact-card">
-              <strong>5,000+</strong>
-              <span>विद्यार्थियों तक पहुँच</span>
-            </div>
+            <div className="about-objectives-list">
+              {objectives.map((objective, index) => (
+                <div className="about-objective-item" key={index}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
 
-            <div className="about-impact-card">
-              <strong>2,000+</strong>
-              <span>पुस्तक / अध्ययन सामग्री</span>
-            </div>
-
-            <div className="about-impact-card">
-              <strong>500+</strong>
-              <span>स्वयंसेवक</span>
+                  <p>{objective}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* ==================================================
-               WORKING AREA
-            ================================================== */}
+          REACH
+      ================================================== */}
+      <section className="about-reach" id="working-area">
+        <div className="about-container">
+          <div className="about-reach-inner">
+            <div className="about-reach-content">
+              <span className="about-kicker">OUR REACH</span>
 
-      <section className="about-region-section" id="working-area">
-        <div className="about-page-container">
-          <div className="about-region-content">
-            <span>Our Reach</span>
+              <h2>
+                From local communities
+                <span>towards wider impact.</span>
+              </h2>
+
+              <p>
+                Bheem Sevak Samiti primarily works across areas of Uttar
+                Pradesh and Uttarakhand, with a special focus on rural and
+                underserved communities.
+              </p>
+            </div>
+
+            <div className="about-reach-location">
+              <span>PRIMARY REGION</span>
+
+              <strong>Uttar Pradesh</strong>
+
+              <small>Working towards communities across the region</small>
+
+              <div className="about-reach-divider" />
+
+              <span>EXTENDED REACH</span>
+
+              <strong>Uttarakhand</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ==================================================
+          LOOKING AHEAD
+      ================================================== */}
+      <section className="about-future" id="future-priorities">
+        <div className="about-container">
+          <div className="about-section-heading about-section-heading--center">
+            <span className="about-kicker">LOOKING AHEAD</span>
 
             <h2>
-              उत्तर प्रदेश से
-              <strong>उत्तराखंड तक</strong>
+              Continuing the
+              <span>journey forward.</span>
             </h2>
 
             <p>
-              भीम सेवक समिति का सामाजिक एवं शैक्षिक कार्यक्षेत्र मुख्य रूप से
-              उत्तर प्रदेश एवं उत्तराखंड के विभिन्न क्षेत्रों में है। संस्था
-              विशेष रूप से ग्रामीण एवं जरूरतमंद समुदायों तक शिक्षा एवं सामाजिक
-              जागरूकता की गतिविधियाँ पहुँचाने का प्रयास करती है।
+              We aim to deepen our work and create more opportunities for
+              children, young people and communities.
             </p>
           </div>
-        </div>
-      </section>
 
-      {/* ==================================================
-               FUTURE PRIORITIES
-            ================================================== */}
-
-      <section className="about-priorities-section" id="future-priorities">
-        <div className="about-page-container">
-          <div className="about-section-heading">
-            <span>Looking Ahead</span>
-
-            <h2>
-              हमारा
-              <strong>भविष्य का संकल्प</strong>
-            </h2>
-          </div>
-
-          <div className="about-priorities-list">
-            {[
-              "अधिक से अधिक बच्चों को शिक्षा से जोड़ना।",
-              "ग्रामीण क्षेत्रों में निःशुल्क पाठशालाओं का विस्तार करना।",
-              "जरूरतमंद विद्यार्थियों को शैक्षिक सामग्री उपलब्ध कराना।",
-              "युवाओं को सामाजिक कार्यों से जोड़ना।",
-              "पर्यावरण संरक्षण एवं वृक्षारोपण को बढ़ाना।",
-              "सामाजिक कुरीतियों के विरुद्ध व्यापक जन-जागरूकता अभियान चलाना।",
-              "विद्यार्थियों के लिए शैक्षिक एवं प्रतियोगी कार्यक्रम आयोजित करना।",
-              "स्वयंसेवक नेटवर्क को मजबूत करना।",
-            ].map((priority, index) => (
-              <div className="about-priority-item" key={index}>
+          <div className="about-future-grid">
+            {priorities.map((priority, index) => (
+              <div className="about-future-item" key={index}>
                 <span>✓</span>
-
                 <p>{priority}</p>
               </div>
             ))}
@@ -447,26 +392,31 @@ export default function AboutPage() {
       </section>
 
       {/* ==================================================
-               FINAL MESSAGE
-            ================================================== */}
-
-      <section className="about-final-section">
-        <div className="about-page-container">
-          <div className="about-final-content">
-            <span>Our Belief</span>
+          FINAL MESSAGE
+      ================================================== */}
+      <section className="about-final">
+        <div className="about-container">
+          <div className="about-final-inner">
+            <span className="about-kicker">OUR BELIEF</span>
 
             <h2>
-              “शिक्षित बनो,
-              <strong>संगठित रहो, संघर्ष करो”</strong>
+              Educate.
+              <span>Organize. Empower.</span>
             </h2>
 
             <p>
-              शिक्षा के माध्यम से जागरूकता, जागरूकता के माध्यम से संगठन और संगठन
-              के माध्यम से सकारात्मक सामाजिक परिवर्तन की दिशा में निरंतर प्रयास।
+              We believe that education creates awareness, awareness creates
+              participation, and participation can lead to meaningful social
+              change.
             </p>
           </div>
         </div>
       </section>
+
+      {/* ==================================================
+          ORIGINAL FOOTER
+      ================================================== */}
+      <Footer />
     </main>
   );
 }

@@ -1,137 +1,105 @@
 "use client";
 
-import { useState } from "react";
-import {
-    FiCheck,
-    FiCopy,
-} from "react-icons/fi";
-
+import { useEffect, useRef, useState } from "react";
+import { FiCheck, FiCopy } from "react-icons/fi";
 
 /* ==========================================================
    OFFICIAL UPI ID
 ========================================================== */
 
-const UPI_ID =
-    "9627833744m@pnb";
-
+const UPI_ID = "9627833744m@pnb";
 
 /* ==========================================================
    COPY UPI BUTTON
 ========================================================== */
 
 export default function CopyUpiButton() {
+    const [status, setStatus] = useState("idle");
 
-    const [copied, setCopied] =
-        useState(false);
-
-    const [copyError, setCopyError] =
-        useState(false);
-
+    const timeoutRef = useRef(null);
 
     /* ======================================================
-       COPY HANDLER
+       CLEANUP
+    ====================================================== */
+
+    useEffect(() => {
+        return () => {
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
+        };
+    }, []);
+
+    /* ======================================================
+       COPY UPI ID
     ====================================================== */
 
     const handleCopy = async () => {
-
         try {
+            setStatus("copying");
 
-            setCopyError(false);
+            if (!navigator?.clipboard) {
+                throw new Error("Clipboard API unavailable");
+            }
 
+            await navigator.clipboard.writeText(UPI_ID);
 
-            /*
-                Clipboard API
-            */
+            setStatus("copied");
 
-            await navigator.clipboard.writeText(
-                UPI_ID
-            );
-
-
-            /*
-                Success state
-            */
-
-            setCopied(true);
-
-
-            /*
-                Reset after 1.8 seconds
-            */
-
-            setTimeout(() => {
-
-                setCopied(false);
-
+            timeoutRef.current = setTimeout(() => {
+                setStatus("idle");
             }, 1800);
-
-
         } catch (error) {
+            console.error("Unable to copy UPI ID:", error);
 
-            console.error(
-                "Unable to copy UPI ID:",
-                error
-            );
+            setStatus("error");
 
-
-            /*
-                Error state
-            */
-
-            setCopyError(true);
-
-
-            setTimeout(() => {
-
-                setCopyError(false);
-
+            timeoutRef.current = setTimeout(() => {
+                setStatus("idle");
             }, 1800);
-
         }
-
     };
 
+    /* ======================================================
+       BUTTON STATE
+    ====================================================== */
+
+    const isCopied = status === "copied";
+    const isError = status === "error";
+    const isCopying = status === "copying";
 
     return (
-
         <button
             type="button"
-
             className={`donate-upi-copy ${
-                copied
-                    ? "is-copied"
-                    : ""
+                isCopied ? "is-copied" : ""
             } ${
-                copyError
-                    ? "is-error"
-                    : ""
+                isError ? "is-error" : ""
+            } ${
+                isCopying ? "is-copying" : ""
             }`}
-
-            aria-label={
-                copied
-                    ? "UPI ID copied"
-                    : "Copy UPI ID"
-            }
-
-            title={
-                copied
-                    ? "UPI ID Copied"
-                    : copyError
-                    ? "Unable to copy UPI ID"
-                    : "Copy UPI ID"
-            }
-
             onClick={handleCopy}
+            disabled={isCopying}
+            aria-label={
+                isCopied
+                    ? "UPI ID copied"
+                    : isError
+                    ? "Unable to copy UPI ID"
+                    : "Copy official UPI ID"
+            }
+            title={
+                isCopied
+                    ? "UPI ID copied"
+                    : isError
+                    ? "Unable to copy UPI ID"
+                    : "Copy official UPI ID"
+            }
         >
-
-            {copied ? (
-                <FiCheck />
+            {isCopied ? (
+                <FiCheck aria-hidden="true" />
             ) : (
-                <FiCopy />
+                <FiCopy aria-hidden="true" />
             )}
-
         </button>
-
     );
-
 }

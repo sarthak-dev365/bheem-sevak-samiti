@@ -1,581 +1,336 @@
 /* ==========================================================
-BHEEM SEVAK SAMITI
-HOME — OUR JOURNEY
-Clean • Premium • Responsive
-========================================================== */
-
-/* ==========================================================
-SECTION
+   HOME OUR JOURNEY
+   BHEEM SEVAK SAMITI
 ========================================================== */
 
 .home-journey {
-position: relative;
-width: 100%;
-padding: 92px 0 96px;
-background: #f8fafc;
-overflow: hidden;
+  width: 100%;
+  padding: 78px 24px 82px;
+  background: #f3f7fb;
 }
-
-/* ==========================================================
-SUBTLE BACKGROUND DETAILS
-========================================================== */
-
-.home-journey::before,
-.home-journey::after {
-content: "";
-position: absolute;
-pointer-events: none;
-border-radius: 50%;
-background: rgba(15, 61, 122, 0.035);
-}
-
-.home-journey::before {
-width: 360px;
-height: 360px;
-top: -210px;
-left: -190px;
-}
-
-.home-journey::after {
-width: 300px;
-height: 300px;
-right: -170px;
-bottom: -190px;
-}
-
-/* ==========================================================
-CONTAINER
-========================================================== */
 
 .home-journey__container {
-position: relative;
-z-index: 1;
-width: min(1240px, calc(100% - 48px));
-margin: 0 auto;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
 }
 
+
 /* ==========================================================
-HEADER
+   HEADER
 ========================================================== */
 
 .home-journey__header {
-max-width: 850px;
-margin: 0 auto 48px;
-text-align: center;
+  text-align: center;
+  margin-bottom: 42px;
 }
-
-/* ==========================================================
-EYEBROW
-========================================================== */
 
 .home-journey__eyebrow {
-position: relative;
-display: inline-flex;
-align-items: center;
-gap: 12px;
-margin-bottom: 14px;
+  display: inline-block;
+  margin-bottom: 11px;
 
-
-color: #f57c00;
-font-family: Georgia, "Times New Roman", serif;
-font-size: 13px;
-font-weight: 700;
-letter-spacing: 2px;
-line-height: 1;
-text-transform: uppercase;
-
-
+  color: #f47b20;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
 }
-
-.home-journey__eyebrow::before,
-.home-journey__eyebrow::after {
-content: "";
-width: 30px;
-height: 1.5px;
-background: #f57c00;
-}
-
-/* ==========================================================
-MAIN HEADING
-========================================================== */
 
 .home-journey__header h2 {
-margin: 0;
+  max-width: 720px;
+  margin: 0 auto;
 
-
-color: #123f78;
-font-family: Georgia, "Times New Roman", serif;
-font-size: clamp(36px, 4vw, 56px);
-font-weight: 700;
-line-height: 1.14;
-letter-spacing: -1.5px;
-
-
+  color: #102f56;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.18;
+  font-weight: 800;
 }
 
 .home-journey__header h2 span {
-color: #f57c00;
+  display: inline;
 }
 
-/* ==========================================================
-DESCRIPTION
-========================================================== */
-
-.home-journey__header p {
-max-width: 760px;
-margin: 18px auto 0;
-
-
-color: #6b7c93;
-font-size: 16px;
-font-weight: 400;
-line-height: 1.8;
-
-
-}
 
 /* ==========================================================
-CARDS GRID
+   JOURNEY GRID
 ========================================================== */
 
 .home-journey__grid {
-display: grid;
-grid-template-columns: repeat(3, minmax(0, 1fr));
-gap: 22px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
 }
 
+
 /* ==========================================================
-CARD
+   CARD
 ========================================================== */
 
 .home-journey__card {
-position: relative;
-min-height: 255px;
-padding: 30px 30px 28px;
+  position: relative;
 
+  min-height: 235px;
+  padding: 25px;
 
-background: #ffffff;
-border: 1px solid #e5ebf2;
-border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #e3eaf1;
+  border-radius: 16px;
 
-box-shadow:
-    0 10px 30px rgba(15, 61, 122, 0.055);
+  box-shadow: 0 8px 25px rgba(16, 47, 86, 0.055);
 
-overflow: hidden;
-
-transition:
+  transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
     border-color 0.25s ease;
-
-
 }
-
-/* Orange top accent */
-
-.home-journey__card::before {
-content: "";
-position: absolute;
-top: 0;
-left: 30px;
-
-
-width: 48px;
-height: 4px;
-
-background: #f57c00;
-border-radius: 0 0 6px 6px;
-
-
-}
-
-/* Card hover */
 
 .home-journey__card:hover {
-transform: translateY(-5px);
+  transform: translateY(-5px);
 
+  border-color: #f47b20;
 
-border-color: rgba(245, 124, 0, 0.22);
-
-box-shadow:
-    0 18px 40px rgba(15, 61, 122, 0.10);
-
-
+  box-shadow: 0 15px 32px rgba(16, 47, 86, 0.10);
 }
 
+
 /* ==========================================================
-CARD TOP
+   CARD TOP
 ========================================================== */
 
-.home-journey__card-top {
-display: flex;
-align-items: center;
-justify-content: space-between;
-gap: 20px;
+.home-journey__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-
-margin-bottom: 30px;
-
-
+  margin-bottom: 24px;
 }
-
-/* ==========================================================
-NUMBER
-========================================================== */
 
 .home-journey__number {
-display: inline-flex;
-align-items: center;
-justify-content: center;
+  color: #a8b6c5;
 
-
-width: 48px;
-height: 48px;
-
-flex: 0 0 48px;
-
-color: #ffffff;
-background: #123f78;
-
-border-radius: 14px;
-
-font-family: Georgia, "Times New Roman", serif;
-font-size: 15px;
-font-weight: 700;
-
-box-shadow:
-    0 8px 18px rgba(18, 63, 120, 0.18);
-
-
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
 }
 
+.home-journey__icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #fff1e5;
+  color: #f47b20;
+
+  font-size: 21px;
+}
+
+
 /* ==========================================================
-LABEL
+   CARD CONTENT
 ========================================================== */
 
-.home-journey__label {
-color: #f57c00;
+.home-journey__card h3 {
+  margin: 0 0 10px;
 
+  color: #102f56;
 
-font-family: Georgia, "Times New Roman", serif;
-font-size: 12px;
-font-weight: 700;
-letter-spacing: 1.2px;
-line-height: 1.3;
-text-align: right;
-
-
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 750;
 }
 
+.home-journey__card p {
+  margin: 0;
+  padding-right: 10px;
+
+  color: #64748b;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
 /* ==========================================================
-CARD CONTENT
+   CARD ARROW
 ========================================================== */
 
-.home-journey__card-content h3 {
-margin: 0 0 12px;
+.home-journey__arrow {
+  position: absolute;
+  right: 25px;
+  bottom: 23px;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-color: #12345f;
+  color: #1d5fa7;
+  font-size: 18px;
 
-font-family: Georgia, "Times New Roman", serif;
-font-size: 24px;
-font-weight: 700;
-line-height: 1.35;
-
-
+  transition: transform 0.25s ease;
 }
 
-.home-journey__card-content p {
-margin: 0;
-
-
-color: #71829a;
-
-font-size: 14px;
-font-weight: 400;
-line-height: 1.75;
-
-
+.home-journey__card:hover .home-journey__arrow {
+  transform: translateX(4px);
 }
+
 
 /* ==========================================================
-CTA
+   CTA
 ========================================================== */
 
 .home-journey__action {
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
 
-
-margin-top: 34px;
-
-
+  margin-top: 34px;
 }
 
-/* ==========================================================
-CTA BUTTON
-========================================================== */
-
 .home-journey__button {
-display: inline-flex;
-align-items: center;
-justify-content: center;
-gap: 12px;
+  min-height: 50px;
+  padding: 0 25px;
 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 
-min-height: 50px;
-padding: 6px 8px 6px 22px;
+  border-radius: 9px;
 
-color: #ffffff;
-background: #123f78;
+  background: #102f56;
+  color: #ffffff;
 
-border: 1px solid #123f78;
-border-radius: 999px;
+  font-size: 15px;
+  font-weight: 700;
 
-font-family: Georgia, "Times New Roman", serif;
-font-size: 14px;
-font-weight: 700;
-text-decoration: none;
+  text-decoration: none;
 
-box-shadow:
-    0 8px 22px rgba(18, 63, 120, 0.16);
+  box-shadow: 0 8px 20px rgba(16, 47, 86, 0.15);
 
-transition:
-    background-color 0.25s ease,
-    border-color 0.25s ease,
+  transition:
+    background 0.25s ease,
     transform 0.25s ease,
     box-shadow 0.25s ease;
+}
 
+.home-journey__button svg {
+  font-size: 18px;
 
+  transition: transform 0.25s ease;
 }
 
 .home-journey__button:hover {
-background: #0d315f;
-border-color: #0d315f;
-transform: translateY(-2px);
+  background: #0b2545;
+  transform: translateY(-2px);
 
-
-box-shadow:
-    0 12px 28px rgba(18, 63, 120, 0.22);
-
-
+  box-shadow: 0 12px 26px rgba(16, 47, 86, 0.20);
 }
 
-.home-journey__button:focus-visible {
-outline: 3px solid rgba(245, 124, 0, 0.35);
-outline-offset: 4px;
+.home-journey__button:hover svg {
+  transform: translateX(4px);
 }
+
 
 /* ==========================================================
-CTA ARROW
+   TABLET
 ========================================================== */
 
-.home-journey__button-arrow {
-display: inline-flex;
-align-items: center;
-justify-content: center;
+@media (max-width: 850px) {
+  .home-journey {
+    padding: 65px 20px 70px;
+  }
 
-
-width: 36px;
-height: 36px;
-
-color: #ffffff;
-background: #f57c00;
-
-border-radius: 50%;
-
-font-size: 18px;
-line-height: 1;
-
-transition:
-    transform 0.25s ease,
-    background-color 0.25s ease;
-
-
-}
-
-.home-journey__button:hover .home-journey__button-arrow {
-transform: translateX(3px);
-background: #ef6c00;
-}
-
-/* ==========================================================
-TABLET
-========================================================== */
-
-@media (max-width: 1000px) {
-.home-journey {
-padding: 78px 0 82px;
-}
-
-
-.home-journey__container {
-    width: min(920px, calc(100% - 40px));
-}
-
-.home-journey__grid {
-    gap: 18px;
-}
-
-.home-journey__card {
-    padding: 26px 24px 25px;
-}
-
-.home-journey__card::before {
-    left: 24px;
-}
-
-.home-journey__card-content h3 {
-    font-size: 21px;
-}
-
-.home-journey__card-content p {
-    font-size: 13.5px;
-}
-
-
-}
-
-/* ==========================================================
-MOBILE
-========================================================== */
-
-@media (max-width: 700px) {
-.home-journey {
-padding: 64px 0 68px;
-}
-
-
-.home-journey__container {
-    width: min(100% - 32px, 560px);
-}
-
-.home-journey__header {
-    margin-bottom: 34px;
-}
-
-.home-journey__eyebrow {
-    font-size: 11px;
-    letter-spacing: 1.6px;
-    gap: 9px;
-}
-
-.home-journey__eyebrow::before,
-.home-journey__eyebrow::after {
-    width: 22px;
-}
-
-.home-journey__header h2 {
-    font-size: clamp(32px, 9vw, 42px);
-    letter-spacing: -0.8px;
-}
-
-.home-journey__header p {
-    margin-top: 14px;
-    font-size: 14px;
-    line-height: 1.7;
-}
-
-.home-journey__grid {
-    grid-template-columns: 1fr;
+  .home-journey__grid {
     gap: 15px;
+  }
+
+  .home-journey__card {
+    min-height: 220px;
+    padding: 21px;
+  }
+
+  .home-journey__card h3 {
+    font-size: 18px;
+  }
+
+  .home-journey__card p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
 }
 
-.home-journey__card {
-    min-height: auto;
-    padding: 25px 23px 24px;
-    border-radius: 17px;
-}
-
-.home-journey__card::before {
-    left: 23px;
-    width: 42px;
-}
-
-.home-journey__card-top {
-    margin-bottom: 24px;
-}
-
-.home-journey__number {
-    width: 44px;
-    height: 44px;
-    flex-basis: 44px;
-    border-radius: 12px;
-}
-
-.home-journey__label {
-    font-size: 10px;
-    letter-spacing: 1px;
-}
-
-.home-journey__card-content h3 {
-    margin-bottom: 9px;
-    font-size: 21px;
-}
-
-.home-journey__card-content p {
-    font-size: 13.5px;
-    line-height: 1.7;
-}
-
-.home-journey__action {
-    margin-top: 28px;
-}
-
-.home-journey__button {
-    min-height: 48px;
-    font-size: 13px;
-}
-
-
-}
 
 /* ==========================================================
-SMALL MOBILE
+   MOBILE
 ========================================================== */
 
-@media (max-width: 400px) {
-.home-journey {
-padding: 56px 0 60px;
-}
+@media (max-width: 650px) {
+  .home-journey {
+    padding: 58px 16px 62px;
+  }
 
+  .home-journey__header {
+    margin-bottom: 30px;
+  }
 
-.home-journey__container {
-    width: calc(100% - 28px);
-}
+  .home-journey__eyebrow {
+    font-size: 11px;
+  }
 
-.home-journey__header h2 {
-    font-size: 30px;
-}
+  .home-journey__header h2 {
+    font-size: 28px;
+  }
 
-.home-journey__card {
-    padding: 23px 20px;
-}
+  .home-journey__grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 
-.home-journey__card::before {
-    left: 20px;
-}
+  .home-journey__card {
+    min-height: auto;
+    padding: 20px;
+  }
 
-.home-journey__card-content h3 {
-    font-size: 19px;
-}
+  .home-journey__top {
+    margin-bottom: 18px;
+  }
 
-.home-journey__button {
+  .home-journey__icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .home-journey__card h3 {
+    font-size: 18px;
+  }
+
+  .home-journey__card p {
+    padding-right: 25px;
+  }
+
+  .home-journey__action {
+    margin-top: 26px;
+  }
+
+  .home-journey__button {
     width: 100%;
-    max-width: 250px;
+    max-width: 280px;
+  }
 }
 
-
-}
 
 /* ==========================================================
-REDUCED MOTION
+   REDUCED MOTION
 ========================================================== */
 
 @media (prefers-reduced-motion: reduce) {
-.home-journey__card,
-.home-journey__button,
-.home-journey__button-arrow {
-transition: none;
-}
+  .home-journey__card,
+  .home-journey__button,
+  .home-journey__arrow,
+  .home-journey__button svg {
+    transition: none;
+  }
 }
